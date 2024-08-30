@@ -13,10 +13,10 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::all();
+        $restaurants = Restaurant::all();
 
         $data = [
-            "restaurant" => $restaurant
+            "restaurants" => $restaurants
         ];
 
         return view('admin.restaurants.index', $data);
@@ -35,7 +35,7 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
@@ -43,7 +43,11 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        //
+        $data = [
+            "restaurant" => $restaurant
+        ];
+
+        return view("admin.restaurants.show", $data);
     }
 
     /**
