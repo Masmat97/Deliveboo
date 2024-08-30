@@ -12,15 +12,16 @@ class RestaurantController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $restaurants = Restaurant::all();
+{
+    // In questo modo prende solo i ristoranti dell'utente autenticato
+    $restaurants = Restaurant::where('user_id', auth()->id())->get();
 
-        $data = [
-            "restaurants" => $restaurants
-        ];
+    $data = [
+        "restaurants" => $restaurants
+    ];
 
-        return view('admin.restaurants.index', $data);
-    }
+    return view('admin.restaurants.index', $data);
+}
 
     /**
      * Show the form for creating a new resource.
