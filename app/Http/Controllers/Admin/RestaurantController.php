@@ -13,7 +13,13 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $restaurant = Restaurant::all();
+
+        $data = [
+            "restaurant" => $restaurant
+        ];
+
+        return view('admin.restaurants.index', $data);
     }
 
     /**
