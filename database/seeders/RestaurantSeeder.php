@@ -20,7 +20,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant2->image = 'https://img1.wsimg.com/isteam/ip/587e2db3-e147-4a44-9766-3c9c8d5285ca/blob-0001.png';
         $newRestaurant2->user_id = 2;
         $newRestaurant2->save();
-        $newRestaurant2->types()->attach(1) ;
+        $newRestaurant2->types()->attach([1]);
 
 
         $newRestaurant3 = new Restaurant();
@@ -30,7 +30,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant3->image = 'https://www.thegastrojob.com/wp-content/uploads/2018/02/Ristorante-il-Pagliaccio-a-Roma.jpg';
         $newRestaurant3->user_id = 3;
         $newRestaurant3->save();
-        $newRestaurant3->types()->attach(1) ;
+        $newRestaurant3->types()->attach(1);
 
         // Michelin-starred Italian restaurant
 
@@ -41,7 +41,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant4->image = 'https://www.zenit-group.it/wp-content/uploads/2016/02/Sushiko-Ferrara-foto-10-500x500.jpg';
         $newRestaurant4->user_id = 4;
         $newRestaurant4->save();
-        $newRestaurant2->types()->attach([2,4]);
+        $newRestaurant4->types()->attach([2, 4]);
 
 
         // Japanese sushi restaurant
@@ -53,7 +53,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant5->image = 'https://photos.wikimapia.org/p/00/03/68/93/41_full.jpg';
         $newRestaurant5->user_id = 5;
         $newRestaurant5->save();
-        $newRestaurant5->types()->attach(3) ;
+        $newRestaurant5->types()->attach(3);
 
         // Indian restaurant
 
@@ -64,7 +64,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant6->image = 'https://www.sercolombiano.com/wp-content/uploads/2018/02/DSC_0009.jpg';
         $newRestaurant6->user_id = 6;
         $newRestaurant6->save();
-        $newRestaurant6->types()->attach([1,4]) ;
+        $newRestaurant6->types()->attach([1, 4]);
 
         // Seafood restaurant
 
@@ -75,7 +75,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant7->image = 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/roma-burger-bar-glendalina-ziemba.jpg';
         $newRestaurant7->user_id = 7;
         $newRestaurant7->save();
-        $newRestaurant7->types()->attach([5,8]);
+        $newRestaurant7->types()->attach([5, 8]);
 
         // American-style burger joint
 
@@ -86,7 +86,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant8->image = 'https://media-cdn.tripadvisor.com/media/photo-s/16/ed/8f/99/photo0jpg.jpg';
         $newRestaurant8->user_id = 8;
         $newRestaurant8->save();
-        $newRestaurant8->types()->attach(1) ;
+        $newRestaurant8->types()->attach(1);
 
         // Traditional Roman trattoria
 
@@ -97,7 +97,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant9->image = 'https://media-cdn.tripadvisor.com/media/photo-s/11/98/81/f7/kebabish-curry-and-grill.jpg';
         $newRestaurant9->user_id = 9;
         $newRestaurant9->save();
-        $newRestaurant9->types()->attach(6) ;
+        $newRestaurant9->types()->attach(6);
 
         // Middle Eastern kebab shop
 
@@ -108,7 +108,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant10->image = 'https://italianliving.com/custom/domain_1/image_files/sitemgr_photo_23534.jpg';
         $newRestaurant10->user_id = 10;
         $newRestaurant10->save();
-        $newRestaurant10->types()->attach(1) ;
+        $newRestaurant10->types()->attach(1);
 
         // Neapolitan-style pizzeria
 
@@ -119,7 +119,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant11->image = 'https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/55/3b/d9/553bd9ae-784e-dc83-8700-044fb2da59d5/source/512x512bb.jpg';
         $newRestaurant11->user_id = 11;
         $newRestaurant11->save();
-        $newRestaurant11->types()->attach(2) ;
+        $newRestaurant11->types()->attach(2);
 
         // Japanese ramen restaurant
 
@@ -130,7 +130,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant12->image = 'https://media-cdn.tripadvisor.com/media/photo-s/10/e3/07/90/photo2jpg.jpg';
         $newRestaurant12->user_id = 12;
         $newRestaurant12->save();
-        $newRestaurant12->types()->attach(1) ;
+        $newRestaurant12->types()->attach(1);
 
         // Italian restaurant specializing in carbonara
 
@@ -141,7 +141,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant13->image = 'https://live.staticflickr.com/2256/2325273112_5e296f04dd.jpg';
         $newRestaurant13->user_id = 13;
         $newRestaurant13->save();
-        $newRestaurant13->types()->attach(10) ;
+        $newRestaurant13->types()->attach(10);
 
         // Mexican taqueria
 
@@ -152,7 +152,7 @@ class RestaurantSeeder extends Seeder
         $newRestaurant14->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/99/09/0d/la-galetta.jpg?w=1200&h=-1&s=1';
         $newRestaurant14->user_id = 14;
         $newRestaurant14->save();
-        $newRestaurant14->types()->attach(11) ;
+        $newRestaurant14->types()->attach(11);
 
         // French bistro
 

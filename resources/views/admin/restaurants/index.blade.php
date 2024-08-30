@@ -19,6 +19,12 @@
                                     @endif
                                 </a>
                                 </p>
+                                <div>
+                                    <p>Tipologie:</p>
+                                    @foreach ($restaurant->types as $type)
+                                        <p>{{ $type->name }}</p>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
 
