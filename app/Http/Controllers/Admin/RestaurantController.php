@@ -12,16 +12,16 @@ class RestaurantController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-{
-    // In questo modo prende solo i ristoranti dell'utente autenticato
-    $restaurants = Restaurant::where('user_id', auth()->id())->get();
+    {
+        // In questo modo prende solo i ristoranti dell'utente autenticato
+        $restaurants = Restaurant::where('user_id', auth()->id())->get();
 
-    $data = [
-        "restaurants" => $restaurants
-    ];
+        $data = [
+            "restaurants" => $restaurants
+        ];
 
-    return view('admin.restaurants.index', $data);
-}
+        return view('admin.restaurants.index', $data);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -44,34 +44,40 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        $data = [
-            "restaurant" => $restaurant
-        ];
+        if ($restaurant->user_id != auth()->id()) {
+            abort(403); // Non autorizzato a vedere questo ristorante
+        }
 
-        return view("admin.restaurants.show", $data);
+        return view("admin.restaurants.show", ['restaurant' => $restaurant]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Restaurant $restaurant)
     {
-        //
+        if ($restaurant->user_id != auth()->id()) {
+            abort(403); // Non autorizzato a modificare questo ristorante
+        }
+
+        return view('admin.restaurants.edit', ['restaurant' => $restaurant]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        if ($restaurant->user_id != auth()->id()) {
+            abort(403); // Non autorizzato a aggiornare questo ristorante
+        }
+
+        // Aggiorna il ristorante qui
+        $restaurant->update($request->all());
+        return redirect()->route('admin.restaurants.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Restaurant $restaurant)
     {
-        //
+        if ($restaurant->user_id != auth()->id()) {
+            abort(403); // Non autorizzato a eliminare questo ristorante
+        }
+
+        $restaurant->delete();
+        return redirect()->route('admin.restaurants.index');
     }
 }
