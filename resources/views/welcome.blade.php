@@ -19,24 +19,26 @@
 </div>
 
 <script>
-document.getElementById('typeSelect').addEventListener('change', function() {
-    fetch(`/search?type=${this.value}`)
+document.getElementById('typeSelect').addEventListener('change', function () {
+    fetch(`/admin/search?type=${this.value}`)
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('restaurantsContainer');
             container.innerHTML = '';
             data.forEach(restaurant => {
-                container.innerHTML += `<div class="col-md-4">
-                                            <div class="card mb-4">
-                                                <img src="${restaurant.image}" class="card-img-top" alt="${restaurant.name}">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${restaurant.name}</h5>
-                                                    <p class="card-text">${restaurant.address}</p>
-                                                </div>
-                                            </div>
-                                        </div>`;
+                container.innerHTML += `
+                    <div class="card mb-4">
+                        <img src="${restaurant.image || 'path/to/default/image.png'}" class="card-img-top" alt="${restaurant.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${restaurant.name}</h5>
+                            <p class="card-text">${restaurant.description || ''}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                `;
             });
-        });
+        })
+        .catch(error => console.error('Error fetching data:', error));
 });
 </script>
 @endsection
