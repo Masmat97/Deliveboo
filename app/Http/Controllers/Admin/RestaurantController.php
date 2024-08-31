@@ -90,4 +90,17 @@ class RestaurantController extends Controller
         $restaurant->delete();
         return redirect()->route('admin.restaurants.index');
     }
+
+    /**
+     * Filtra i ristoranti per tipologia e ritorna i dati in formato JSON.
+     */
+    public function search(Request $request)
+    {
+        $typeId = $request->type;
+        $restaurants = Restaurant::whereHas('types', function ($query) use ($typeId) {
+            $query->where('id', $typeId);
+        })->get();
+
+        return response()->json($restaurants);
+    }
 }
