@@ -11,7 +11,7 @@ class RestaurantController extends Controller
 {
     /**
      * Mostra una lista di risorse.
-     * Mostra solo i ristoranti che appartengono a quel utente.
+     * Mostra solo i ristoranti che appartengono all'utente autenticato.
      */
     public function index()
     {
@@ -20,29 +20,30 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Creare una nuova risorsa.
-     * Questo nuovo ristorante apparterrà a quell'utente che ha eseguito il log in.
+     * Prepara la vista per creare una nuova risorsa.
+     * Passa una nuova istanza di Restaurant alla vista.
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $restaurant = new Restaurant();
+        return view('admin.restaurants.create', ['restaurant' => $restaurant]);
     }
 
     /**
      * Conserva una nuova risorsa nello storage.
-     * Assegna automaticamente il ristorante a quel utente che ha eseguito il log in.
+     * Assegna automaticamente il ristorante all'utente autenticato.
      */
     public function store(Request $request)
     {
         $restaurant = new Restaurant($request->all());
-        $restaurant->user_id = Auth::id(); // Set the owner of the restaurant
+        $restaurant->user_id = Auth::id();
         $restaurant->save();
         return redirect()->route('admin.restaurants.index');
     }
 
     /**
-     * Mostra una risorsa dallo storage.
-     * Lo mostra solo all'utente autenticato con il log in.
+     * Mostra una risorsa specifica dallo storage.
+     * Accessibile solo dall'utente proprietario del ristorante.
      */
     public function show(Restaurant $restaurant)
     {
@@ -53,8 +54,8 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Può modificare una risorsa dallo storage.
-     * Il permesso è unicamente del utente che ha fatto il log in.
+     * Prepara la vista per modificare una risorsa esistente.
+     * Accessibile solo dall'utente proprietario del ristorante.
      */
     public function edit(Restaurant $restaurant)
     {
@@ -65,8 +66,8 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Aggiorna una risorsa dallo storage.
-     * Il permesso è unicamente del utente che ha fatto il log in.
+     * Aggiorna una risorsa nello storage.
+     * Accessibile solo dall'utente proprietario del ristorante.
      */
     public function update(Request $request, Restaurant $restaurant)
     {
@@ -79,7 +80,7 @@ class RestaurantController extends Controller
 
     /**
      * Rimuove una risorsa dallo storage.
-     * Il permesso è unicamente del utente che ha fatto il log in.
+     * Accessibile solo dall'utente proprietario del ristorante.
      */
     public function destroy(Restaurant $restaurant)
     {
