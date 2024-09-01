@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateDishesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // Colonna per il nome del piatto
+            $table->text('description')->nullable(); // Colonna per la descrizione del piatto
+            $table->decimal('price', 8, 2); // Colonna per il prezzo del piatto
+            $table->unsignedBigInteger('restaurant_id'); // Colonna per la relazione con il ristorante
             $table->timestamps();
+
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
         });
     }
 
@@ -24,4 +30,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('dishes');
     }
-};
+}

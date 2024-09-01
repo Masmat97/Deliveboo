@@ -2,18 +2,24 @@
 
 @section('content')
 <div class="container">
-    <h1>Menu del Ristorante: {{ $restaurant->name }}</h1>
-    <div>
-        <p>Indirizzo: {{ $restaurant->address }}</p>
-        <p>Descrizione: {{ $restaurant->description }}</p>
-        <h3>Piatti:</h3>
-        @foreach ($dishes as $dish)
-            <div>
-                <h4>{{ $dish->name }}</h4>
-                <p>{{ $dish->description }}</p>
-                <p>Prezzo: €{{ number_format($dish->price, 2) }}</p>
+    <h1>{{ $restaurant->name }}</h1>
+    <p>{{ $restaurant->address }}</p>
+
+    <h2>Menu</h2>
+    <div class="row">
+        @forelse($dishes as $dish)
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $dish->name }}</h5>
+                        <p class="card-text">{{ $dish->description }}</p>
+                        <p class="card-text"><strong>Price: </strong>{{ $dish->price }} €</p>
+                    </div>
+                </div>
             </div>
-        @endforeach
+        @empty
+            <p>No dishes available.</p>
+        @endforelse
     </div>
 </div>
 @endsection
