@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\Admin\DishController;
+use App\Http\Controllers\MenuController; // Assicurati di includere il MenuController
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,8 @@ Route::middleware(['auth'])
         Route::resource('/dishes', DishController::class); // Aggiunta la route per gestire i piatti
         Route::get('/search', [RestaurantController::class, 'search'])->name('restaurants.search'); // Route per la ricerca dei ristoranti
     });
+
+// Aggiungo la rotta per visualizzare il menu di un ristorante
+Route::get('/menu/{restaurant}', [MenuController::class, 'show'])->name('menu.show');
 
 require __DIR__ . '/auth.php';

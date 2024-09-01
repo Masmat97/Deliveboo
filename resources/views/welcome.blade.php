@@ -32,7 +32,7 @@ document.getElementById('typeSelect').addEventListener('change', function () {
                         <div class="card-body">
                             <h5 class="card-title">${restaurant.name}</h5>
                             <p class="card-text">${restaurant.description || ''}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="/menu/${restaurant.id}" class="btn btn-primary">View Menu</a>
                         </div>
                     </div>
                 `;
