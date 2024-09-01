@@ -96,11 +96,16 @@ class RestaurantController extends Controller
      */
     public function search(Request $request)
     {
-        $typeId = $request->type;
-        $restaurants = Restaurant::whereHas('types', function ($query) use ($typeId) {
-            $query->where('id', $typeId);
-        })->get();
+        try {
+            $typeId = $request->type;
+            $restaurants = Restaurant::whereHas('types', function ($query) use ($typeId) {
+                $query->where('types.id', $typeId);  // Qualifica il riferimento a 'id' con 'types.id'
+            })->get();
 
-        return response()->json($restaurants);
+            return response()->json($restaurants);
+        } catch (\Exception $e) {
+            \Log::error("Errore durante la ricerca dei ristoranti: " . $e->getMessage());
+            return response()->json(['error' => 'Errore server'], 500);
+        }
     }
 }
