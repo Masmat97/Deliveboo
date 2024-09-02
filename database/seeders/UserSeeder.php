@@ -46,6 +46,41 @@ class UserSeeder extends Seeder
                 'email' => 'burgerbar@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
+            [
+                'name' => 'La Gensola Restaurant',
+                'email' => 'lagensola@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Kebabish Restaurant',
+                'email' => 'kebabish@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'La Campana Restaurant',
+                'email' => 'lacampana@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Sakura Restaurant',
+                'email' => 'sakura@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'La Carbonara Restaurant',
+                'email' => 'lacarbonara@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Tacos el Fogoncito Restaurant',
+                'email' => 'tacoselfogoncito@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'La Galette Restaurant',
+                'email' => 'lagalette@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
 
         ];
 
