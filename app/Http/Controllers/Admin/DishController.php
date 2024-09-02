@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dish;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -29,7 +32,7 @@ class DishController extends Controller
         $data = [
             'dishes' => $dishes,
         ];
-        return view('admin.dishes.create');
+        return view('admin.dishes.create', $data);
     }
 
     /**
@@ -37,26 +40,29 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate(
-            [
-                'name' => 'required | min:5 |max:50',
-                'image' => 'required |image',
-                'ingredient' => 'required |min:10',
-                'price' => 'required |numeric',
-                'restaurant_id' => 'required',
-            ]);
-            // if($request->has('image')){
-                //     $image_path = Storage::put('images', $request->image);
-                //     $data['image'] = $image_path;
-                // }
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to create a dish');
+        }
+        $restaurant = Restaurant::where('user_id', auth()->id())->first();
+        $data = $request->validate([
+            'name' => 'required | min:5 |max:50',
+            'ingredient' => 'required |min:10',
+            'price' => 'required |numeric',
+            'availability' => 'required',
+            'image' => 'required |image',
+        ]);
+
+        if ($request->has('image')) {
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
 
         $newDish = new Dish();
         $newDish->fill($data);
-        $newDish->restaurant_id = $data['restaurant_id'];
+        $newDish->restaurant_id = $restaurant->id;
         $newDish->save();
-        return redirect()->route('admin.dishes.show', ['dishes'=> $newDish])->with('success', 'Dish created successfully');
 
-
+        return redirect()->route('admin.dishes.index')->with('success', 'Dish created successfully');
     }
 
     /**
@@ -88,10 +94,20 @@ class DishController extends Controller
         $dish->ingredient = $request->input('ingredient');
         $dish->price = $request->input('price');
         $dish->availability = $request->input('availability');
-        $dish->image = $request->input('image');
-        $dish->save();
+
+        if ($request->has('image')) {
+            if ($dish->image && !Str::startsWith($dish->image, 'http')) {
+                Storage::delete($dish->image); // Delete the old image
+            }
+            $image = Storage::put('images', $request->image);
+            $dish->image = $image; // Assign the new image to the $dish object
+        }
+
+        $dish->update(['name' => $dish->name, 'ingredient' => $dish->ingredient, 'price' => $dish->price, 'availability' => $dish->availability, 'image' => $dish->image]);
+
         return redirect()->route('admin.dishes.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
