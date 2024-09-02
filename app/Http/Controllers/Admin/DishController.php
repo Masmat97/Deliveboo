@@ -11,11 +11,13 @@ class DishController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $restaurant_id = $request->user()->restaurant_id;
-        $dishes = Dish::where('restaurant_id', $restaurant_id)->get();
-        return view('admin.dishes.index', compact('dishes'));
+        $dishes = Dish::where('restaurant_id',auth()-> id())->get();
+        $data = [
+            'dishes' => $dishes,
+        ];
+        return view('admin.dishes.index', $data);
     }
 
     /**
@@ -23,6 +25,10 @@ class DishController extends Controller
      */
     public function create()
     {
+        $dishes = Dish::where('restaurant_id',auth()-> id())->get();
+        $data = [
+            'dishes' => $dishes,
+        ];
         return view('admin.dishes.create');
     }
 
@@ -31,15 +37,26 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate(
+            [
+                'name' => 'required | min:5 |max:50',
+                'image' => 'required |image',
+                'ingredient' => 'required |min:10',
+                'price' => 'required |numeric',
+                'restaurant_id' => 'required',
+            ]);
+            // if($request->has('image')){
+                //     $image_path = Storage::put('images', $request->image);
+                //     $data['image'] = $image_path;
+                // }
+
         $newDish = new Dish();
-        $newDish->restaurant_id = $request->user()->restaurant_id;
-        $newDish->name = $request->input('name');
-        $newDish->ingredient = $request->input('ingredient');
-        $newDish->price = $request->input('price');
-        $newDish->availability = $request->input('availability');
-        $newDish->image = $request->input('image');
+        $newDish->fill($data);
+        $newDish->restaurant_id = $data['restaurant_id'];
         $newDish->save();
-        return redirect()->route('admin.dishes.index');
+        return redirect()->route('admin.dishes.show', ['dishes'=> $newDish])->with('success', 'Dish created successfully');
+
+
     }
 
     /**
@@ -47,7 +64,12 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        return view('admin.dishes.show', compact('dish'));
+
+        $data =
+        [
+            'dish' => $dish,
+        ];
+        return view('admin.dishes.show', $data);
     }
 
     /**
