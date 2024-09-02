@@ -30,16 +30,8 @@
 
                         <div class="my-3 d-flex flex-column">
                             <button type="button" class="btn btn-primary"><a
-                                    href="{{ route('admin.restaurants.edit', $restaurant->id) }}">Modifica</a>
+                                    href="{{ route('admin.dishes.index') }}">Visualizza Menù</a>
                             </button>
-
-                            <form class="my-1" action="{{ route('admin.restaurants.destroy', $restaurant) }}"
-                                method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-primary  w-100">Elimina</button>
-                            </form>
-
                         </div>
 
                     </div>
