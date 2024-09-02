@@ -53,7 +53,7 @@ class DishController extends Controller
         ]);
 
         if ($request->has('image')) {
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('images', $request->image);
             $data['image'] = $image_path;
         }
 
@@ -95,11 +95,11 @@ class DishController extends Controller
             'ingredient' => 'required |min:10',
             'price' => 'required |numeric',
             'availability' => 'required',
-            'image' => 'required',
+            'image' => 'nullable|image',
         ]);
 
         if ($request->has('image')) {
-            $image_path = Storage::put('uploads', $request->image);
+            $image_path = Storage::put('images', $request->image);
             $data['image'] = $image_path;
         }
 
