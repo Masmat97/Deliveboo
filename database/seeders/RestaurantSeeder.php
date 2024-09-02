@@ -109,7 +109,6 @@ class RestaurantSeeder extends Seeder
                 'types' => [11]
             ]
         ];
-
         $users = User::all(); // Retrieve all users in ascending order
 
         $userIndex = 0;

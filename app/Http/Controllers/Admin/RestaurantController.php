@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -28,7 +29,18 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        // conta il numero di ristoranti associati all'utente attualmente autenticato
+        $restaurantCount = Restaurant::where('user_id', auth()->id())->count();
+
+        if ($restaurantCount == 0) {
+            $types = Type::all();
+            $data = [
+                "types" => $types,
+            ];
+            return view('admin.restaurants.create', $data);
+        } else {
+            abort(403); // Non autorizzato a vedere questo ristorante
+        }
     }
 
     /**
