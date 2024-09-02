@@ -49,7 +49,7 @@ class RestaurantSeeder extends Seeder
                 'name' => 'La Rosetta',
                 'address' => 'Piazza del Popolo, 18, 00187 Roma RM, Italy',
                 'p_iva' => 'IT3333333333',
-                'image' => 'https://www.sercolombiano.com/wp-content/uploads/2018/02/DSC_0009.jpg',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqiXF2TnUl6yY7twSpq9HoqZ4MeHr8TLuNrw&s',
                 'types' => [1, 4]
             ],
             [
