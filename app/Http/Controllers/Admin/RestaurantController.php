@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -48,6 +49,24 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+
+        $user = User::where('id', auth()->id())->first();
+
+        $data = $request->validate(
+            [
+                'name' => 'required|min:5|max:50',
+                'address' => 'required',
+                'image' => 'required | image',
+                'p_iva' => 'required|size:11',
+            ]
+
+        );
+
+        $newRestaurant = new Restaurant();
+        $newRestaurant->fill($data);
+        $newRestaurant->user_id = $user->id;
+        $newRestaurant->save();
+
         return redirect()->route('admin.restaurants.index');
     }
 

@@ -9,13 +9,22 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'address',
+        'image',
+        'p_iva'
+    ];
+
     // Definisce la relazione con l'User
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
     // La relazione esistente con Type
-    public function types(){
+    public function types()
+    {
         return $this->belongsToMany(Type::class);
     }
 
