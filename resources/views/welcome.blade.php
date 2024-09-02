@@ -21,7 +21,7 @@
 <script>
     document.getElementById('typeSelect').addEventListener('change', function () {
         const selectedType = this.value;
-        console.log(`Selected type: ${selectedType}`); // Debugging log
+        console.log(`Selected type: ${selectedType}`);
 
         fetch(`/admin/search?type=${selectedType}`)
             .then(response => {
@@ -31,31 +31,25 @@
                 return response.json();
             })
             .then(data => {
-                console.log('Received data:', data); // Debugging log
                 const container = document.getElementById('restaurantsContainer');
-                container.innerHTML = ''; // Svuota il contenitore
-                if (data.length === 0) {
-                    container.innerHTML = '<p>Nessun ristorante trovato per questa tipologia.</p>';
-                } else {
-                    data.forEach(restaurant => {
-                        container.innerHTML += `
-                            <div class="col-md-4">
-                                <div class="card mb-4">
-                                    <img src="${restaurant.image || 'path/to/default/image.png'}" class="card-img-top" alt="${restaurant.name}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${restaurant.name}</h5>
-                                        <p class="card-text">${restaurant.address}</p>
-                                        <a href="/menu/${restaurant.id}" class="btn btn-primary">View Menu</a>
-                                    </div>
+                container.innerHTML = '';
+                data.forEach(restaurant => {
+                    container.innerHTML += `
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="${restaurant.image}" class="card-img-top" alt="${restaurant.name}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${restaurant.name}</h5>
+                                    <p class="card-text">${restaurant.address}</p>
+                                    <a href="/menu/${restaurant.id}" class="btn btn-primary">View Menu</a>
                                 </div>
                             </div>
-                        `;
-                    });
-                }
+                        </div>
+                    `;
+                });
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
-                document.getElementById('restaurantsContainer').innerHTML = '<p>Errore nel caricamento dei dati.</p>';
             });
     });
 </script>
