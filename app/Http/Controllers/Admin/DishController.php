@@ -64,7 +64,6 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-
         $data =
         [
             'dish' => $dish,

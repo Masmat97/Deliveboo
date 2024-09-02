@@ -3,7 +3,6 @@
 @section('content')
 				<div class="card_container">
 								<div class="card-show">
-                                    {{ dd($dish) }}
 												<h4 class="mt-4 mb-4">{{ $dish->name }}</h4>
 												<div class="img_container">
 
