@@ -110,17 +110,34 @@ class RestaurantSeeder extends Seeder
             ]
         ];
 
+        $users = User::all(); // Retrieve all users in ascending order
+
+        $userIndex = 0;
+
+
         foreach ($restaurants as $data) {
-            $user = User::inRandomOrder()->first();  // Prende un utente a caso
+
+            $user = $users[$userIndex % $users->count()];; // Get the next user in the list
+
             $restaurant = new Restaurant([
+
                 'name' => $data['name'],
+
                 'address' => $data['address'],
+
                 'p_iva' => $data['p_iva'],
+
                 'image' => $data['image'],
+
                 'user_id' => $user->id  // Assegna l'ID dell'utente trovato
+
             ]);
+
             $restaurant->save();
+
             $restaurant->types()->attach($data['types']);
+
+            $userIndex++;
         }
     }
 }

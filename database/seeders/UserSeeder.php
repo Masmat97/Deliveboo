@@ -17,11 +17,6 @@ class UserSeeder extends Seeder
         // Array di utenti da creare
         $users = [
             [
-                'name' => 'Deliveboo Main',
-                'email' => 'deliveboo@boolean.it',
-                'password' => Hash::make('deliveboo123')
-            ],
-            [
                 'name' => 'La Bella Vita Restaurant',
                 'email' => 'labellavita@restaurant.it',
                 'password' => Hash::make('deliveboo123')
@@ -51,7 +46,7 @@ class UserSeeder extends Seeder
                 'email' => 'burgerbar@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
-           
+
         ];
 
         // Ciclo per creare gli utenti
