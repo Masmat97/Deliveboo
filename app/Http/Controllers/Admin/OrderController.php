@@ -4,63 +4,30 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Funzione per visualizzare la lista degli ordini ricevuti
     public function index()
     {
-        //
+        // Recupera solo gli ordini del ristorante associato all'utente autenticato
+        $orders = Order::where('restaurant_id', Auth::user()->restaurant->id)
+                        ->with('user', 'dishes') // Carica i dettagli degli utenti e dei piatti
+                        ->orderBy('created_at', 'desc') // Ordina per data di creazione
+                        ->get();
+
+        return view('admin.orders.index', compact('orders'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    // Funzione per aggiornare lo stato dell'ordine
+    public function updateStatus(Order $order, $status)
     {
-        //
-    }
+        $this->authorize('update', $order); // Autorizza solo se l'utente è proprietario del ristorante
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $order->status = $status;
+        $order->save();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Order $order)
-    {
-        //
+        return redirect()->route('admin.orders.index')->with('success', 'Order status updated successfully');
     }
 }
