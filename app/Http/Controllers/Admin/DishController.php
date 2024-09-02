@@ -16,7 +16,7 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::where('restaurant_id',auth()-> id())->get();
+        $dishes = Dish::where('restaurant_id', auth()->id())->get();
         $data = [
             'dishes' => $dishes,
         ];
@@ -28,7 +28,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        $dishes = Dish::where('restaurant_id',auth()-> id())->get();
+        $dishes = Dish::where('restaurant_id', auth()->id())->get();
         $data = [
             'dishes' => $dishes,
         ];
@@ -71,9 +71,9 @@ class DishController extends Controller
     public function show(Dish $dish)
     {
         $data =
-        [
-            'dish' => $dish,
-        ];
+            [
+                'dish' => $dish,
+            ];
         return view('admin.dishes.show', $data);
     }
 
