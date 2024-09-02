@@ -11,9 +11,11 @@ class DishController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $restaurant_id = $request->user()->restaurant_id;
+        $dishes = Dish::where('restaurant_id', $restaurant_id)->get();
+        return view('admin.dishes.index', compact('dishes'));
     }
 
     /**
@@ -21,7 +23,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dishes.create');
     }
 
     /**
@@ -29,7 +31,15 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newDish = new Dish();
+        $newDish->restaurant_id = $request->user()->restaurant_id;
+        $newDish->name = $request->input('name');
+        $newDish->ingredient = $request->input('ingredient');
+        $newDish->price = $request->input('price');
+        $newDish->availability = $request->input('availability');
+        $newDish->image = $request->input('image');
+        $newDish->save();
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -37,7 +47,7 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        //
+        return view('admin.dishes.show', compact('dish'));
     }
 
     /**
@@ -45,7 +55,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        //
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -53,7 +63,13 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        //
+        $dish->name = $request->input('name');
+        $dish->ingredient = $request->input('ingredient');
+        $dish->price = $request->input('price');
+        $dish->availability = $request->input('availability');
+        $dish->image = $request->input('image');
+        $dish->save();
+        return redirect()->route('admin.dishes.index');
     }
 
     /**
@@ -61,6 +77,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        //
+        $dish->delete();
+        return redirect()->route('admin.dishes.index');
     }
 }
