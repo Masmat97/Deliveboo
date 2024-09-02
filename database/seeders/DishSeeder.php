@@ -22,7 +22,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = "Chicken breast, Mushrooms, Onion, Garlic";
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = "pollo-alla-cacciatora.jpg";
+        $newDish->image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdo6Cx1O2jaJHjjMGYhL_NlA7ybc5DdJswPA&s";
         $newDish->save();
 
         $newDish = new Dish();
@@ -31,7 +31,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Spaghetti, Garlic, Olive oil, Red pepper flakes';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'spaghetti-aglio-e-olio.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzn3SiOum4YNZz2rnpHkW4B0LYA1OwAhW_dg&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -40,7 +40,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Tomato, Basil, Mozzarella, Balsamic vinegar';
         $newDish->price = 8.99;
         $newDish->availability = true;
-        $newDish->image = 'bruschetta.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbgEArTW90-D2VARxsrED-ptPf0ZxMKWgedw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -49,7 +49,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Risotto, Saffron, Beef broth, Parmesan cheese, Ossobuco';
         $newDish->price = 22.99;
         $newDish->availability = false;
-        $newDish->image = 'risotto-alla-milanese.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabmWcjTyb36Qlzzxul0oPhG_Nsi4TKpvRCQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -58,7 +58,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken breast, Tomato sauce, Mozzarella cheese, Parmesan cheese';
         $newDish->price = 16.99;
         $newDish->availability = true;
-        $newDish->image = 'pollo-alla-parmigiana.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNugcSNjZKHcintFX1dv8EdU78WZW95-5g8Q&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -67,7 +67,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Fettuccine, Parmesan cheese, Butter, Cream';
         $newDish->price = 18.99;
         $newDish->availability = true;
-        $newDish->image = 'fettuccine-alfredo.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpS352Q473F_wHJUv1_Fx5c_681gdkghZpYA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -76,7 +76,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Gnocchi, Tomato sauce, Pecorino Romano cheese, Basil';
         $newDish->price = 16.99;
         $newDish->availability = true;
-        $newDish->image = 'gnocchi-alla-romana.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuIYdpYr692Txk1QyrpBSHAet2aw2SjoRnA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -85,7 +85,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Tomato, Mozzarella cheese, Basil, Balsamic vinegar';
         $newDish->price = 9.99;
         $newDish->availability = true;
-        $newDish->image = 'insalata-caprese.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAcE2NwPt63BEhQ3AWT_5rke9i6ODHwt3q_A&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -94,7 +94,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Tortellini, Cream sauce, Parmesan cheese, Fresh parsley';
         $newDish->price = 18.99;
         $newDish->availability = true;
-        $newDish->image = 'tortellini-alla-panna.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHTR-FZfdAdl99894ZLRGl8cJXfSQoLs_b6w&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -103,7 +103,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Cannelloni, Spinach, Ricotta cheese, Tomato sauce';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'cannelloni-con-spinaci.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgUUlyGf3TDL6w4lPw7tptMBIcHGK0-Q10_w&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -112,7 +112,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Zeppole dough, Ricotta cheese, Powdered sugar, Chocolate chips';
         $newDish->price = 11.99;
         $newDish->availability = true;
-        $newDish->image = 'zeppole-di-san-giuseppe.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwSCdOH5prTmSOcd0qUKU1ttHEz-xx-MffPQ&s';
         $newDish->save();
 
         //Japanise dishes
@@ -123,7 +123,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Salmon, Sushi rice, Nori seaweed';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'salmon-sushi.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJxQaH8tYycnMFjNSl2U-_zTyKI_wWUIKClg&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -132,7 +132,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Pork belly, Noodles, Miso broth, Scallions';
         $newDish->price = 10.99;
         $newDish->availability = true;
-        $newDish->image = 'ramen.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgEUJXsS_DWZq3F0NFdZbf1Asl005HCxo2Jg&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -141,7 +141,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Pork, Vegetables, Soy sauce, Pan-fried dumplings';
         $newDish->price = 8.99;
         $newDish->availability = true;
-        $newDish->image = 'gyoza.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAseewJWSMPZWKp3rKp4dR3uz7lQAsZayjNw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -150,7 +150,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken breast, Teriyaki sauce, Rice, Vegetables';
         $newDish->price = 13.99;
         $newDish->availability = true;
-        $newDish->image = 'teriyaki-chicken.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL8ygNHObqwAfUkb4XMI4jOdz1xuhVwYFMdg&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -159,7 +159,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Udon noodles, Vegetables, Miso broth, Tempura bits';
         $newDish->price = 11.99;
         $newDish->availability = true;
-        $newDish->image = 'udon-noodles.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXl2LqxgExOE89lQ0F2kevbvlO5KPitpDzGA&s';
         $newDish->save();
 
 
@@ -171,7 +171,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken breast, Tomato sauce, Cream, Spices';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'chicken-tikka-masala.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRGX7PMk7hJVz3D0ULZKeAjjpIIP69qVQ6QA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -180,7 +180,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Paneer cheese, Spinach, Garlic, Cream';
         $newDish->price = 13.99;
         $newDish->availability = true;
-        $newDish->image = 'palak-paneer.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFyLOXqejhRscOxdsEp90MgEnvbXlS71kQDA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -189,7 +189,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Potatoes, Peas, Onions, Spices, Pastry';
         $newDish->price = 6.99;
         $newDish->availability = true;
-        $newDish->image = 'samosas.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCgx56WwjE3BEf66tUWeO_dwKLorguXCvNPA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -198,7 +198,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken breast, Tomato sauce, Butter, Spices';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'butter-chicken.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsWc3JXNElTEwy9Flx_-LKkyzhzgGV6VY3KA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -207,7 +207,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Paneer cheese, Peas, Onions, Spices, Cream';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'mattar-paneer.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRou4_6sFEozO5Cia09uqGK_AvpoHOlNRMteA&s';
         $newDish->save();
 
         //Seafood dishes
@@ -218,7 +218,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Shrimp, Mussels, Clams, Garlic, Cherry tomatoes, White wine, Linguine';
         $newDish->price = 19.99;
         $newDish->availability = true;
-        $newDish->image = 'pasta-allo-scoglio.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdXQVP3k8amfs--l2XDbM7iqnn2F0LWsvcEA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -227,7 +227,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Shrimp, Lemon, Capers, Garlic, Olive oil';
         $newDish->price = 16.99;
         $newDish->availability = true;
-        $newDish->image = 'tartare-di-gambero.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBldB2vhX0--ue9aytCwwSmhLcVB1uKCoUrw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -236,7 +236,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Oysters, Flour, Eggs, Breadcrumbs, Olive oil';
         $newDish->price = 18.99;
         $newDish->availability = true;
-        $newDish->image = 'ostriche-fritte.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2hjtYSSOb_g2hJVamM1ZY4UU5ZDGJ1yM4Fw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -245,7 +245,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Octopus, Olive oil, Garlic, Lemon, Herbs';
         $newDish->price = 17.99;
         $newDish->availability = true;
-        $newDish->image = 'grilled-octopus.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyhJEONz4PHVn459e5F5ku0Uqtiayr4pd1sQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -254,7 +254,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Shrimp, Calamari, Whitebait, Zucchini, Olive oil';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'fritto-misto.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxOlmTmH7Zi-GIX4LVbvsjahUp2BL-Kf2ceQ&s';
         $newDish->save();
 
         //Hamburger Dishes
@@ -265,7 +265,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef patty, Cheddar cheese, Lettuce, Tomato, Onion, Pickles';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'classic-cheeseburger.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvbcDP8tXu4MixuG403ET8sZSDbg0kKPaLQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -274,7 +274,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef patty, Bacon, Cheddar cheese, BBQ sauce, Lettuce, Tomato';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'bacon-bbq-burger.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx8bLqNbLVP_CgMgcgy6vznapgKUecGTILrQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -283,7 +283,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef patty, Sauteed mushrooms, Swiss cheese, Lettuce, Tomato';
         $newDish->price = 13.99;
         $newDish->availability = true;
-        $newDish->image = 'mushroom-swiss-burger.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC6q0-SiNwnezCS_ku3WkR80mNaCqiavYJTw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -292,7 +292,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef patty, Jalapeno peppers, Cream cheese, Bacon, Lettuce, Tomato';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'jalapeno-popper-burger.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA_OUYlzS60nruGgYrI2ke6d9r0vp3vOkBAA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -301,7 +301,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef patty, Feta cheese, Olives, Tomato, Lettuce, Tzatziki sauce';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'greek-burger.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRV4DY9rrSoJcQOBAKmYxKzuZdC_FDurWhmA&s';
         $newDish->save();
 
 
@@ -313,7 +313,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Mixed vegetables, Shrimp, Calamari, Zucchini, Fritto misto batter';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'fritto-misto.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxOlmTmH7Zi-GIX4LVbvsjahUp2BL-Kf2ceQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -322,7 +322,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Ravioli, Eggplant, Tomato sauce, Ricotta salata cheese, Basil';
         $newDish->price = 17.99;
         $newDish->availability = true;
-        $newDish->image = 'ravioli-alla-norma.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCw7TwvtilzAE6gP3cScTFMFVOAQ6HICWo8Q&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -331,7 +331,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken breast, Mushrooms, Onion, Garlic, White wine, Tomato sauce';
         $newDish->price = 19.99;
         $newDish->availability = true;
-        $newDish->image = 'pollo-alla-cacciatora-con-funghi.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqkibBZYsNTJfLwg6hqW0FhKtlslmH7ujR7Q&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -340,7 +340,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Crespelle batter, Nutella, Whipped cream, Fresh strawberries';
         $newDish->price = 10.99;
         $newDish->availability = true;
-        $newDish->image = 'crespelle-con-nutella.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0m81rcJl5VJPvE7JNARc3I8ik1jUidZcnfA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -349,7 +349,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Ladyfingers, Espresso, Mascarpone cheese, Whipped cream, Cocoa powder';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'tiramisu.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIGMT1iBTYqPkCDvs1BL8a8alP9bZThhWhYw&s';
         $newDish->save();
 
 
@@ -361,7 +361,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Lamb, Tomato, Onion, Lettuce, Tzatziki sauce, Pita bread';
         $newDish->price = 9.99;
         $newDish->availability = true;
-        $newDish->image = 'panino-kebab.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaV39GZAG7mp8hNjM2SJjZUJXKZb2kzF5bqQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -370,7 +370,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken, Tomato, Onion, Lettuce, Tzatziki sauce, Piadina bread';
         $newDish->price = 10.99;
         $newDish->availability = true;
-        $newDish->image = 'piadina-kebab.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa3sA_P93aLtXSAvQJXS5QewxNJrIqWk_BRw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -379,7 +379,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Lamb, Tomato, Onion, Lettuce, Tzatziki sauce, Pita bread';
         $newDish->price = 11.99;
         $newDish->availability = true;
-        $newDish->image = 'doner-kebab.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYUAD78P-RX2RAZ8i5Q4TTaGiOMps2Y8HdBA&s';
         $newDish->save();
 
         //Italian dishes
@@ -390,7 +390,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = ' Toasted bread, Prosciutto, Fresh tomatoes, Basil, Mozzarella cheese';
         $newDish->price = 13.99;
         $newDish->availability = true;
-        $newDish->image = 'bruschetta-con-prosciutto.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDIQw-eWtYFaorN_RVkyAFjHTst28yrHVdUQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -399,7 +399,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Spaghetti, Bacon, Eggs, Parmesan cheese, Black pepper';
         $newDish->price = 16.99;
         $newDish->availability = true;
-        $newDish->image = 'spaghetti-alla-carbonara.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLpPrRKn2nKW7AipsdtZ-DeiZmbTDp9cEOpQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -408,7 +408,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Breaded chicken breast, Tomato sauce, Mozzarella cheese, Fresh basil';
         $newDish->price = 18.99;
         $newDish->availability = true;
-        $newDish->image = 'pollo-alla-milanese.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK-ELld2DZ0-1aR345XGmBikhoSEkgH4mHMw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -417,7 +417,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Cannoli shells, Sweetened ricotta cheese, Chocolate chips, Candied fruit';
         $newDish->price = 11.99;
         $newDish->availability = true;
-        $newDish->image = 'cannoli-siciliani.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tEAZLU0N0mL4Tq7O7ccfUVZ7bXMOoBDKTw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -426,7 +426,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Panna cotta cream, Mixed berries, Whipped cream, Fresh mint';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'panna-cotta-con-frutta.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0McvvJyMPshH2tgJQwMqJjC1ZeqBGOqFxGA&s';
         $newDish->save();
 
         //Japanese dishes
@@ -437,7 +437,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Breaded pork cutlet, Shredded cabbage, Rice, Miso soup';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'tonkatsu.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD57-XradmIuMEJkFfrtNZsn-PqQU1YAk07Q&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -446,7 +446,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Grilled chicken skewers, Yakitori sauce, Steamed rice';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'yakiitori.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM2nbztWB7boK3o8AqsvDC8NmCQ-jZvkl8Ow&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -455,7 +455,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Grilled salmon, Steamed rice, Mixed vegetables, Miso soup';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'bento-box.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4wRCch8Z9WS34Xx4axxMjuuDsigo1Fo1VOA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -464,7 +464,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Triangular rice balls, Salmon filling, Nori seaweed';
         $newDish->price = 9.99;
         $newDish->availability = true;
-        $newDish->image = 'onigiri.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfNzSOxsfsT0vg6SvD-O143x1Y4CZ4SDrrzQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -473,7 +473,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Mochi shell, Green tea ice cream, Red bean paste';
         $newDish->price = 6.99;
         $newDish->availability = true;
-        $newDish->image = 'mochi-ice-cream.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0u1wIChFhySbsHxhUfiI_4pYFN_WdMhNVQg&s';
         $newDish->save();
 
         //Italian dishes
@@ -484,7 +484,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Risotto balls, Mozzarella cheese, Tomato sauce, Fresh parsley';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'arancini-con-mozzarella.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_wRqn0nbGFYdyHNrXHlMBFCoUc4UCImZZFg&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -493,7 +493,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Tortellini, Chicken broth, Fresh parsley, Parmesan cheese';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'tortellini-en-brodo.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2j5r9t_R-2wh-egXH-gyh2tP2TO7OrACUug&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -502,7 +502,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Spaghetti, Jowls, Eggs, Parmesan cheese, Black pepper';
         $newDish->price = 16.99;
         $newDish->availability = true;
-        $newDish->image = 'spaghetti-alla-carbonara.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLpPrRKn2nKW7AipsdtZ-DeiZmbTDp9cEOpQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -511,7 +511,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Sfogliatelle shells, Sweetened ricotta cheese, Candied fruit, Powdered sugar';
         $newDish->price = 10.99;
         $newDish->availability = true;
-        $newDish->image = 'sfogliatelle-con-ricotta.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMjrRBIWkOYu4Nl5JCaQQ2iDZVeEsCJEboAg&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -520,7 +520,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Espresso, Whipped cream, Chocolate powder';
         $newDish->price = 4.99;
         $newDish->availability = true;
-        $newDish->image = 'caffe-italiano.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMyn2AV0uVkJm0iq4DLbTl-Tt3B7D2MVbZQw&s';
         $newDish->save();
 
         //Mexican dishes
@@ -531,7 +531,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Pork, Pineapple, Onion, Cilantro, Tortilla';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'tacos-al-pastor.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2AOqi0onm2yuyl449qok4jk2t-ciEHCKVkA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -540,7 +540,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken, Cheese, Onion, Bell peppers, Tortilla';
         $newDish->price = 10.99;
         $newDish->availability = true;
-        $newDish->image = 'quesadillas.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZFqywGnCC1PnY5udTlJQNdo21hOvFtua6yw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -549,7 +549,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef, Tomato sauce, Cheese, Tortilla';
         $newDish->price = 13.99;
         $newDish->availability = true;
-        $newDish->image = 'enchiladas-rojas.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIZv9x7WiMc3GCMAkwsNU6_pNhj2DCZfadbA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -558,7 +558,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Roasted poblano peppers, Cheese, Meat, Tomato sauce';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'chiles-rellenos.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6YnNRhut-_N4stDtINgha0BdXvrEfjhvmYA&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -567,7 +567,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Beef, Bell peppers, Onion, Tortilla, Sour cream';
         $newDish->price = 15.99;
         $newDish->availability = true;
-        $newDish->image = 'fajitas.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoETKLrBniCOf9ZrbLsfx1AywUzgE-SOTmPQ&s';
         $newDish->save();
 
         // French dishes
@@ -578,7 +578,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Chicken, Red wine, Mushrooms, Bacon, Potatoes';
         $newDish->price = 18.99;
         $newDish->availability = true;
-        $newDish->image = 'coq-au-vin.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkoURSDc0bAgwjk4vpNI2A7wXtmP_Q5NTekQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -587,7 +587,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Fish, Shellfish, Vegetables, Rouille, Croutons';
         $newDish->price = 19.99;
         $newDish->availability = true;
-        $newDish->image = 'bouillabaisse.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMsW601_OiP-YFLDlPveHm44ewJgXcpcqUJw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -596,7 +596,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Eggplant, Zucchini, Bell peppers, Tomato, Garlic';
         $newDish->price = 12.99;
         $newDish->availability = true;
-        $newDish->image = 'ratatouille.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6Hbvf0GdrSVB-cL-3vqn9Ahrb5FRno7cPw&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -605,7 +605,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Cream, Sugar, Eggs, Vanilla, Caramelized sugar';
         $newDish->price = 7.99;
         $newDish->availability = true;
-        $newDish->image = 'creme-brulee.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJzDUOYuRQLTTIfkIvDqWgfJ0x_aju6ht-FQ&s';
         $newDish->save();
 
         $newDish = new Dish();
@@ -614,7 +614,7 @@ class DishSeeder extends Seeder
         $newDish->ingredient = 'Eggs, Cream, Bacon, Cheese, Pastry';
         $newDish->price = 14.99;
         $newDish->availability = true;
-        $newDish->image = 'quiche-lorraine.jpg';
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-pAx7YeYpRXyh6WOZQqbwDWsYLlQdhWkqw&s';
         $newDish->save();
     }
 }
