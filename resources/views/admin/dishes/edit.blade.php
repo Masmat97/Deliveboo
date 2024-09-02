@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form method="POST" action="{{ route('admin.dishes.update', $dish->id) }}">
+    <form method="POST" action="{{ route('admin.dishes.update', $dish->id) }}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group p-3">
@@ -9,7 +9,8 @@
         </div>
         <div class="form-group p-3">
             <label for="image" class="form-label">Image:</label>
-            <input type="file" class="form-control" id="image" name="image" value="{{ $dish->image }}">
+            <input type="file" class="form-control" id="image" name="image">
+
         </div>
         <div class="form-group p-3">
             <label for="ingredient" class="form-label">Ingredient:</label>

@@ -53,7 +53,7 @@ class DishController extends Controller
         ]);
 
         if ($request->has('image')) {
-            $image_path = Storage::put('images', $request->image);
+            $image_path = Storage::put('uploads', $request->image);
             $data['image'] = $image_path;
         }
 
@@ -90,22 +90,24 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        $dish->name = $request->input('name');
-        $dish->ingredient = $request->input('ingredient');
-        $dish->price = $request->input('price');
-        $dish->availability = $request->input('availability');
+        $data = $request->validate([
+            'name' => 'required | min:5 |max:50',
+            'ingredient' => 'required |min:10',
+            'price' => 'required |numeric',
+            'availability' => 'required',
+            'image' => 'required',
+        ]);
 
         if ($request->has('image')) {
-            if ($dish->image && !Str::startsWith($dish->image, 'http')) {
-                Storage::delete($dish->image); // Delete the old image
-            }
-            $image = Storage::put('images', $request->image);
-            $dish->image = $image; // Assign the new image to the $dish object
+            $image_path = Storage::put('uploads', $request->image);
+            $data['image'] = $image_path;
         }
 
-        $dish->update(['name' => $dish->name, 'ingredient' => $dish->ingredient, 'price' => $dish->price, 'availability' => $dish->availability, 'image' => $dish->image]);
+        $dish->fill($data);
+        $dish->save();
 
-        return redirect()->route('admin.dishes.index');
+
+        return redirect()->route('admin.dishes.index', $dish);
     }
 
 
