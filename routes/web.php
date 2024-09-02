@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\Admin\OrderController; // Import del controller degli ordini
 use App\Http\Controllers\CartController; // Import del CartController
+use App\Http\Controllers\PaymentController; // Import del PaymentController
 use App\Models\Restaurant;
 
 /*
@@ -41,6 +42,12 @@ Route::middleware(['auth'])
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{dish}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove/{dish}', [CartController::class, 'remove'])->name('cart.remove');
-Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); // Questa è la rotta mancante
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); 
+
+// Rotte per gestire il pagamento
+Route::middleware('auth')->group(function () {
+    Route::get('/payment/token', [PaymentController::class, 'token'])->name('payment.token');
+    Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout');
+});
 
 require __DIR__ . '/auth.php';

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
     <h1>Il tuo Carrello</h1>
 
@@ -39,6 +38,11 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="text-right">
+            <h3>Totale: {{ $total }} €</h3>
+            <a href="{{ route('checkout') }}" class="btn btn-primary">Procedi al pagamento</a>
+        </div>
     @else
         <p>Il tuo carrello è vuoto.</p>
     @endif
@@ -48,5 +52,4 @@
         <button type="submit" class="btn btn-warning">Svuota Carrello</button>
     </form>
 </div>
-
 @endsection

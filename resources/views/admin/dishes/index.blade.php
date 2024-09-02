@@ -16,17 +16,20 @@
                         @endif
                     </div>
                     <p class="mt-4"><b>Ingredient:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e(Str::limit($dish->ingredient, 100, ' [Read more]')))) !!}</p>
-
-
                 </div>
                 <div class="card-footer text-center">
                     <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary p-1">View Details</a>
                     <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning p-1">Edit</a>
                     <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
-
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger p-1">Delete</button>
+                    </form>
+                    <!-- Form per aggiungere al carrello -->
+                    <form action="{{ route('cart.add', $dish->id) }}" method="POST" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="quantity" value="1"> <!-- Puoi permettere all'utente di scegliere la quantità -->
+                        <button type="submit" class="btn btn-success p-1 mt-2">Add to Cart</button>
                     </form>
                 </div>
             </div>
