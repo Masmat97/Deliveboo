@@ -101,6 +101,10 @@ class DishController extends Controller
         if ($request->has('image')) {
             $image_path = Storage::put('images', $request->image);
             $data['image'] = $image_path;
+
+            if ($dish->image && !Str::startsWith($dish->image, 'http')) {
+                Storage::delete($dish->image);
+            }
         }
 
         $dish->fill($data);
