@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
     <h1 class="text-center p-4">My Dishes</h1>
     <div class="card_container d-flex flex-wrap justify-content-center align-items-center">
@@ -8,11 +9,11 @@
                     <h5>{{ $dish->name }}</h5>
                 </div>
                 <div class="card-body">
-                    <div class="img-container mx-auto w-100 mb-1" style="box-shadow: 10px 10px 10px rgba(1, 29, 172, 0.193)">
+                    <div class="img-container mx-auto mb-1" style="width: 18rem; height: 18rem; overflow: hidden; border-radius: 10px; box-shadow: 10px 10px 10px rgba(1, 29, 172, 0.193);">
                         @if (Str::startsWith($dish->image, 'http'))
-                            <img src="{{ $dish->image }}" alt="">
+                            <img class="img-fluid w-100 h-100 object-fit-cover" src="{{ $dish->image }}" alt="">
                         @else
-                            <img src="{{ asset('storage/' . $dish->image) }}" alt="">
+                            <img class="img-fluid w-100 h-100 object-fit-cover" src="{{ asset('storage/' . $dish->image) }}" alt="">
                         @endif
                     </div>
                     <p class="mt-4"><b>Ingredient:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e(Str::limit($dish->ingredient, 100, ' [Read more]')))) !!}</p>
@@ -29,7 +30,7 @@
                     <form action="{{ route('cart.add', $dish->id) }}" method="POST" class="d-inline">
                         @csrf
                         <input type="hidden" name="quantity" value="1"> <!-- Puoi permettere all'utente di scegliere la quantità -->
-                        <button type="submit" class="btn btn-success p-1 mt-2">Add to Cart</button>
+                        <button type="submit" class="btn btn-success p-1">Add to Cart</button>
                     </form>
                 </div>
             </div>
