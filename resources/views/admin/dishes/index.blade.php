@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="img-container mx-auto w-100 mb-1" style="box-shadow: 10px 10px 10px rgba(1, 29, 172, 0.193)">
                         @if (Str::startsWith($dish->image, 'http'))
-                            <img src="{{ $dish->image }}" alt="">
+                            <img height="250" src="{{ $dish->image }}" alt="">
                         @else
                             <img src="{{ asset('storage/' . $dish->image) }}" alt="">
                         @endif
