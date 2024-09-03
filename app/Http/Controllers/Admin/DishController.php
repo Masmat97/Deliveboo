@@ -45,11 +45,19 @@ class DishController extends Controller
         }
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
         $data = $request->validate([
-            'name' => 'required | min:5 |max:50',
-            'ingredient' => 'required |min:10',
-            'price' => 'required |numeric',
-            'availability' => 'required',
-            'image' => 'required |image',
+            'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/u',
+            'image' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            'ingredient' => 'required|string|min:1|regex:/^[a-zA-Z0-9\s,]+$/u',
+            'price' => 'required|numeric|min:0.01',
+            'availability' => 'required|in:0,1',
+        ], [
+            'price.min' => 'The price must be greater than 0.',
+            'image.max' => 'The image file cannot be larger than 2MB.',
+            'name.required' => 'You must enter the name of the dish.',
+            'name.regex' => 'The name can only contain letters and spaces.',
+            'ingredient.required' => 'Please enter an ingredient.',
+            'ingredient.min' => 'Please enter at least one ingredient.',
+            'ingredient.regex' => 'Ingredient can only contain letters, numbers, and spaces.',
         ]);
 
         if ($request->has('image')) {
@@ -64,7 +72,6 @@ class DishController extends Controller
 
         return redirect()->route('admin.dishes.index')->with('success', 'Dish created successfully');
     }
-
     /**
      * Display the specified resource.
      */
@@ -91,12 +98,21 @@ class DishController extends Controller
     public function update(Request $request, Dish $dish)
     {
         $data = $request->validate([
-            'name' => 'required | min:5 |max:50',
-            'ingredient' => 'required |min:10',
-            'price' => 'required |numeric',
-            'availability' => 'required',
-            'image' => 'nullable|image',
+            'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/u',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'ingredient' => 'required|string|min:1|regex:/^[a-zA-Z0-9\s,]+$/u',
+            'price' => 'required|numeric|min:0.01',
+            'availability' => 'required|in:0,1',
+        ], [
+            'price.min' => 'The price must be greater than 0.',
+            'image.max' => 'The image file cannot be larger than 2MB.',
+            'name.required' => 'You must enter the name of the dish.',
+            'name.regex' => 'The name can only contain letters and spaces.',
+            'ingredient.required' => 'Please enter an ingredient.',
+            'ingredient.min' => 'Please enter at least one ingredient.',
+            'ingredient.regex' => 'Ingredient can only contain letters, numbers, and spaces.',
         ]);
+
 
         if ($request->has('image')) {
             $image_path = Storage::put('images', $request->image);
@@ -110,8 +126,7 @@ class DishController extends Controller
         $dish->fill($data);
         $dish->save();
 
-
-        return redirect()->route('admin.dishes.index', $dish);
+        return redirect()->route('admin.dishes.index', $dish)->with('success', 'Dish updated successfully');
     }
 
 
