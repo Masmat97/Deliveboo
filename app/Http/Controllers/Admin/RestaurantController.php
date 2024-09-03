@@ -7,6 +7,7 @@ use App\Models\Restaurant;
 use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -61,6 +62,11 @@ class RestaurantController extends Controller
                 'types' => 'required|array|min:1',
             ]
         );
+
+        if ($request->has('image')) {
+            $image_path = Storage::put('images', $request->image);
+            $data['image'] = $image_path;
+        }
 
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($data);

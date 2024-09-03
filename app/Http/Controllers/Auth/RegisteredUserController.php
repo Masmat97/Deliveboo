@@ -32,7 +32,20 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    $parts = explode('@', $value);
+                    $domain = $parts[1];
+                    if (!str_contains($domain, '.')) {
+                        $fail('L\'email deve avere un\'estensione (ad esempio, .com, .it, ecc.)');
+                    }
+                },
+                'unique:' . User::class,
+            ],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
