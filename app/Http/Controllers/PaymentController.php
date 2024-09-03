@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Braintree\Gateway;
 use Illuminate\Http\Request;
+use Braintree\Gateway as BraintreeGateway;
+use Illuminate\Support\Facades\Session;
 
 class PaymentController extends Controller
 {
@@ -11,7 +12,7 @@ class PaymentController extends Controller
 
     public function __construct()
     {
-        $this->gateway = new Gateway([
+        $this->gateway = new BraintreeGateway([
             'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),
             'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
@@ -19,29 +20,40 @@ class PaymentController extends Controller
         ]);
     }
 
-    public function checkout(Request $request)
+    public function showCheckout()
     {
-        $amount = $request->amount; // Questo dovrebbe essere l'importo totale del carrello
-        $nonce = $request->payment_method_nonce;
+        $cart = Session::get('cart', []);
+        $total = array_reduce($cart, function ($carry, $item) {
+            return $carry + ($item['price'] * $item['quantity']);
+        }, 0);
+
+        $token = $this->gateway->ClientToken()->generate();
+
+        return view('checkout.show', [
+            'cart' => $cart,
+            'total' => $total,
+            'token' => $token
+        ]);
+    }
+
+    public function processPayment(Request $request)
+    {
+        $amount = $request->input('amount');
+        $nonce = $request->input('payment_method_nonce');
 
         $result = $this->gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
             'options' => [
-                'submitForSettlement' => true,
-            ],
+                'submitForSettlement' => true
+            ]
         ]);
 
         if ($result->success) {
-            return redirect()->route('cart.index')->with('success', 'Pagamento effettuato con successo!');
+            Session::forget('cart');
+            return redirect()->route('cart.index')->with('success', 'Pagamento completato con successo!');
         } else {
-            return redirect()->route('cart.index')->with('error', 'Errore nel pagamento: ' . $result->message);
+            return redirect()->route('checkout.show')->with('error', 'Pagamento fallito. Riprova.');
         }
-    }
-
-    public function token()
-    {
-        $clientToken = $this->gateway->clientToken()->generate();
-        return response()->json(['clientToken' => $clientToken]);
     }
 }

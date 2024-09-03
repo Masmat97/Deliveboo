@@ -41,7 +41,7 @@
 
         <div class="text-right">
             <h3>Totale: {{ $total }} €</h3>
-            <a href="{{ route('checkout') }}" class="btn btn-primary">Procedi al pagamento</a>
+            <a href="{{ route('checkout.show') }}" class="btn btn-primary">Procedi al pagamento</a> 
         </div>
     @else
         <p>Il tuo carrello è vuoto.</p>

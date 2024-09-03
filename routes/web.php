@@ -42,12 +42,14 @@ Route::middleware(['auth'])
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{dish}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove/{dish}', [CartController::class, 'remove'])->name('cart.remove');
-Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); 
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 // Rotte per gestire il pagamento
 Route::middleware('auth')->group(function () {
-    Route::get('/payment/token', [PaymentController::class, 'token'])->name('payment.token');
-    Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout');
+    // Rotta per ottenere il token di pagamento
+    Route::get('/checkout', [PaymentController::class, 'showCheckout'])->name('checkout.show');
+    // Rotta per processare il pagamento
+    Route::post('/checkout', [PaymentController::class, 'processPayment'])->name('checkout.process');
 });
 
 require __DIR__ . '/auth.php';
