@@ -12,40 +12,54 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Type;
+use App\Models\Restaurant;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
-    public function create(): View
+    public function create()
     {
-        return view('auth.register');
+        $types = Type::all(); // assuming you have a Type model
+        return view('auth.register', ['types' => $types]);
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+            'name' => 'required|string',
+            'address' => 'required|string',
+            'p_iva' => 'required|string|size:11',
+            'image' => 'required|image',
+            'types' => 'required|array',
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        event(new Registered($user));
+        // Create a new user
+        $user = new User();
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password'));
+        $user->name = $request->input('name'); // Add this line
+        $user->save();
 
-        Auth::login($user);
+        // Create a new restaurant
+        $restaurant = new Restaurant();
+        $restaurant->name = $request->input('name');
+        $restaurant->address = $request->input('address');
+        $restaurant->p_iva = $request->input('p_iva');
+        $restaurant->image = $request->file('image');
+        $restaurant->user_id = $user->id;
+        $restaurant->save();
 
-        return redirect(RouteServiceProvider::HOME);
+        // Associate types with the restaurant
+        $restaurant->types()->sync($request->input('types'));
+
+        return redirect()->route('admin.restaurants.index')->with('success', 'Restaurant created successfully!');
     }
 }
