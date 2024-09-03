@@ -54,12 +54,12 @@ class RestaurantController extends Controller
 
         $data = $request->validate(
             [
-                'name' => 'required|min:5|max:50',
-                'address' => 'required',
-                'image' => 'required | image',
-                'p_iva' => 'required|size:11',
+                'name' => 'required|min:4|max:50',
+                'address' => 'required|min:5',
+                'image' => 'required|image',
+                'p_iva' => 'required|size:11|regex:/^IT[A-Z0-9]{9}$/',
+                'types' => 'required|array|min:1',
             ]
-
         );
 
         $newRestaurant = new Restaurant();
