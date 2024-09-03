@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Checkout</h1>
+    <h1>Procedi al Pagamento</h1>
 
     @if (session('error'))
         <div class="alert alert-danger">
@@ -10,26 +10,50 @@
         </div>
     @endif
 
-    <h3>Totale da pagare: {{ $total }} €</h3>
+    <div class="card">
+        <div class="card-body">
+            <h3>Totale: {{ $total }} €</h3>
 
-    <form action="{{ route('checkout.process') }}" method="POST" id="payment-form">
-        @csrf
-        <div id="dropin-container"></div>
-        <button type="submit" class="btn btn-primary mt-3">Paga ora</button>
-    </form>
+            <form action="{{ route('checkout.process') }}" method="POST" id="payment-form">
+                @csrf
+                <input type="hidden" name="amount" value="{{ $total }}">
+
+                <div class="mb-3">
+                    <label for="card-number" class="form-label">Numero di Carta</label>
+                    <div id="card-number"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="expiration-date" class="form-label">Data di Scadenza</label>
+                    <div id="expiration-date"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <div id="cvv"></div>
+                </div>
+
+                <input type="hidden" id="nonce" name="payment_method_nonce">
+                <button type="submit" class="btn btn-primary">Paga {{ $total }} €</button>
+            </form>
+        </div>
+    </div>
 </div>
 
-<script src="https://js.braintreegateway.com/web/dropin/1.26.0/js/dropin.min.js"></script>
+<script src="https://js.braintreegateway.com/web/dropin/1.33.6/js/dropin.min.js"></script>
 <script>
     var form = document.querySelector('#payment-form');
-    var clientToken = "{{ $token }}";
+    var client_token = "{{ $token }}";
 
     braintree.dropin.create({
-        authorization: clientToken,
-        container: '#dropin-container'
-    }, function (err, instance) {
-        if (err) {
-            console.error(err);
+        authorization: client_token,
+        selector: '#card-number',
+        paypal: {
+            flow: 'vault'
+        }
+    }, function (createErr, instance) {
+        if (createErr) {
+            console.log('Create Error', createErr);
             return;
         }
 
@@ -38,17 +62,12 @@
 
             instance.requestPaymentMethod(function (err, payload) {
                 if (err) {
-                    console.error(err);
+                    console.log('Request Payment Method Error', err);
                     return;
                 }
 
-                var nonceInput = document.createElement('input');
-                nonceInput.type = 'hidden';
-                nonceInput.name = 'payment_method_nonce';
-                nonceInput.value = payload.nonce;
-
-                form.appendChild(nonceInput);
-
+                // Add the nonce to the form and submit
+                document.querySelector('#nonce').value = payload.nonce;
                 form.submit();
             });
         });
