@@ -32,23 +32,19 @@
             console.error(err);
             return;
         }
-
         form.addEventListener('submit', function (event) {
             event.preventDefault();
-
             instance.requestPaymentMethod(function (err, payload) {
                 if (err) {
                     console.error(err);
                     return;
                 }
-
+                // Aggiungi il nonce al form e invia il form
                 var nonceInput = document.createElement('input');
-                nonceInput.type = 'hidden';
-                nonceInput.name = 'payment_method_nonce';
-                nonceInput.value = payload.nonce;
-
+                nonceInput.setAttribute('type', 'hidden');
+                nonceInput.setAttribute('name', 'payment_method_nonce');
+                nonceInput.setAttribute('value', payload.nonce);
                 form.appendChild(nonceInput);
-
                 form.submit();
             });
         });
