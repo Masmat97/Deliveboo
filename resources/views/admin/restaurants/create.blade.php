@@ -15,7 +15,7 @@
 
                     {{-- Nome Ristorante --}}
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Nome del Ristorante</label>
+                        <label class="form-label fw-bold">Nome del Ristorante *</label>
                         <input type="text" class="form-control" name="name" value="{{ old('name') }}" required
                             minlength="4">
                         @error('name')
@@ -25,7 +25,7 @@
 
                     {{-- Indirizzo --}}
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Indirizzo</label>
+                        <label class="form-label fw-bold">Indirizzo *</label>
                         <input type="text" class="form-control" name="address" value="{{ old('address') }}" required
                             minlength="5">
                         @error('address')
@@ -35,7 +35,7 @@
 
                     {{-- Partita IVA --}}
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Partita IVA</label>
+                        <label class="form-label fw-bold">Partita IVA *</label>
                         <input type="text" class="form-control" name="p_iva" value="{{ old('p_iva') }}" required
                             minlength="11" maxlength="11">
                         @error('p_iva')
@@ -45,7 +45,7 @@
 
                     {{-- Immagine --}}
                     <div class="mb-3">
-                        <label class="form-label fw-bold">Immagine</label>
+                        <label class="form-label fw-bold">Immagine *</label>
                         <input type="file" class="form-control" name="image" value="{{ old('image') }}" required>
                         @error('image')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -54,7 +54,7 @@
 
                     {{-- Tipologia --}}
                     <div class="form-group">
-                        <label for="language" class="form-label fw-bold">Tipologia:</label>
+                        <label for="language" class="form-label fw-bold">Tipologia: *</label>
                         <div class="check-box d-flex flex-wrap" id="tipologia-checkbox">
                             @foreach ($types as $type)
                                 <span class="" style="width: 25% ">
@@ -68,6 +68,9 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
+                    <div class="mt-3" style="color: gray">I campi contenenti <b style="color: black">*</b> sono
+                        obbligatori </div>
 
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
