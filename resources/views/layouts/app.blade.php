@@ -23,7 +23,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <div class="">
-                        <img src="{{ asset('storage/image/logo_deliveboo.png') }}" alt="" class="img-fluid"
+                        <img src="{{ asset('storage/images/logo_deliveboo.png') }}" alt="" class="img-fluid"
                             style="width: 6rem;">
                     </div>
                 </a>
