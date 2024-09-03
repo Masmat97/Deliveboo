@@ -3,57 +3,46 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Braintree\Gateway as BraintreeGateway;
-use Illuminate\Support\Facades\Session;
+use Braintree\Gateway;
 
 class PaymentController extends Controller
 {
-    protected $gateway;
-
-    public function __construct()
-    {
-        $this->gateway = new BraintreeGateway([
-            'environment' => env('BRAINTREE_ENV'),
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
-        ]);
-    }
-
     public function showCheckout()
     {
-        $cart = Session::get('cart', []);
-        $total = array_reduce($cart, function ($carry, $item) {
-            return $carry + ($item['price'] * $item['quantity']);
-        }, 0);
-
-        $token = $this->gateway->ClientToken()->generate();
-
-        return view('checkout.show', [
-            'cart' => $cart,
-            'total' => $total,
-            'token' => $token
-        ]);
+        return view('checkout.show');
     }
 
     public function processPayment(Request $request)
     {
-        $amount = $request->input('amount');
-        $nonce = $request->input('payment_method_nonce');
-
-        $result = $this->gateway->transaction()->sale([
-            'amount' => $amount,
-            'paymentMethodNonce' => $nonce,
-            'options' => [
-                'submitForSettlement' => true
-            ]
+        $gateway = new Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchant_id'),
+            'publicKey' => config('services.braintree.public_key'),
+            'privateKey' => config('services.braintree.private_key'),
         ]);
 
-        if ($result->success) {
-            Session::forget('cart');
-            return redirect()->route('cart.index')->with('success', 'Pagamento completato con successo!');
-        } else {
-            return redirect()->route('checkout.show')->with('error', 'Pagamento fallito. Riprova.');
+        $nonceFromTheClient = $request->input('payment_method_nonce');
+        $total = $request->input('amount');
+
+        try {
+            $result = $gateway->transaction()->sale([
+                'amount' => $total,
+                'paymentMethodNonce' => $nonceFromTheClient,
+                'options' => [
+                    'submitForSettlement' => true,
+                ],
+            ]);
+
+            if ($result->success) {
+                // Pagamento riuscito
+                return redirect()->route('checkout.show')->with('success', 'Pagamento completato con successo!');
+            } else {
+                // Pagamento fallito
+                return redirect()->route('checkout.show')->with('error', 'Pagamento fallito: ' . $result->message);
+            }
+        } catch (\Exception $e) {
+            // Errore di sistema
+            return redirect()->route('checkout.show')->with('error', 'Errore durante il pagamento: ' . $e->getMessage());
         }
     }
 }
