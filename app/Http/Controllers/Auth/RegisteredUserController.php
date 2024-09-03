@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Restaurant;
+use App\Models\Type;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -10,56 +12,76 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Validator;
-use App\Models\Type;
-use App\Models\Restaurant;
 
 class RegisteredUserController extends Controller
 {
-    public function create()
+    /**
+     * Display the registration view.
+     */
+    public function create(): View
     {
         $types = Type::all(); // assuming you have a Type model
         return view('auth.register', ['types' => $types]);
     }
 
-    public function store(Request $request)
+    /**
+     * Handle an incoming registration request.
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function store(Request $request): RedirectResponse
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required',
-            'name' => 'required|string',
-            'address' => 'required|string',
-            'p_iva' => 'required|string|size:11',
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                function ($attribute, $value, $fail) {
+                    $parts = explode('@', $value);
+                    $domain = $parts[1];
+                    if (!str_contains($domain, '.')) {
+                        $fail('L\'email deve avere un\'estensione (ad esempio, .com, .it, ecc.)');
+                    }
+                },
+                'unique:' . User::class,
+            ],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'address' => 'required|string|min:5',
             'image' => 'required|image',
-            'types' => 'required|array',
+            'p_iva' => 'required|size:11|regex:/^IT[A-Z0-9]{9}$/',
+            'types' => 'required|array|min:1',
         ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if ($request->has('image')) {
+            $image_path = Storage::put('images', $request->image);
         }
 
-        // Create a new user
-        $user = new User();
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
-        $user->name = $request->input('name'); // Add this line
-        $user->save();
-
-        // Create a new restaurant
         $restaurant = new Restaurant();
         $restaurant->name = $request->input('name');
         $restaurant->address = $request->input('address');
         $restaurant->p_iva = $request->input('p_iva');
-        $restaurant->image = $request->file('image');
+        $restaurant->image = $image_path;
         $restaurant->user_id = $user->id;
         $restaurant->save();
 
         // Associate types with the restaurant
         $restaurant->types()->sync($request->input('types'));
 
-        return redirect()->route('admin.restaurants.index')->with('success', 'Restaurant created successfully!');
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
     }
 }
