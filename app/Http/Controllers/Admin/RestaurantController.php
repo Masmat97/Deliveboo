@@ -1,114 +1,71 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
-use App\Models\Type;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    // Mostra tutti i ristoranti dell'utente autenticato
     public function index()
     {
-        // In questo modo prende solo i ristoranti dell'utente autenticato
         $restaurants = Restaurant::where('user_id', auth()->id())->get();
-
-        $data = [
-            "restaurants" => $restaurants
-        ];
-
-        return view('admin.restaurants.index', $data);
+        return response()->json($restaurants);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        // conta il numero di ristoranti associati all'utente attualmente autenticato
-        $restaurantCount = Restaurant::where('user_id', auth()->id())->count();
-
-        if ($restaurantCount == 0) {
-            $types = Type::all();
-            $data = [
-                "types" => $types,
-            ];
-            return view('admin.restaurants.create', $data);
-        } else {
-            abort(403); // Non autorizzato a vedere questo ristorante
-        }
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-
-        $user = User::where('id', auth()->id())->first();
-
-        $data = $request->validate(
-            [
-                'name' => 'required|min:5|max:50',
-                'address' => 'required',
-                'image' => 'required | image',
-                'p_iva' => 'required|size:11',
-            ]
-
-        );
-
-        $newRestaurant = new Restaurant();
-        $newRestaurant->fill($data);
-        $newRestaurant->user_id = $user->id;
-        $newRestaurant->save();
-
-        return redirect()->route('admin.restaurants.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
+    // Mostra un singolo ristorante
     public function show(Restaurant $restaurant)
     {
-        if ($restaurant->user_id != auth()->id()) {
-            abort(403); // Non autorizzato a vedere questo ristorante
-        }
-
-        return view("admin.restaurants.show", ['restaurant' => $restaurant]);
+        $this->authorize('view', $restaurant);
+        return response()->json($restaurant);
     }
 
-    public function edit(Restaurant $restaurant)
+    // Crea un nuovo ristorante
+    public function store(Request $request)
     {
-        if ($restaurant->user_id != auth()->id()) {
-            abort(403); // Non autorizzato a modificare questo ristorante
-        }
+        $this->authorize('create', Restaurant::class);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            // altri campi validati qui
+        ]);
 
-        return view('admin.restaurants.edit', ['restaurant' => $restaurant]);
+        $restaurant = new Restaurant($request->all());
+        $restaurant->user_id = auth()->id();
+        $restaurant->save();
+
+        return response()->json($restaurant, 201);
     }
 
+    // Aggiorna un ristorante esistente
     public function update(Request $request, Restaurant $restaurant)
     {
-        if ($restaurant->user_id != auth()->id()) {
-            abort(403); // Non autorizzato a aggiornare questo ristorante
-        }
+        $this->authorize('update', $restaurant);
 
-        // Aggiorna il ristorante qui
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            // altri campi validati qui
+        ]);
+
         $restaurant->update($request->all());
-        return redirect()->route('admin.restaurants.index');
+
+        return response()->json($restaurant);
     }
 
+    // Elimina un ristorante
     public function destroy(Restaurant $restaurant)
     {
-        if ($restaurant->user_id != auth()->id()) {
-            abort(403); // Non autorizzato a eliminare questo ristorante
-        }
+        $this->authorize('delete', $restaurant);
 
         $restaurant->delete();
-        return redirect()->route('admin.restaurants.index');
+
+        return response()->json(null, 204); // Nessun contenuto da restituire
     }
 }
