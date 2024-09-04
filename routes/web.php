@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DishController;
-use App\Http\Controllers\Admin\RestaurantController;
+use App\Http\Controllers\Admin\AdminRestaurantController;
 use App\Http\Controllers\Admin\OrderController; // Import del controller degli ordini
 use App\Http\Controllers\CartController; // Import del CartController
 use App\Http\Controllers\PaymentController; // Import del PaymentController
@@ -30,7 +30,7 @@ Route::middleware(['auth'])
     ->group(function () {
 
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('/restaurants', RestaurantController::class);
+        Route::resource('/restaurants', AdminRestaurantController::class);
         Route::resource('/dishes', DishController::class);
 
         // Rotte per gestire gli ordini

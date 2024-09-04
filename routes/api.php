@@ -1,19 +1,11 @@
 <?php
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\TypeController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/cart/add/{id}', [CartController::class, 'add']);
+Route::patch('/cart/update/{id}', [CartController::class, 'update']);
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove']);
+Route::post('/cart/clear', [CartController::class, 'clear']);
+Route::get('/types', [TypeController::class, 'index']);

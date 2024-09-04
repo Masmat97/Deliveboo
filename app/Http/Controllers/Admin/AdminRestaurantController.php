@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
-class RestaurantController extends Controller
+class AdminRestaurantController extends Controller
 {
     public function __construct()
     {
