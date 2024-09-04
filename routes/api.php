@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\TypeController;
+use App\Http\Controllers\Admin\TypeController;
 
 
 Route::post('/cart/add/{id}', [CartController::class, 'add']);
