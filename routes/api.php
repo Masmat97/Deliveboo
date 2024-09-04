@@ -22,7 +22,7 @@ Route::get('restaurants', [RestaurantController::class, 'index']);
 Route::get('types', [TypeController::class, 'index']);
 
 Route::get('restaurants/{id}', [RestaurantController::class, 'show']);
-Route::get('types/{type}', [TypeController::class, 'show']);
+Route::get('types/restaurant/{type}', [TypeController::class, 'show']);
 
 
 
