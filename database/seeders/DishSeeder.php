@@ -616,5 +616,801 @@ class DishSeeder extends Seeder
         $newDish->availability = true;
         $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-pAx7YeYpRXyh6WOZQqbwDWsYLlQdhWkqw&s';
         $newDish->save();
+
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14; // assuming the restaurant ID is 1
+        $newDish->name = 'Risotto alla Milanese';
+        $newDish->ingredient = 'Risotto, Saffron, Beef broth, Parmesan cheese, Ossobuco';
+        $newDish->price = 22.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTabmWcjTyb36Qlzzxul0oPhG_Nsi4TKpvRCQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Pizza Margherita';
+        $newDish->ingredient = 'Tomato, Mozzarella, Basil, Olive oil';
+        $newDish->price = 9.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKdjUUgea28rz1mhpS7pDI8yyTgIPljmQTrw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Lasagna alla Bolognese';
+        $newDish->ingredient = 'Lasagna sheets, Bolognese sauce, Besciamella, Parmesan cheese';
+        $newDish->price = 18.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ZXgamALzyWxUyZ5W3jyi5gHIAWUQ3Hc22w&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Spaghetti Carbonara';
+        $newDish->ingredient = 'Spaghetti, Eggs, Pecorino Romano, Guanciale, Black pepper';
+        $newDish->price = 15.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDSuIbmFm8SxI_zBEF8S4oyHbvo2MDPKrtvQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Pizza Quattro Stagioni';
+        $newDish->ingredient = 'Tomato, Mozzarella, Mushrooms, Ham, Artichokes, Olives';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Ni3bTQV5Spt1KdAcuhMpaHz4ZXm7uiU7FA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Gnocchi al Pesto';
+        $newDish->ingredient = 'Gnocchi, Pesto sauce, Parmesan cheese, Olive oil';
+        $newDish->price = 14.25;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIktPW44D3vldOJDjoosNMxvPwuZh90RgK4g&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Pizza Diavola';
+        $newDish->ingredient = 'Tomato, Mozzarella, Spicy salami, Olive oil';
+        $newDish->price = 11.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9nngyUoJmEcoCu9KT5wv2ZR5iKCBtlOGGtg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Fettuccine Alfredo';
+        $newDish->ingredient = 'Fettuccine, Butter, Parmesan cheese';
+        $newDish->price = 16.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMs5QqKj9ZI8nkdmxl0AOAuvVw44kZC0I0HA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Pizza Capricciosa';
+        $newDish->ingredient = 'Tomato, Mozzarella, Ham, Artichokes, Mushrooms, Olives';
+        $newDish->price = 13.80;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcEluKIOX73eFmCC8Fe2nXYG4y1Vb4X9GWxQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 14;
+        $newDish->name = 'Ravioli al Burro e Salvia';
+        $newDish->ingredient = 'Ravioli, Butter, Sage, Parmesan cheese';
+        $newDish->price = 17.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKU3MQ0d4XWfiNw5Tf3a-pFykyav1X_LDWgw&s';
+        $newDish->save();
+
+        // Creazione di paitti giapponesi e cinesi
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 15;
+        $newDish->name = 'Sushi Misto';
+        $newDish->ingredient = 'Riso, Tonno, Salmone, Gamberi, Alghe, Soia';
+        $newDish->price = 18.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGN1lunB_KFNH5WeXpsx5B6Tl6Url672CfCw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 15;
+        $newDish->name = 'Ramen';
+        $newDish->ingredient = 'Brodo di maiale, Noodles, Uovo, Alghe, Cipollotto, Maiale Chashu';
+        $newDish->price = 13.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRC32Vd1GZeEFLtFEoh2sQEffp-HOmHRPwWA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 15;
+        $newDish->name = 'Pollo al Limone';
+        $newDish->ingredient = 'Pollo, Salsa al limone, Verdure, Riso bianco';
+        $newDish->price = 12.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9Gf9MZVHuJAIKrYWfYW-0W2wwzq2_Rik7mQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 15;
+        $newDish->name = 'Anatra alla Pechinese';
+        $newDish->ingredient = 'Anatra, Salsa di soia, Verdure, Frittelle di riso';
+        $newDish->price = 24.99;
+        $newDish->availability = false;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68UPfuH6EuQwJ71tmJh1KqmOIZMpOEu3fHw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 15;
+        $newDish->name = 'Tempura di Gamberi';
+        $newDish->ingredient = 'Gamberi, Pastella Tempura, Verdure fritte';
+        $newDish->price = 15.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtiqVV6fmemTlEKzOrLXBov7HGABhL8FdAcA&s';
+        $newDish->save();
+
+        // Creazione di piatti brasiliani di pesce
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 16;
+        $newDish->name = 'Moqueca de Peixe';
+        $newDish->ingredient = 'Fish fillets, Coconut milk, Tomatoes, Onions, Garlic, Cilantro, Palm oil';
+        $newDish->price = 25.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNhn437Wkz-7fKKluJ6MObbP6HeihA2t0CKQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 16;
+        $newDish->name = 'Camarão na Moranga';
+        $newDish->ingredient = 'Shrimps, Cream cheese, Pumpkin, Coconut milk, Garlic, Tomatoes';
+        $newDish->price = 28.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUkeC-jGfI5ROOJSwCBurAJLL-qP4FO0aLpQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 16;
+        $newDish->name = 'Peixe Frito com Acarajé';
+        $newDish->ingredient = 'Fried fish fillets, Acarajé (black-eyed pea fritters), Palm oil, Shrimp sauce';
+        $newDish->price = 23.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsPbFojIpXnuxoKlV1bGOuwsehqfYgZe9vQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 16;
+        $newDish->name = 'Caldeirada de Frutos do Mar';
+        $newDish->ingredient = 'Seafood mix (fish, shrimp, mussels), Tomatoes, Onions, Garlic, Coconut milk, Cilantro';
+        $newDish->price = 30.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHconTFAim0ua-ufbKpt4TeYVlg23w0SOXA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 16;
+        $newDish->name = 'Bobó de Camarão';
+        $newDish->ingredient = 'Shrimps, Cassava puree, Coconut milk, Garlic, Palm oil, Onions, Tomatoes';
+        $newDish->price = 26.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIwqF9t-fzyr_Sl4wQZPjXP-hnfi4iqObzMw&s';
+        $newDish->save();
+
+        // Creazione di piatti Thai
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 17;
+        $newDish->name = 'Pad Thai';
+        $newDish->ingredient = 'Rice noodles, Shrimp, Eggs, Tofu, Peanuts, Tamarind sauce';
+        $newDish->price = 14.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTmf4Gtcg_7-RnknKOP8usaCGPWK1JPHPx-w&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 17;
+        $newDish->name = 'Tom Yum Goong';
+        $newDish->ingredient = 'Shrimp, Lemongrass, Lime leaves, Galangal, Chili, Fish sauce';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQfj1ZmQY_ZavTiGKf6erxnnFxVGN2rg-7g&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 17;
+        $newDish->name = 'Green Curry Chicken';
+        $newDish->ingredient = 'Chicken, Green curry paste, Coconut milk, Thai basil, Eggplant';
+        $newDish->price = 16.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8wr2QXYNDT5kUQmkgDHiCovQ95ou7o0zrsg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 17;
+        $newDish->name = 'Som Tum (Papaya Salad)';
+        $newDish->ingredient = 'Green papaya, Chili, Peanuts, Lime, Fish sauce, Tomatoes';
+        $newDish->price = 10.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT93gDIEM4BYePdRi2-1BusI8qBACjpKCbkQQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 17;
+        $newDish->name = 'Massaman Curry';
+        $newDish->ingredient = 'Beef, Potatoes, Coconut milk, Massaman curry paste, Peanuts';
+        $newDish->price = 18.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeXBNuobg85Gg0o7oQC-GhsZW9rpzDKFAfw&s';
+        $newDish->save();
+
+        // Creazione dei piatti McDonald's
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 18;
+        $newDish->name = 'Big Mac';
+        $newDish->ingredient = 'Beef patties, Lettuce, Cheese, Pickles, Onions, Special sauce, Sesame bun';
+        $newDish->price = 5.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqPe1vvTBi0xEjR8fEPAqbKGiHhoS7csWSvw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 18;
+        $newDish->name = 'Chicken McNuggets';
+        $newDish->ingredient = 'Chicken, Breading, Frying oil, Dipping sauces';
+        $newDish->price = 4.49;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcdP24UDRIBDstoUBU-WZmeylt4ojzDmkug&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 18;
+        $newDish->name = 'Filet-O-Fish';
+        $newDish->ingredient = 'Fish fillet, Tartar sauce, Cheese, Steamed bun';
+        $newDish->price = 4.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwQxNCyxSX3EQoswhOobHCFTGSLTJT_phMBg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 18;
+        $newDish->name = 'McChicken';
+        $newDish->ingredient = 'Chicken patty, Lettuce, Mayonnaise, Sesame bun';
+        $newDish->price = 4.29;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiwYzSTCUcv3N0TfkHNBgzTvLt8vndaFuYkA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 18;
+        $newDish->name = 'Quarter Pounder with Cheese';
+        $newDish->ingredient = 'Beef patty, Cheese, Pickles, Onions, Ketchup, Mustard, Sesame bun';
+        $newDish->price = 6.19;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_qctTSSNTji_iUXaPasVmoNhUkapgYYsUTw&s';
+        $newDish->save();
+
+        // Creazione dei piatti per Burger King
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 19;
+        $newDish->name = 'Whopper';
+        $newDish->ingredient = 'Beef patty, Lettuce, Tomato, Onion, Pickles, Ketchup, Mayo, Sesame seed bun';
+        $newDish->price = 6.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJHZCZOVwY2T94uKUvhVqYR4Cq_DNwH6VXmg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 19;
+        $newDish->name = 'Chicken Royale';
+        $newDish->ingredient = 'Crispy chicken patty, Lettuce, Mayo, Sesame seed bun';
+        $newDish->price = 5.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg6cVcIJPKa8PUqi09FMfK7RxYG6wqqrq6fw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 19;
+        $newDish->name = 'Double Whopper';
+        $newDish->ingredient = 'Two beef patties, Lettuce, Tomato, Onion, Pickles, Ketchup, Mayo, Sesame seed bun';
+        $newDish->price = 8.49;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqtQMpUHNgNzhsDHgEzI78pQwZjRBhgSDV_w&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 19;
+        $newDish->name = 'Bacon King';
+        $newDish->ingredient = 'Two beef patties, Bacon, American cheese, Ketchup, Mayo, Sesame seed bun';
+        $newDish->price = 7.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkxmbBAdYTStUQN6RiuhQJBkxnAxJHPi4XDQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 19;
+        $newDish->name = 'Veggie Burger';
+        $newDish->ingredient = 'Vegetable patty, Lettuce, Tomato, Onion, Pickles, Ketchup, Mayo, Sesame seed bun';
+        $newDish->price = 5.49;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFYjBFq0eDp7AIuBNECYHxG78qyDwO1KvsA&s';
+        $newDish->save();
+
+        // Creazione dei piatti per Old Wild West
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 20;
+        $newDish->name = 'Burger Texano';
+        $newDish->ingredient = 'Beef patty, Cheddar cheese, Bacon, BBQ sauce, Onion rings, Lettuce';
+        $newDish->price = 14.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStElcS6lKc0oVmHrQZxj6pZNgIJSLLAf8HoQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 20;
+        $newDish->name = 'Ribs alla Griglia';
+        $newDish->ingredient = 'Pork ribs, BBQ sauce, Coleslaw, Fries';
+        $newDish->price = 19.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgMCnz2Djc6s6wKF5Cs_5c2Ehe_JeyDj1Dnw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 20;
+        $newDish->name = 'Nachos con Formaggio e Guacamole';
+        $newDish->ingredient = 'Nachos, Cheddar cheese, Jalapenos, Guacamole, Sour cream';
+        $newDish->price = 9.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWin2qp1ojuDLCTlRg4MkuxPNxLGjH7GW3vA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 20;
+        $newDish->name = 'Chicken Wings Piccanti';
+        $newDish->ingredient = 'Chicken wings, Spicy sauce, Celery sticks, Ranch dressing';
+        $newDish->price = 12.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVlNKcOXRThcCaBXw_V2lF5wGv-c7JxyMQ8w&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 20;
+        $newDish->name = 'Chili con Carne';
+        $newDish->ingredient = 'Ground beef, Beans, Tomatoes, Chili peppers, Sour cream';
+        $newDish->price = 11.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpm_jp84-qvDHmlUOghqDuuz7zyvOeZLZtSQ&s';
+        $newDish->save();
+
+        // Creazione dei piatti di kebab
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 21;
+        $newDish->name = 'Kebab Classico';
+        $newDish->ingredient = 'Pane pita, Carne di agnello, Pomodoro, Cipolla, Salsa yogurt';
+        $newDish->price = 6.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScaZMnS0V3WDnahjzODzuDTwcKy1wIxSGdjA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 21;
+        $newDish->name = 'Kebab con Pollo';
+        $newDish->ingredient = 'Pane pita, Pollo, Pomodoro, Lattuga, Cipolla, Salsa piccante';
+        $newDish->price = 7.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSodMb8jrdA22C0XBwibqyCpuMnG0F6lt3WQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 21;
+        $newDish->name = 'Kebab con Manzo';
+        $newDish->ingredient = 'Pane pita, Manzo, Insalata, Cipolla, Salsa di tahina';
+        $newDish->price = 7.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqTdz6gVEOPAaFeBjDhcn2wmBjHfMpRz7cKA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 21;
+        $newDish->name = 'Kebab Vegetariano';
+        $newDish->ingredient = 'Pane pita, Falafel, Insalata, Pomodoro, Salsa hummus';
+        $newDish->price = 6.80;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmwug30O03OHWi6atU01FKUF9GHew1LQTvFg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 21;
+        $newDish->name = 'Kebab Mix';
+        $newDish->ingredient = 'Pane pita, Carne di agnello e pollo, Insalata, Pomodoro, Salsa yogurt';
+        $newDish->price = 8.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-eDhgZWeAl8NqOT3auqXGSRKKQDJVBHy2oA&s';
+        $newDish->save();
+
+        // Creazione di piatti greci
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 22;
+        $newDish->name = 'Moussaka';
+        $newDish->ingredient = 'Eggplant, Minced beef, Béchamel sauce, Potatoes, Tomato, Onion';
+        $newDish->price = 17.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxI1Ep07A9BUQUX4s4th3guQT9TtY9du2BJQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 22;
+        $newDish->name = 'Souvlaki';
+        $newDish->ingredient = 'Grilled pork, Pita bread, Tzatziki, Tomato, Onion';
+        $newDish->price = 12.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYCVJlcGocHWQPBU0d0jEfDScNjipqb78OlQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 22;
+        $newDish->name = 'Spanakopita';
+        $newDish->ingredient = 'Phyllo dough, Spinach, Feta cheese, Onion, Eggs';
+        $newDish->price = 8.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp0B2JerzfqRUxJ44WGZwBqu2H0eC9s7nEfQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 22;
+        $newDish->name = 'Gyros';
+        $newDish->ingredient = 'Pita bread, Chicken, Tzatziki, Tomato, Onion, French fries';
+        $newDish->price = 10.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ7EXyv9dQwdOZtaD5Scx91OO3fcTZ-VvZNw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 22;
+        $newDish->name = 'Greek Salad';
+        $newDish->ingredient = 'Tomato, Cucumber, Red onion, Feta cheese, Olives, Olive oil';
+        $newDish->price = 9.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQuE-ozL-Dm8BQlittzmktCP-dujc2TqEVBw&s';
+        $newDish->save();
+
+        // Creazione di piatti messicani e spagnoli
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 23;
+        $newDish->name = 'Tacos al Pastor';
+        $newDish->ingredient = 'Corn tortilla, Marinated pork, Pineapple, Onion, Cilantro, Salsa';
+        $newDish->price = 8.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBSyEazO9kr9xIwZ35ZptfDK81j6pN0EBPTw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 23;
+        $newDish->name = 'Paella Valenciana';
+        $newDish->ingredient = 'Rice, Chicken, Rabbit, Green beans, Saffron, Olive oil';
+        $newDish->price = 25.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR24c5BzZnC9zRc-LR980gyfzFgR4pvkbBQBQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 23;
+        $newDish->name = 'Chiles Rellenos';
+        $newDish->ingredient = 'Poblano peppers, Cheese, Tomato sauce, Ground beef, Rice, Beans';
+        $newDish->price = 14.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx8sCpdwWrpgq7ikaizoAvI0TbpL5zO5peLw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 23;
+        $newDish->name = 'Gazpacho';
+        $newDish->ingredient = 'Tomatoes, Cucumbers, Bell peppers, Garlic, Olive oil, Vinegar';
+        $newDish->price = 9.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKYaAafiHmlzc4f5_oDOmwOcFDyX8Bg-FLEQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 23;
+        $newDish->name = 'Enchiladas Verdes';
+        $newDish->ingredient = 'Corn tortillas, Chicken, Green salsa, Sour cream, Cheese, Onion';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFhDF1G4wp0J90BQb9rXdFID6ih17YejbOtA&s';
+        $newDish->save();
+
+        // Creazione dei piatti per Pequeño Atypical Tapas Bar
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 24;
+        $newDish->name = 'Gambas al Ajillo';
+        $newDish->ingredient = 'Shrimp, Garlic, Olive oil, Red pepper flakes, Parsley';
+        $newDish->price = 15.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWK4cE5-CtfjlbrohdAUwliBE2mMtcgmWJEg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 24;
+        $newDish->name = 'Patatas Bravas';
+        $newDish->ingredient = 'Potatoes, Tomato sauce, Garlic, Paprika, Olive oil';
+        $newDish->price = 10.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzfwNTk2JticBIXN3dqa6Sscb6gvNAz2rozg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 24;
+        $newDish->name = 'Chorizo al Vino';
+        $newDish->ingredient = 'Chorizo sausage, Red wine, Garlic, Onions, Olive oil';
+        $newDish->price = 12.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxw-qyc2F7clm6R9wLejESAYgi49Tgr-Wk5w&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 24;
+        $newDish->name = 'Croquetas de Jamón';
+        $newDish->ingredient = 'Ham, Flour, Milk, Butter, Bread crumbs';
+        $newDish->price = 14.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0bE_cI_7y3wbucnO3EHNNvMDX0qAn0fvmWw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 24;
+        $newDish->name = 'Pulpo a la Gallega';
+        $newDish->ingredient = 'Octopus, Paprika, Olive oil, Sea salt, Potatoes';
+        $newDish->price = 18.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbmrzGGfG8XJ3-Rqcbq_1gHrkMuU4uQFx7dQ&s';
+        $newDish->save();
+
+        // Creazione dei piatti peruviani
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 25;
+        $newDish->name = 'Ceviche de Corvina';
+        $newDish->ingredient = 'Corvina fish, Lime juice, Red onions, Cilantro, Chili peppers, Sweet potato, Corn';
+        $newDish->price = 18.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt1yllwv1zQVvqmmD1xQqr9_huhuzzQ9FBtA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 25;
+        $newDish->name = 'Tiradito';
+        $newDish->ingredient = 'Raw fish, Lime juice, Aji amarillo, Garlic, Cilantro, Red onions, Sweet potato, Corn';
+        $newDish->price = 19.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2pxlZPwaA2KvdiHTOKz4TZz-0QyOAt_uonA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 25;
+        $newDish->name = 'Causa Rellena de Atún';
+        $newDish->ingredient = 'Yellow potatoes, Tuna, Lime juice, Aji amarillo, Mayonnaise, Avocado, Olives';
+        $newDish->price = 17.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT747sPhHVj9tqQbtxGGQoRrCwanDQ-Ne2hCQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 25;
+        $newDish->name = 'Pescado a la Chorillana';
+        $newDish->ingredient = 'Fish fillets, Tomatoes, Onions, Garlic, Aji amarillo, White wine, Cilantro';
+        $newDish->price = 20.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1NG1uQ9RYP0zy-NU1SWUT9sEOyAZ-_Vri8Q&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 25;
+        $newDish->name = 'Arroz con Mariscos';
+        $newDish->ingredient = 'Rice, Mixed seafood, Tomatoes, Red peppers, Peas, Garlic, Cilantro, White wine';
+        $newDish->price = 21.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNhuYe1o8uBlTqiKYSAGocH-VMOCPGH2bXcg&s';
+        $newDish->save();
+
+        // Creazione dei piatti di sushi italiano
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 26;
+        $newDish->name = 'Sushi Roll alla Caprese';
+        $newDish->ingredient = 'Salmon, Mozzarella, Tomato, Basil, Olive oil';
+        $newDish->price = 15.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhw_O3wzoTXg2MR9E43DjIOBj-r58QtkzO5A&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 26;
+        $newDish->name = 'Sushi Roll al Prosciutto';
+        $newDish->ingredient = 'Prosciutto, Cucumber, Cream cheese, Avocado';
+        $newDish->price = 16.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy_5NOHam9l0O648aVCUkuKUr7S7Ifzvqluw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 26;
+        $newDish->name = 'Sushi Roll alla Carbonara';
+        $newDish->ingredient = 'Tuna, Parmesan cheese, Egg, Black pepper';
+        $newDish->price = 17.25;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStzRghch6Yic-mJckuVi6CHzd0oB1N5PwBmg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 26;
+        $newDish->name = 'Sushi Roll al Pesto';
+        $newDish->ingredient = 'Shrimp, Pesto sauce, Basil, Pine nuts';
+        $newDish->price = 18.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://media-cdn.tripadvisor.com/media/photo-s/0e/41/35/27/sushi-con-pesto-alla.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 26;
+        $newDish->name = 'Sushi Roll al Gorgonzola';
+        $newDish->ingredient = 'Crab, Gorgonzola cheese, Walnuts, Pear slices';
+        $newDish->price = 19.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe4jlBwP8jLmSJh1vZOvbHJjmxOyxBgHM68Q&s';
+        $newDish->save();
+
+        // Creazione dei piatti di poke
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 27;
+        $newDish->name = 'Poke Bowl Classico';
+        $newDish->ingredient = 'Ahi tuna, Rice, Avocado, Cucumber, Seaweed, Soy sauce';
+        $newDish->price = 15.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWip2cdJHpXEsOLaPi_C4qa0H_qb9xEeZCbw&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 27;
+        $newDish->name = 'Poke Bowl Salmon';
+        $newDish->ingredient = 'Salmon, Rice, Edamame, Mango, Avocado, Spicy mayo';
+        $newDish->price = 17.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd-51p88O9rdJPYThcEka-T2LLpWCx0tK-FA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 27;
+        $newDish->name = 'Poke Bowl Veggie';
+        $newDish->ingredient = 'Tofu, Rice, Seaweed, Cucumber, Carrots, Sesame seeds';
+        $newDish->price = 14.25;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYfGAUQQCA4EtpKU1E9HMSzqD_3BtTCkdVGg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 27;
+        $newDish->name = 'Poke Bowl Spicy Tuna';
+        $newDish->ingredient = 'Spicy tuna, Rice, Avocado, Jalapenos, Seaweed, Soy sauce';
+        $newDish->price = 16.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGWaY8cjZp-BTZOyKgjBPaOoCHR9m0noLh8A&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 27;
+        $newDish->name = 'Poke Bowl Tropical';
+        $newDish->ingredient = 'Yellowfin tuna, Rice, Pineapple, Avocado, Red onion, Cilantro';
+        $newDish->price = 18.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOcd75FLhxXAzdNl-FRAjgBUug6rql3nbFzg&s';
+        $newDish->save();
+
+        // Creazione dei piatti di cucina tedesca
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 28;
+        $newDish->name = 'Wiener Schnitzel';
+        $newDish->ingredient = 'Veal, Flour, Eggs, Bread crumbs, Lemon, Parsley';
+        $newDish->price = 24.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREY5c6fRXjFbrUy7qoIrlvDGLtTHtfjHn0OQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 28;
+        $newDish->name = 'Bratwurst';
+        $newDish->ingredient = 'Pork sausage, Caraway seeds, Garlic, Salt, Pepper';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAWvGwnDr8r0YDXApdt8aQnZYnDgTndAilCQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 28;
+        $newDish->name = 'Sauerkraut';
+        $newDish->ingredient = 'Fermented cabbage, Caraway seeds, Bay leaves';
+        $newDish->price = 8.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2m1VQEtjCI4tyAhaTdfdksM4daS6N5RBx3Q&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 28;
+        $newDish->name = 'Kartoffelsalat';
+        $newDish->ingredient = 'Potatoes, Vinegar, Oil, Mustard, Onions, Pickles';
+        $newDish->price = 9.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm8rYqmon1wLRNuCwIO2uwr9MrWNcBbZtGpQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 28;
+        $newDish->name = 'Apfelstrudel';
+        $newDish->ingredient = 'Apples, Puff pastry, Sugar, Cinnamon, Raisins';
+        $newDish->price = 7.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReButNe1EuKJJdc3fjhAyMyJwSnp6P_cRoVQ&s';
+        $newDish->save();
+
+        // Creazione dei piatti argentini
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 29;
+        $newDish->name = 'Asado';
+        $newDish->ingredient = 'Beef ribs, Chorizo, Morcilla, Chimichurri';
+        $newDish->price = 29.99;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR3W70rZ6-Wi48hp3lwXJffHUPCTZ2mBlSuA&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 29;
+        $newDish->name = 'Empanadas';
+        $newDish->ingredient = 'Pastry dough, Ground beef, Onions, Eggs, Olives, Spices';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSthVrVKTyru-rCxg1KRr4DpC4nTzBXhBLaPQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 29;
+        $newDish->name = 'Milanesa a la Napolitana';
+        $newDish->ingredient = 'Breaded beef steak, Tomato sauce, Ham, Cheese';
+        $newDish->price = 18.75;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaCCQggbnCDFhxhhEdx61zo97tP2fvkpUNDQ&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 29;
+        $newDish->name = 'Provoleta';
+        $newDish->ingredient = 'Provolone cheese, Olive oil, Oregano, Chili flakes';
+        $newDish->price = 14.00;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmi6wTN1PSDDUxYwQuVdDIFDpTKRo3kZqFXg&s';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 29;
+        $newDish->name = 'Dulce de Leche';
+        $newDish->ingredient = 'Sweet milk caramel spread';
+        $newDish->price = 8.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYdVq2cZjU_MaNPywVhqZrknS07q8_mjggCg&s';
+        $newDish->save();
     }
 }
