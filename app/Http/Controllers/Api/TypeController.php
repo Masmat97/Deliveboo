@@ -17,18 +17,25 @@ class TypeController extends Controller
         ]);
     }
 
-    public function show($type)
+    public function show(Request $request)
     {
-        $typeInstance = Type::where('name', $type)->first();
-        if (!$typeInstance) {
+        $types = explode(',', $request->input('types')); // Convert string to array
+
+        if (!$types) {
             return response()->json([
                 'success' => false,
-                'message' => 'Type not found'
-            ], 404);
+                'message' => 'No types provided'
+            ], 400);
         }
-        $restaurants = Restaurant::whereHas('types', function ($query) use ($type) {
-            $query->where('name', $type);
+
+        $restaurants = Restaurant::where(function ($query) use ($types) {
+            foreach ($types as $type) {
+                $query->whereHas('types', function ($subQuery) use ($type) {
+                    $subQuery->where('name', $type);
+                });
+            }
         })->get();
+
         return response()->json([
             'success' => true,
             'restaurants' => $restaurants
