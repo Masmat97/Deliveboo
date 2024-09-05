@@ -81,6 +81,91 @@ class UserSeeder extends Seeder
                 'email' => 'lagalette@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
+            [
+                'name' => 'Ristorante Pizzeria Il Buchetto',
+                'email' => 'ilbuchetto@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Miyabi Restaurant',
+                'email' => 'miyabi@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Romakinho Restaurant',
+                'email' => 'romakinho@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Pad Thai Kung Restaurant',
+                'email' => 'padthaikung@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'McDonald Restaurant',
+                'email' => 'mcdonald@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Burger King  Restaurant',
+                'email' => 'burgerking@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Old Wild West  Restaurant',
+                'email' => 'oldwildwest@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Ali Baba  Restaurant',
+                'email' => 'alibaba@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Greco Romano  Restaurant',
+                'email' => 'grecoromano@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'El Pueblo Bistrot Sede Cipro  Restaurant',
+                'email' => 'elpueblo@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Greco Romano  Restaurant',
+                'email' => 'grecoromano@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Pequeño Atypical Tapas Bar  Restaurant',
+                'email' => 'pequeño@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Inka Chicken Restaurant',
+                'email' => 'inka@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Dejavu Restaurant',
+                'email' => 'dejavu@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Poke House Restaurant',
+                'email' => 'pokehouse@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Cantina Tirolese Restaurant',
+                'email' => 'cantinatirolese@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'I Monticiani Restaurant',
+                'email' => 'imonticiani@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
 
         ];
 
