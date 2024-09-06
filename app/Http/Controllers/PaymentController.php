@@ -37,9 +37,9 @@ class PaymentController extends Controller
 
     public function processPayment(Request $request)
     {
-        $nonce = $request->payment_method_nonce;
-        $amount = $request->amount;
-
+        $nonce = $request->input('payment_method_nonce');
+        $amount = $request->input('amount');
+    
         $result = $this->gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
@@ -47,13 +47,14 @@ class PaymentController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-
+    
         if ($result->success) {
-            // Pagamento riuscito, gestisci l'ordine e svuota il carrello qui
+            // Pagamento riuscito
             Session::forget('cart');
             return redirect()->route('checkout.show')->with('success', 'Pagamento effettuato con successo!');
         } else {
-            // Pagamento fallito, visualizza il messaggio di errore
+            // Log degli errori
+            \Log::error('Braintree Payment Error: ' . json_encode($result->errors));
             return redirect()->route('checkout.show')->with('error', 'Pagamento fallito. Riprova.');
         }
     }
