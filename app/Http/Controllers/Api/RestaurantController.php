@@ -16,23 +16,21 @@ class RestaurantController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show($name)
     {
-        $restaurants = Restaurant::with(['types', 'dishes'])->where('id', $id)->first();
+        $restaurants = Restaurant::with(['types', 'dishes'])->where('name', $name)->first();
 
         if ($restaurants) {
             return response()->json([
                 'success' => true,
                 'restaurants' => $restaurants
             ]);
-
         } else {
             return response()->json([
                 'success' => false,
                 'message' => "404 not found"
             ]);
         }
-        dd($restaurants);
+        // Remove the dd() function as it's not needed here
     }
-
 }
