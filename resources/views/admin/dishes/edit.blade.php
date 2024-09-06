@@ -5,8 +5,9 @@
         @method('PUT')
         <div class="form-group p-3">
             <label for="name" class="form-label">Name:*</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ $dish->name }}"required
-                maxlength="255" minlength="3">
+            <input type="text" class="form-control" id="name" name="name" value="{{ $dish->name }}" required
+                   maxlength="255" minlength="3">
+            <div id="name-error"></div> <!-- Add this element to display the error message -->
             @error('name')
                 @if ($message == 'You must enter the name of the dish.')
                     <div class="alert alert-danger">You must enter the name of the dish.</div>
@@ -26,7 +27,8 @@
         </div>
         <div class="form-group p-3">
             <label for="ingredient" class="form-label">Ingredient:*</label>
-            <textarea class="form-control" id="description" name="ingredient" required minlength="5">{{ $dish->ingredient }}</textarea>
+            <textarea class="form-control" id="ingredient" name="ingredient" required minlength="5">{{ $dish->ingredient }}</textarea>
+            <div id="message"></div> <!-- Add this element -->
             @error('ingredient')
                 @if ($message == 'Please enter an ingredient.')
                     <div class="alert alert-danger">Please enter an ingredient.</div>
@@ -63,4 +65,6 @@
             obbligatori </div>
         <button type="submit" class="btn btn-primary m-3">Edit</button>
     </form>
+    <script src="{{ asset('js/validate_dish_edit.js') }}"></script>
+
 @endsection
