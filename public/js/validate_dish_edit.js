@@ -100,11 +100,11 @@ nameInput.addEventListener('input', (e) => {
       nameErrorDiv.className = 'alert alert-danger';
     } else if (inputValue.length < minLength) {
       // input too short, show error message
-      nameErrorDiv.innerHTML = `Il nome deve avere almeno ${minLength} caratteri`;
+      nameErrorDiv.innerHTML ="Il nome deve avere almeno ${minLength} caratteri";
       nameErrorDiv.className = 'alert alert-danger';
     } else if (inputValue.length > maxLength) {
       // input too long, show error message
-      nameErrorDiv.innerHTML = `Il nome deve avere non più di ${maxLength} caratteri`;
+      nameErrorDiv.innerHTML = "Il nome deve avere non più di ${maxLength} caratteri";
       nameErrorDiv.className = 'alert alert-danger';
     } else {
       // input is valid, remove error message and class
@@ -117,37 +117,42 @@ nameInput.addEventListener('input', (e) => {
     nameErrorDiv.className = '';
   }
 });
+
 //-----------------------------------------------
 //INGREDIENTI
 
-const inputField = document.getElementById('ingredient'); // assume a textarea with id "ingredient"
-const messageElement = document.getElementById('message'); // assume a message element with id "message"
+const inputField = document.getElementById('ingredient');
+const messageElement = document.getElementById('message');
 
-inputField.addEventListener('input', (e) => {
-    const inputValue = e.target.value;
-    const minLength = 4;
-    const maxLength = 255;
-    const allowedChars = /^[a-zA-Z0-9\s.,()"\/\-]+$/; // allowed characters: letters, numbers, spaces, and specific special characters
+if (inputField && messageElement) {
+    inputField.addEventListener('input', (e) => {
+        const inputValue = e.target.value;
+        const minLength = 4;
+        const maxLength = 255;
+        const allowedChars = /^[a-zA-Z0-9\s.,()"\/\-]+$/; // allowed characters: letters, numbers, spaces, and specific special characters
 
-    if (inputValue.length < minLength) {
-        messageElement.textContent = `Errore: Inserisci almeno ${minLength} caratteri.`;
-        messageElement.className = 'alert alert-danger';
-        return;
-    }
+        if (inputValue.length < minLength) {
+            messageElement.textContent = `Errore: Inserisci almeno ${minLength} caratteri.`;
+            messageElement.className = 'alert alert-danger';
+            return;
+        }
 
-    if (inputValue.length > maxLength) {
-        messageElement.textContent = `Errore: Inserisci non più di ${maxLength} caratteri.`;
-        messageElement.className = 'alert alert-danger';
-        return;
-    }
+        if (inputValue.length > maxLength) {
+            messageElement.textContent = `Errore: Inserisci non più di ${maxLength} caratteri.`;
+            messageElement.className = 'alert alert-danger';
+            return;
+        }
 
-    if (!allowedChars.test(inputValue)) {
-        messageElement.textContent = `Errore: Sono consentiti solo lettere, numeri, spazi e i seguenti caratteri speciali: . , ( ) " / -`;
-        messageElement.className = 'alert alert-danger';
-        return;
-    }
+        if (!allowedChars.test(inputValue)) {
+            messageElement.textContent = `Errore: Sono consentiti solo lettere, numeri, spazi e i seguenti caratteri speciali: . , ( ) " / -`;
+            messageElement.className = 'alert alert-danger';
+            return;
+        }
 
-    // if all checks pass, the input is valid
-    messageElement.textContent = '';
-    messageElement.className = '';
-});
+        // if all checks pass, the input is valid
+        messageElement.textContent = '';
+        messageElement.className = '';
+    });
+} else {
+    console.error("Element with id 'ingredient' or 'message' not found.");
+}
