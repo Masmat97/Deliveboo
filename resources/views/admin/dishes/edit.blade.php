@@ -4,16 +4,9 @@
         @csrf
         @method('PUT')
         <div class="form-group p-3">
-<<<<<<< HEAD
             <label for="name" class="form-label">Nome:*</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ $dish->name }}"required
                 maxlength="255" minlength="3">
-=======
-            <label for="name" class="form-label">Name:*</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ $dish->name }}" required
-                   maxlength="255" minlength="3">
-            <div id="name-error"></div> <!-- Add this element to display the error message -->
->>>>>>> b41c58b40dae9e6475e215e60f6523374da2d76a
             @error('name')
                 @if ($message == 'You must enter the name of the dish.')
                     <div class="alert alert-danger">Devi inserire il nome del piatto.</div>
@@ -32,14 +25,8 @@
             @enderror
         </div>
         <div class="form-group p-3">
-<<<<<<< HEAD
             <label for="ingredient" class="form-label">Ingredienti:*</label>
             <textarea class="form-control" id="description" name="ingredient" required minlength="5">{{ $dish->ingredient }}</textarea>
-=======
-            <label for="ingredient" class="form-label">Ingredient:*</label>
-            <textarea class="form-control" id="ingredient" name="ingredient" required minlength="5">{{ $dish->ingredient }}</textarea>
-            <div id="message"></div> <!-- Add this element -->
->>>>>>> b41c58b40dae9e6475e215e60f6523374da2d76a
             @error('ingredient')
                 @if ($message == 'Please enter an ingredient.')
                     <div class="alert alert-danger">Inserisci un ingrediente.</div>

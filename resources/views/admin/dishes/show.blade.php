@@ -1,23 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-				<div class="card_container">
-								<div class="card-show">
-												<h4 class="mt-4 mb-4">{{ $dish->name }}</h4>
-												<div class="img_container">
-
-																{{-- @if (Str::startsWith($dish->image, 'http'))
-																				<img src="{{ $dish['image'] }}" alt="">
-																@else
-																				<img src="{{ asset('storage/' . $dish->image) }}" alt="">
-																@endif --}}
-
-												</div>
-												<p class="mt-4"><b>Ingredienti:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e($dish->ingredient))) !!}</p>
-												<p class="mt-4"><b>Prezzo:</b> {{ $dish->price }} </p>
-								@endsection
-=======
     <h1 class="text-center p-4">{{ $dish->name }}</h1>
     <div class="table-responsive p-4">
         <table class="table table-striped table-bordered">
@@ -59,4 +42,3 @@
         </table>
     </div>
 @endsection
->>>>>>> b41c58b40dae9e6475e215e60f6523374da2d76a

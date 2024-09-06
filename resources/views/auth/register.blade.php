@@ -14,12 +14,8 @@
 
                             <div class="mb-4 row">
                                 <label for="email"
-<<<<<<< HEAD
                                     class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }} *</label>
 
-=======
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }} *</label>
->>>>>>> b41c58b40dae9e6475e215e60f6523374da2d76a
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
@@ -50,12 +46,8 @@
 
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-<<<<<<< HEAD
                                     class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
 
-=======
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
->>>>>>> b41c58b40dae9e6475e215e60f6523374da2d76a
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
