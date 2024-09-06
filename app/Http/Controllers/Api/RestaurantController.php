@@ -12,7 +12,7 @@ class RestaurantController extends Controller
     {
         return response()->json([
             'success' => true,
-            'restaurants' => Restaurant::with(['types', 'dishes'])->orderByDesc('id')->paginate()
+            'restaurants' => Restaurant::with(['types', 'dishes'])->orderByDesc('id')->paginate(12)
         ]);
     }
 
