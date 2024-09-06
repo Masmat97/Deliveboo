@@ -21,7 +21,7 @@
                 <div class="card-footer text-center">
                     <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary p-1">View Details</a>
                     <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning p-1">Edit</a>
-                    <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
+                    <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Sei sicuro di eliminare questo piatto?')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger p-1">Delete</button>
