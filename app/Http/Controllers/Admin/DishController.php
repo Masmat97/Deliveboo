@@ -89,6 +89,14 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
+        $authorizedRestaurantIds = Restaurant::where('user_id', auth()->id())->pluck('id');
+
+        if (!$authorizedRestaurantIds->contains($dish->restaurant_id)) {
+
+            abort(403); // Non autorizzato a aggiornare questo piatto
+
+        }
+
         return view('admin.dishes.edit', compact('dish'));
     }
 
@@ -97,6 +105,9 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
+
+
+
         $data = $request->validate([
             'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/u',
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
