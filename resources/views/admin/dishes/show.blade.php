@@ -13,6 +13,6 @@
 																@endif --}}
 
 												</div>
-												<p class="mt-4"><b>Ingredient:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e($dish->ingredient))) !!}</p>
-												<p class="mt-4"><b>Price:</b> {{ $dish->price }} </p>
+												<p class="mt-4"><b>Ingredienti:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e($dish->ingredient))) !!}</p>
+												<p class="mt-4"><b>Prezzo:</b> {{ $dish->price }} </p>
 								@endsection

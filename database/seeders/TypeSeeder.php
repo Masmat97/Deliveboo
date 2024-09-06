@@ -14,23 +14,23 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         $newType = new Type();
-        $newType->name = 'Italian';
+        $newType->name = 'Italiano';
         $newType->save();
 
         $newType1 = new Type();
-        $newType1->name = 'Japanese';
+        $newType1->name = 'Giapponese';
         $newType1->save();
 
         $newType2 = new Type();
-        $newType2->name = 'Indian';
+        $newType2->name = 'Indiano';
         $newType2->save();
 
         $newType3 = new Type();
-        $newType3->name = 'Seafood';
+        $newType3->name = 'Mare';
         $newType3->save();
 
         $newType4 = new Type();
-        $newType4->name = 'American';
+        $newType4->name = 'Americano';
         $newType4->save();
 
         $newType5 = new Type();
@@ -38,7 +38,7 @@ class TypeSeeder extends Seeder
         $newType5->save();
 
         $newType6 = new Type();
-        $newType6->name = 'Middle Eastern';
+        $newType6->name = 'Medio Oriente';
         $newType6->save();
 
         $newType7 = new Type();
@@ -46,19 +46,19 @@ class TypeSeeder extends Seeder
         $newType7->save();
 
         $newType8 = new Type();
-        $newType8->name = 'Chinese';
+        $newType8->name = 'Cinese';
         $newType8->save();
 
         $newType9 = new Type();
-        $newType9->name = 'Mexican';
+        $newType9->name = 'Messicano';
         $newType9->save();
 
         $newType10 = new Type();
-        $newType10->name = 'French';
+        $newType10->name = 'Francese';
         $newType10->save();
 
         $newType11 = new Type();
-        $newType11->name = 'Greek';
+        $newType11->name = 'Greco';
         $newType11->save();
 
         $newType12 = new Type();
@@ -66,31 +66,31 @@ class TypeSeeder extends Seeder
         $newType12->save();
 
         $newType13 = new Type();
-        $newType13->name = 'Vietnamese';
+        $newType13->name = 'vietnamita';
         $newType13->save();
 
         $newType14 = new Type();
-        $newType14->name = 'Korean';
+        $newType14->name = 'Coreano';
         $newType14->save();
 
         $newType15 = new Type();
-        $newType15->name = 'Spanish';
+        $newType15->name = 'Spagnolo';
         $newType15->save();
 
         $newType16 = new Type();
-        $newType16->name = 'German';
+        $newType16->name = 'Tedesco';
         $newType16->save();
 
         $newType17 = new Type();
-        $newType17->name = 'Brazilian';
+        $newType17->name = 'Brasiliano';
         $newType17->save();
 
         $newType18 = new Type();
-        $newType18->name = 'Argentine';
+        $newType18->name = 'Argentino';
         $newType18->save();
 
         $newType19 = new Type();
-        $newType19->name = 'Peruvian';
+        $newType19->name = 'Peruviano';
         $newType19->save();
 
         $newType20 = new Type();

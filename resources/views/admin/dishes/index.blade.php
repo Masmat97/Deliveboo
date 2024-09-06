@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center p-4">My Dishes</h1>
+    <h1 class="text-center p-4">I miei piatti</h1>
     <div class="card_container d-flex flex-wrap justify-content-center align-items-center">
         @foreach ($dishes as $dish)
             <div class="card w-22rem h-40rem m-1 p-1 mb-5" style="background-color: rgba(255, 255, 255, 0.118)">
@@ -16,21 +16,21 @@
                             <img class="img-fluid w-100 h-100 object-fit-cover" src="{{ asset('storage/' . $dish->image) }}" alt="">
                         @endif
                     </div>
-                    <p class="mt-4"><b>Ingredient:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e(Str::limit($dish->ingredient, 100, ' [Read more]')))) !!}</p>
+                    <p class="mt-4"><b>Ingredienti:</b> {!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e(Str::limit($dish->ingredient, 100, ' [Read more]')))) !!}</p>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary p-1">View Details</a>
-                    <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning p-1">Edit</a>
+                    <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary p-1">Visualizza i dettagli</a>
+                    <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning p-1">Modificare</a>
                     <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger p-1">Delete</button>
+                        <button type="submit" class="btn btn-danger p-1">Eliminare</button>
                     </form>
                     <!-- Form per aggiungere al carrello -->
                     <form action="{{ route('cart.add', $dish->id) }}" method="POST" class="d-inline">
                         @csrf
                         <input type="hidden" name="quantity" value="1"> <!-- Puoi permettere all'utente di scegliere la quantità -->
-                        <button type="submit" class="btn btn-success p-1">Add to Cart</button>
+                        <button type="submit" class="btn btn-success p-1">Aggiungi al carrello</button>
                     </form>
                 </div>
             </div>

@@ -17,67 +17,67 @@ class UserSeeder extends Seeder
         // Array di utenti da creare
         $users = [
             [
-                'name' => 'La Bella Vita Restaurant',
+                'name' => 'La Bella Vita',
                 'email' => 'labellavita@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Il Pagliaccio Restaurant',
+                'name' => 'Il Pagliaccio',
                 'email' => 'ilpagliaccio@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Sushi Ko Restaurant',
+                'name' => 'Sushi Ko',
                 'email' => 'sushiko@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Tandoori Nights Restaurant',
+                'name' => 'Tandoori Nights',
                 'email' => 'tandoorinights@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'La Rosetta Restaurant',
+                'name' => 'La Rosetta',
                 'email' => 'larosetta@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Burger Bar Restaurant',
+                'name' => 'Burger Bar ',
                 'email' => 'burgerbar@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'La Gensola Restaurant',
+                'name' => 'La Gensola ',
                 'email' => 'lagensola@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Kebabish Restaurant',
+                'name' => 'Kebabish',
                 'email' => 'kebabish@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'La Campana Restaurant',
+                'name' => 'La Campana',
                 'email' => 'lacampana@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Sakura Restaurant',
+                'name' => 'Sakura',
                 'email' => 'sakura@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'La Carbonara Restaurant',
+                'name' => 'La Carbonara',
                 'email' => 'lacarbonara@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Tacos el Fogoncito Restaurant',
+                'name' => 'Tacos el Fogoncito',
                 'email' => 'tacoselfogoncito@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'La Galette Restaurant',
+                'name' => 'La Galette',
                 'email' => 'lagalette@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
@@ -87,82 +87,82 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Miyabi Restaurant',
+                'name' => 'Miyabi',
                 'email' => 'miyabi@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Romakinho Restaurant',
+                'name' => 'Romakinho',
                 'email' => 'romakinho@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Pad Thai Kung Restaurant',
+                'name' => 'Pad Thai Kung',
                 'email' => 'padthaikung@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'McDonald Restaurant',
+                'name' => 'McDonald',
                 'email' => 'mcdonald@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Burger King  Restaurant',
+                'name' => 'Burger King',
                 'email' => 'burgerking@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Old Wild West  Restaurant',
+                'name' => 'Old Wild West',
                 'email' => 'oldwildwest@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Ali Baba  Restaurant',
+                'name' => 'Ali Baba',
                 'email' => 'alibaba@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Greco Romano  Restaurant',
+                'name' => 'Greco Romano',
                 'email' => 'grecoromano@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'El Pueblo Bistrot Sede Cipro  Restaurant',
+                'name' => 'El Pueblo Bistrot Sede Cipro',
                 'email' => 'elpueblo@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Greco Romano  Restaurant',
+                'name' => 'Greco Romano',
                 'email' => 'grecoromano@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Pequeño Atypical Tapas Bar  Restaurant',
+                'name' => 'Pequeño Atypical Tapas Bar',
                 'email' => 'pequeño@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Inka Chicken Restaurant',
+                'name' => 'Inka Chicken',
                 'email' => 'inka@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Dejavu Restaurant',
+                'name' => 'Dejavu',
                 'email' => 'dejavu@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Poke House Restaurant',
+                'name' => 'Poke House',
                 'email' => 'pokehouse@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'Cantina Tirolese Restaurant',
+                'name' => 'Cantina Tirolese ',
                 'email' => 'cantinatirolese@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
             [
-                'name' => 'I Monticiani Restaurant',
+                'name' => 'I Monticiani',
                 'email' => 'imonticiani@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
