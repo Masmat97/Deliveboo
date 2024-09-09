@@ -66,7 +66,7 @@ class TypeSeeder extends Seeder
         $newType12->save();
 
         $newType13 = new Type();
-        $newType13->name = 'vietnamita';
+        $newType13->name = 'Vietnamita';
         $newType13->save();
 
         $newType14 = new Type();
