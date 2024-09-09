@@ -1,15 +1,15 @@
 @extends('layouts.app')
+
 @section('content')
     <div class="container">
         <div class="row pb-5 pt-3">
             <div class="col-12">
-                <h1>Aggiungi il tuo Ristorante</h1>
+                <h1 class="text-center">Aggiungi il tuo Ristorante</h1>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-sm-10 col-12">
                 <form method="POST" action="{{ route('admin.restaurants.store') }}" enctype="multipart/form-data">
                     @csrf
 
@@ -57,7 +57,7 @@
                         <label for="language" class="form-label fw-bold">Tipologia: *</label>
                         <div class="check-box d-flex flex-wrap" id="tipologia-checkbox">
                             @foreach ($types as $type)
-                                <span class="" style="width: 25% ">
+                                <span class="col-md-3 col-sm-4 col-6">
                                     <input type="checkbox" name="types[]" value="{{ $type->id }}"
                                         @if (in_array($type->id, old('types', []))) checked @endif>
                                     <label>{{ $type->name }}</label>
