@@ -39,25 +39,26 @@
                                 }
 
                                 fetch('/checkout', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                                    },
-                                    body: JSON.stringify({
-                                        paymentMethodNonce: payload.nonce
-                                    })
-                                }).then(function (response) {
-                                    return response.json();
-                                }).then(function (data) {
-                                    if (data.success) {
-                                        alert('Pagamento effettuato con successo!');
-                                    } else {
-                                        alert('Errore nel pagamento: ' + data.error);
-                                    }
-                                }).catch(function (error) {
-                                    console.error('Errore nella richiesta di pagamento:', error);
-                                });
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                },
+                                body: JSON.stringify({
+                                    paymentMethodNonce: payload.nonce
+                                })
+                            }).then(function (response) {
+                                return response.json();
+                            }).then(function (data) {
+                                if (data.success) {
+                                    alert('Pagamento effettuato con successo!');
+                                } else {
+                                    alert('Errore nel pagamento: ' + (data.error || 'Errore sconosciuto'));
+                                }
+                            }).catch(function (error) {
+                                console.error('Errore nella richiesta di pagamento:', error);
+                                alert('Errore nella richiesta di pagamento. Controlla la console per dettagli.');
+                            });
                             });
                         });
                     });
