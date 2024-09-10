@@ -10,11 +10,11 @@ class PaymentController extends Controller
     // Metodo per generare il token client
     public function generateToken()
     {
-        $gateway = new \Braintree\Gateway([
-            'environment' => 'sandbox', // Usa 'production' in produzione
-            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
-            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
-            'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
+        $gateway = new Gateway([
+            'environment' => 'sandbox',
+            'merchantId' => 'f7mwmm2tcm6gjnst',
+            'publicKey' => 'nwnznccj6shknt8q',
+            'privateKey' => '577af64e91b7f6c520c5b6fc6ed73af7',
         ]);
 
         $clientToken = $gateway->clientToken()->generate();
@@ -24,22 +24,31 @@ class PaymentController extends Controller
     // Metodo per visualizzare la pagina di checkout
     public function showCheckout()
     {
-        return view('payment.checkout'); // Restituisce la vista 'checkout' nella cartella 'payment'
+        $gateway = new Gateway([
+            'environment' => 'sandbox',
+            'merchantId' => 'f7mwmm2tcm6gjnst',
+            'publicKey' => 'nwnznccj6shknt8q',
+            'privateKey' => '577af64e91b7f6c520c5b6fc6ed73af7',
+        ]);
+
+        $clientToken = $gateway->clientToken()->generate();
+
+        return view('payment.checkout', ['clientToken' => $clientToken]);
     }
 
     // Metodo per elaborare la transazione
     public function checkout(Request $request)
     {
         try {
-            $gateway = new \Braintree\Gateway([
-                'environment' => config('services.braintree.environment'),
-                'merchantId' => config('services.braintree.merchantId'),
-                'publicKey' => config('services.braintree.publicKey'),
-                'privateKey' => config('services.braintree.privateKey'),
+            $gateway = new Gateway([
+                'environment' => 'sandbox',
+                'merchantId' => 'f7mwmm2tcm6gjnst',
+                'publicKey' => 'nwnznccj6shknt8q',
+                'privateKey' => '577af64e91b7f6c520c5b6fc6ed73af7',
             ]);
-    
+
             $nonceFromTheClient = $request->paymentMethodNonce;
-    
+
             $result = $gateway->transaction()->sale([
                 'amount' => '10.00', // Imposta l'importo del pagamento
                 'paymentMethodNonce' => $nonceFromTheClient,
@@ -47,14 +56,13 @@ class PaymentController extends Controller
                     'submitForSettlement' => true,
                 ],
             ]);
-    
+
             if ($result->success) {
                 return response()->json(['success' => true, 'transaction' => $result->transaction]);
             } else {
                 return response()->json(['success' => false, 'error' => $result->message]);
             }
         } catch (\Exception $e) {
-            // Gestione dell'errore 500, ritorna un messaggio JSON per evitare il problema '<' non valido
             return response()->json(['success' => false, 'error' => 'Errore durante il pagamento: ' . $e->getMessage()], 500);
         }
     }
