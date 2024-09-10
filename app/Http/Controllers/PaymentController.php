@@ -2,60 +2,60 @@
 
 namespace App\Http\Controllers;
 
-use Braintree\Gateway;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Braintree\Gateway;
 
 class PaymentController extends Controller
 {
-    protected $gateway;
-
-    public function __construct()
+    // Metodo per generare il token client
+    public function generateToken()
     {
-        $this->gateway = new Gateway([
-            'environment' => env('BRAINTREE_ENV'),
+        $gateway = new \Braintree\Gateway([
+            'environment' => 'sandbox', // Usa 'production' in produzione
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),
             'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
             'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
         ]);
+
+        $clientToken = $gateway->clientToken()->generate();
+        return response()->json(['clientToken' => $clientToken]);
     }
 
+    // Metodo per visualizzare la pagina di checkout
     public function showCheckout()
     {
-        $cart = Session::get('cart', []);
-        $total = array_reduce($cart, function ($carry, $item) {
-            return $carry + ($item['price'] * $item['quantity']);
-        }, 0);
-
-        $token = $this->gateway->clientToken()->generate();
-
-        return view('checkout.show', [
-            'token' => $token,
-            'total' => $total
-        ]);
+        return view('payment.checkout'); // Restituisce la vista 'checkout' nella cartella 'payment'
     }
 
-    public function processPayment(Request $request)
+    // Metodo per elaborare la transazione
+    public function checkout(Request $request)
     {
-        $nonce = $request->input('payment_method_nonce');
-        $amount = $request->input('amount');
+        try {
+            $gateway = new \Braintree\Gateway([
+                'environment' => config('services.braintree.environment'),
+                'merchantId' => config('services.braintree.merchantId'),
+                'publicKey' => config('services.braintree.publicKey'),
+                'privateKey' => config('services.braintree.privateKey'),
+            ]);
     
-        $result = $this->gateway->transaction()->sale([
-            'amount' => $amount,
-            'paymentMethodNonce' => $nonce,
-            'options' => [
-                'submitForSettlement' => true
-            ]
-        ]);
+            $nonceFromTheClient = $request->paymentMethodNonce;
     
-        if ($result->success) {
-            // Pagamento riuscito
-            Session::forget('cart');
-            return redirect()->route('checkout.show')->with('success', 'Pagamento effettuato con successo!');
-        } else {
-            // Log degli errori
-            \Log::error('Braintree Payment Error: ' . json_encode($result->errors));
-            return redirect()->route('checkout.show')->with('error', 'Pagamento fallito. Riprova.');
+            $result = $gateway->transaction()->sale([
+                'amount' => '10.00', // Imposta l'importo del pagamento
+                'paymentMethodNonce' => $nonceFromTheClient,
+                'options' => [
+                    'submitForSettlement' => true,
+                ],
+            ]);
+    
+            if ($result->success) {
+                return response()->json(['success' => true, 'transaction' => $result->transaction]);
+            } else {
+                return response()->json(['success' => false, 'error' => $result->message]);
+            }
+        } catch (\Exception $e) {
+            // Gestione dell'errore 500, ritorna un messaggio JSON per evitare il problema '<' non valido
+            return response()->json(['success' => false, 'error' => 'Errore durante il pagamento: ' . $e->getMessage()], 500);
         }
     }
 }

@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Admin\RestaurantController;
-use App\Http\Controllers\Admin\OrderController; // Import del controller degli ordini
-use App\Http\Controllers\CartController; // Import del CartController
-use App\Http\Controllers\PaymentController; // Import del PaymentController
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 use App\Models\Restaurant;
 
 /*
@@ -43,13 +43,18 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{dish}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove/{dish}', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+Route::get('/get-cart-total', [CartController::class, 'getTotal']); // Corretto
 
 // Rotte per gestire il pagamento
 Route::middleware('auth')->group(function () {
     // Rotta per ottenere il token di pagamento
+    Route::get('/payment/token', [PaymentController::class, 'generateToken'])->name('payment.token');
+    
+    // Rotta per visualizzare la pagina di checkout
     Route::get('/checkout', [PaymentController::class, 'showCheckout'])->name('checkout.show');
+    
     // Rotta per processare il pagamento
-    Route::post('/checkout', [PaymentController::class, 'processPayment'])->name('checkout.process');
+    Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout.process');
 });
 
 require __DIR__ . '/auth.php';
