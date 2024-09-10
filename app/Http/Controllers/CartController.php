@@ -86,4 +86,14 @@ class CartController extends Controller
         // Reindirizza alla pagina del carrello con un messaggio di successo
         return redirect()->route('cart.index')->with('success', 'Carrello svuotato con successo!');
     }
+
+    public function getTotal()
+    {
+        $cart = Session::get('cart', []);
+        $total = array_reduce($cart, function ($carry, $item) {
+            return $carry + ($item['price'] * $item['quantity']);
+        }, 0);
+        
+        return response()->json(['total' => number_format($total, 2)]);
+    }
 }

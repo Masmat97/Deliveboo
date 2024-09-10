@@ -43,6 +43,7 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{dish}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove/{dish}', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+Route::get('/get-cart-total', [CartController::class, 'getTotal']); // Corretto
 
 // Rotte per gestire il pagamento
 Route::middleware('auth')->group(function () {

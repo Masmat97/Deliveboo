@@ -39,17 +39,21 @@
             </tbody>
         </table>
 
-        <div class="text-right">
-            <h3>Totale: {{ $total }} €</h3>
-            <a href="{{ route('checkout.show') }}" class="btn btn-primary">Procedi al pagamento</a> 
+        <div class="d-flex justify-content-between mt-3">
+            <a href="{{ route('checkout.show') }}" class="btn btn-primary">Procedi al pagamento</a>
+            
+            <form action="{{ route('cart.clear') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-warning">Svuota Carrello</button>
+            </form>
         </div>
+        
+        <div class="text-right mt-3">
+            <h3>Totale: {{ $total }} €</h3>
+        </div>
+        
     @else
         <p>Il tuo carrello è vuoto.</p>
     @endif
-
-    <form action="{{ route('cart.clear') }}" method="POST">
-        @csrf
-        <button type="submit" class="btn btn-warning">Svuota Carrello</button>
-    </form>
 </div>
 @endsection

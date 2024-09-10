@@ -8,6 +8,12 @@
 <body>
     <h1>Pagamento Checkout</h1>
 
+    <!-- Sezione per visualizzare il totale del pagamento -->
+    <div id="payment-total">
+        <p>Total: <span id="total-amount">Caricamento...</span></p>
+        <a href="#total-amount" id="total-link">Vai al Totale</a>
+    </div>
+
     <!-- Contenitore per il Braintree Drop-in UI -->
     <div id="dropin-container"></div>
 
@@ -19,6 +25,17 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Recupera il totale dal server (Laravel) e aggiorna l'elemento #total-amount
+            fetch('/get-cart-total')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('total-amount').textContent = `${data.total} €`;
+                })
+                .catch(error => {
+                    console.error('Errore nel recupero del totale:', error);
+                    document.getElementById('total-amount').textContent = 'Errore nel caricamento';
+                });
+
             fetch('/payment/token')
                 .then(response => response.json())
                 .then(data => {
@@ -39,26 +56,26 @@
                                 }
 
                                 fetch('/checkout', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                                },
-                                body: JSON.stringify({
-                                    paymentMethodNonce: payload.nonce
-                                })
-                            }).then(function (response) {
-                                return response.json();
-                            }).then(function (data) {
-                                if (data.success) {
-                                    alert('Pagamento effettuato con successo!');
-                                } else {
-                                    alert('Errore nel pagamento: ' + (data.error || 'Errore sconosciuto'));
-                                }
-                            }).catch(function (error) {
-                                console.error('Errore nella richiesta di pagamento:', error);
-                                alert('Errore nella richiesta di pagamento. Controlla la console per dettagli.');
-                            });
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                    },
+                                    body: JSON.stringify({
+                                        paymentMethodNonce: payload.nonce
+                                    })
+                                }).then(function (response) {
+                                    return response.json();
+                                }).then(function (data) {
+                                    if (data.success) {
+                                        alert('Pagamento effettuato con successo!');
+                                    } else {
+                                        alert('Errore nel pagamento: ' + (data.error || 'Errore sconosciuto'));
+                                    }
+                                }).catch(function (error) {
+                                    console.error('Errore nella richiesta di pagamento:', error);
+                                    alert('Errore nella richiesta di pagamento. Controlla la console per dettagli.');
+                                });
                             });
                         });
                     });
