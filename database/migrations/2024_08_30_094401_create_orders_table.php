@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('client_address');
             $table->decimal('total');
             $table->string('email');
-            $table->decimal('phone_number');
+            $table->integer('phone_number');
             $table->timestamps();
         });
     }
