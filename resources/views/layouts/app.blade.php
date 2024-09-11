@@ -49,6 +49,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.orders.index') }}">{{ __('Ordini') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.statistics.index') }}">{{ __('Statistiche') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
