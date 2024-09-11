@@ -32,7 +32,7 @@ class Order extends Model
     public function dishes()
     {
         return $this->belongsToMany(Dish::class, 'order_dish')
-                    ->withPivot('quantity')
-                    ->withTimestamps();
+            ->withPivot('quantity')
+            ->withTimestamps();
     }
 }

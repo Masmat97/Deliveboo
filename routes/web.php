@@ -46,15 +46,13 @@ Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear')
 Route::get('/get-cart-total', [CartController::class, 'getTotal']); // Corretto
 
 // Rotte per gestire il pagamento
-Route::middleware('auth')->group(function () {
-    // Rotta per ottenere il token di pagamento
-    Route::get('/payment/token', [PaymentController::class, 'generateToken'])->name('payment.token');
-    
-    // Rotta per visualizzare la pagina di checkout
-    Route::get('/checkout', [PaymentController::class, 'showCheckout'])->name('checkout.show');
-    
-    // Rotta per processare il pagamento
-    Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout.process');
-});
+// Rotta per ottenere il token di pagamento
+Route::get('/payment/token', [PaymentController::class, 'generateToken'])->name('payment.token');
+
+// Rotta per visualizzare la pagina di checkout
+Route::get('/checkout', [PaymentController::class, 'showCheckout'])->name('checkout.show');
+
+// Rotta per processare il pagamento
+Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout.process');
 
 require __DIR__ . '/auth.php';
