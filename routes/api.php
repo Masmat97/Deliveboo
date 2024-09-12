@@ -23,7 +23,7 @@ use PhpParser\Node\Expr\PostDec;
 Route::get('restaurants', [RestaurantController::class, 'index']);
 Route::get('types', [TypeController::class, 'index']);
 
-Route::get('restaurants/{name}', [RestaurantController::class, 'show']);
+Route::get('restaurants/{slug}', [RestaurantController::class, 'show']);
 Route::get('types/restaurant', [TypeController::class, 'show']);
 
 Route::post('payment', [PaymentController::class, 'store']);

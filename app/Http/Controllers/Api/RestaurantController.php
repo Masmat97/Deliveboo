@@ -15,15 +15,14 @@ class RestaurantController extends Controller
             'restaurants' => Restaurant::with(['types', 'dishes'])->orderByDesc('id')->paginate(12)
         ]);
     }
-
-    public function show($name)
+    public function show($slug)
     {
-        $restaurants = Restaurant::with(['types', 'dishes'])->where('name', $name)->first();
+        $restaurant = Restaurant::with(['types', 'dishes'])->where('slug', $slug)->first();
 
-        if ($restaurants) {
+        if ($restaurant) {
             return response()->json([
                 'success' => true,
-                'restaurants' => $restaurants
+                'restaurants' => $restaurant// Return an array with a single restaurant
             ]);
         } else {
             return response()->json([
@@ -31,6 +30,7 @@ class RestaurantController extends Controller
                 'message' => "404 not found"
             ]);
         }
-        // Remove the dd() function as it's not needed here
     }
-}
+
+    }
+
