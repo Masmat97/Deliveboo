@@ -4,21 +4,25 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
-use App\Models\Dish;
 
 class StatisticsController extends Controller
 {
     public function index()
     {
+        // Recupera tutti gli ordini con i piatti associati del ristorante con id 3
         $ordersDetails = Order::whereHas('dishes', function($query) {
             $query->where('restaurant_id', 3);
-        })->with(['dishes' => function($query) {
-            $query->where('restaurant_id', 3);
-        }])->get();
+        })->with(['dishes'])->get();
 
-        // Recupera tutti i piatti del restaurant_id = 3
-        $dishes = Dish::where('restaurant_id', 3)->get();
+        // Calcola il totale di ogni ordine basato sui piatti ordinati
+        foreach ($ordersDetails as $order) {
+            $total = 0;
+            foreach ($order->dishes as $dish) {
+                $total += $dish->pivot->quantity * $dish->price; // Assumendo che esista una relazione many-to-many con i piatti che include 'quantity' e 'price'
+            }
+            $order->calculated_total = $total; // Aggiunge un attributo temporaneo per il totale calcolato
+        }
 
-        return view('admin.statistics.index', compact('ordersDetails', 'dishes'));
+        return view('admin.statistics.index', compact('ordersDetails'));
     }
 }
