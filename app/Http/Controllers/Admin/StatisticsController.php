@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Faker\Factory as Faker;
+use App\Models\Order;
+use App\Models\Dish;
 
 class StatisticsController extends Controller
 {
     public function index()
     {
-        $faker = Faker::create();
+        $ordersDetails = Order::whereHas('dishes', function($query) {
+            $query->where('restaurant_id', 3);
+        })->with(['dishes' => function($query) {
+            $query->where('restaurant_id', 3);
+        }])->get();
 
-        $ordersDetails = collect()->times(10, function ($index) use ($faker) {
-            return (object)[
-                'created_at' => $faker->dateTimeBetween('2024-01-01', '2024-12-31'),
-                'client_name' => $faker->name,
-                'total' => $faker->numberBetween(100, 1000)
-            ];
-        });
+        // Recupera tutti i piatti del restaurant_id = 3
+        $dishes = Dish::where('restaurant_id', 3)->get();
 
-        return view('admin.statistics.index', compact('ordersDetails'));
+        return view('admin.statistics.index', compact('ordersDetails', 'dishes'));
     }
 }
