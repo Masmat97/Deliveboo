@@ -1,29 +1,25 @@
-
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <h1>Statistiche degli Ordini</h1>
-    <div class="mt-4">
-        <h3>Riepilogo Annuale</h3>
-        <table class="table table-bordered">
-            <thead>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Nome Cliente</th>
+                <th>Totale</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($ordersDetails as $order)
                 <tr>
-                    <th>Anno</th>
-                    <th>Numero di Ordini</th>
-                    <th>Totale Vendite (€)</th>
+                    <td>{{ $order->created_at->format('d/m/Y') }}</td>
+                    <td>{{ $order->client_name }}</td>
+                    <td>€{{ number_format($order->total, 2) }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($yearlyStats as $year => $stats)
-                <tr>
-                    <td>{{ $year }}</td>
-                    <td>{{ $stats['orders_count'] }}</td>
-                    <td>{{ number_format($stats['total_sales'], 2) }}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 @endsection

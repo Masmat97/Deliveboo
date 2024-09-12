@@ -1,29 +1,24 @@
 <?php
 
-// app/Http/Controllers/Admin/StatisticsController.php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Order;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class StatisticsController extends Controller
 {
     public function index()
     {
-        // Calcolare le statistiche annuali
-        $yearlyStats = Order::select(
-            DB::raw('year(created_at) as year'),
-            DB::raw('count(*) as orders_count'),
-            DB::raw('sum(total) as total_sales')
-        )
-            ->groupBy('year')
-            ->orderBy('year', 'desc')
-            ->get()
-            ->keyBy('year');
+        $faker = Faker::create();
 
-        return view('admin.statistics.index', compact('yearlyStats'));
+        $ordersDetails = collect()->times(10, function ($index) use ($faker) {
+            return (object)[
+                'created_at' => $faker->dateTimeBetween('2024-01-01', '2024-12-31'),
+                'client_name' => $faker->name,
+                'total' => $faker->numberBetween(100, 1000)
+            ];
+        });
+
+        return view('admin.statistics.index', compact('ordersDetails'));
     }
 }
