@@ -180,7 +180,7 @@ class RestaurantSeeder extends Seeder
                 'types' => [10, 16]
             ],
             [
-                'name' => ' Pequeño Atypical Tapas Bar',
+                'name' => 'Pequeño Atypical Tapas Bar',
                 'address' => 'Largo Somalia 39, 00199 Roma Italia',
                 'p_iva' => 'IT2222222222',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/f6/5c/31/pequeno-atypical-tapas.jpg?w=1200&h=-1&s=1',
@@ -201,7 +201,7 @@ class RestaurantSeeder extends Seeder
                 'types' => [1, 21, 26]
             ],
             [
-                'name' => 'Poke House - Roma',
+                'name' => 'Poke House Roma',
                 'address' => 'Via del Gambero, 36 Roma RM, Italy',
                 'p_iva' => 'IT5555555555',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/a1/e7/f5/house-bowls.jpg?w=1200&h=-1&s=1',
