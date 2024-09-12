@@ -31,13 +31,15 @@ class PaymentController extends Controller
 
 
         foreach ($data as $item) {
-            $newOrder->dishes()->attach($item['dish']['id'], [
+            $dish = Dish::find($item['dish']['id']);
 
-                'price' => $item['dish']['price'], // Prezzo del piatto
+            $newOrder->dishes()->attach($dish['id'], [
+
+                'price' => $dish['price'], // Prezzo del piatto
 
                 'quantity' => $item['quantity'], // Quantità casuale per piatto
 
-                'name_dish' => $item['dish']['name_dish'], // Nome del piatto
+                'name_dish' => $dish['name'], // Nome del piatto
 
             ]);
         }
