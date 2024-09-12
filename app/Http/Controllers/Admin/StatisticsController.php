@@ -17,12 +17,12 @@ class StatisticsController extends Controller
         $yearlyStats = Order::select(
             DB::raw('year(created_at) as year'),
             DB::raw('count(*) as orders_count'),
-            DB::raw('sum(total_amount) as total_sales')
+            DB::raw('sum(total) as total_sales')
         )
-        ->groupBy('year')
-        ->orderBy('year', 'desc')
-        ->get()
-        ->keyBy('year');
+            ->groupBy('year')
+            ->orderBy('year', 'desc')
+            ->get()
+            ->keyBy('year');
 
         return view('admin.statistics.index', compact('yearlyStats'));
     }

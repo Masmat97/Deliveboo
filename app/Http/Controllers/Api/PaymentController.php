@@ -30,14 +30,17 @@ class PaymentController extends Controller
         $newOrder->save();
 
 
-        $dishIds = [];
-
         foreach ($data as $item) {
+            $newOrder->dishes()->attach($item['dish']['id'], [
 
-            $dishIds[] = $item['dish']['id'];
+                'price' => $item['dish']['price'], // Prezzo del piatto
+
+                'quantity' => $item['quantity'], // Quantità casuale per piatto
+
+                'name_dish' => $item['dish']['name_dish'], // Nome del piatto
+
+            ]);
         }
-        $newOrder->dishes()->sync($dishIds);
-
         return response()->json([
             'success' => true,
             'piatti' => $data

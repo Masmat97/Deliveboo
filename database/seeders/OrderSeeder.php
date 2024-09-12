@@ -15,22 +15,34 @@ class OrderSeeder extends Seeder
         $restaurants = Restaurant::all();
 
         foreach ($restaurants as $restaurant) {
+
+
             for ($i = 0; $i < 50; $i++) { // Genera 50 ordini per ristorante
-                $order = new Order();
-                $order->restaurant_id = $restaurant->id;
-                $order->user_id = rand(1, 50); // Assumendo che ci siano 50 utenti
-                $order->total_amount = 0;
-                $order->status = ['pending', 'in preparation', 'completed'][rand(0, 2)];
-                $order->save();
+
+                $newOrder = new Order();
+                $newOrder->date = date('Y-m-d');
+                $newOrder->client_name = 'Giuseppe';
+                $newOrder->client_address = 'Via ciao';
+                $newOrder->email = 'gerg@jmo.it';
+                $newOrder->phone_number = '33333333';
+                $newOrder->total = '34';
+                $newOrder->save();
 
                 // Aggiunge piatti casuali all'ordine
-                $dishes = $restaurant->dishes->random(rand(2, 5));
+                $dishes = $restaurant->dishes->random(rand(2, 3));
+
                 foreach ($dishes as $dish) {
-                    $quantity = rand(1, 3); // Quantità casuale per piatto
-                    $order->dishes()->attach($dish->id, ['quantity' => $quantity]);
-                    $order->total_amount += $dish->price * $quantity;
+                    $quantity = mt_rand(1, 10);
+                    $newOrder->dishes()->attach($dish->id, [
+
+                        'price' => $dish->price, // Prezzo del piatto
+
+                        'quantity' => $quantity, // Quantità casuale per piatto
+
+                        'name_dish' => $dish->name, // Nome del piatto
+
+                    ]);
                 }
-                $order->save();
             }
         }
     }

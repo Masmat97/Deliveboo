@@ -12,10 +12,13 @@ class OrderController extends Controller
     public function index()
     {
         // Recupera solo gli ordini del ristorante associato all'utente autenticato
-        $orders = Order::where('restaurant_id', Auth::user()->restaurant->id)
-                        ->with('user', 'dishes') // Carica i dettagli degli utenti e dei piatti
-                        ->orderBy('created_at', 'desc') // Ordina per data di creazione
-                        ->get();
+        $orders = Order::with(['dishes' => function ($query) {
+
+            $query->where('restaurant_id', Auth::user()->restaurant->id);
+        }])
+            ->with('dishes') // Carica i dettagli degli utenti e dei piatti
+            ->orderBy('created_at', 'desc') // Ordina per data di creazione
+            ->get();
 
         return view('admin.orders.index', compact('orders'));
     }

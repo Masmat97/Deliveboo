@@ -20,7 +20,8 @@ class Order extends Model
 
     // Relazione con il modello Dish (i piatti ordinati)
     public function dishes()
+
     {
-        return $this->belongsToMany(Dish::class);
+        return $this->belongsToMany(Dish::class, 'order_dish')->withPivot('name_dish', 'quantity', 'price');;
     }
 }
