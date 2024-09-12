@@ -28,7 +28,7 @@ class TypeController extends Controller
             ], 400);
         }
 
-        $restaurants = Restaurant::where(function ($query) use ($types) {
+        $restaurants = Restaurant::with(['types', 'dishes'])->where(function ($query) use ($types) {
             foreach ($types as $type) {
                 $query->whereHas('types', function ($subQuery) use ($type) {
                     $subQuery->where('name', $type);
