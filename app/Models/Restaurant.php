@@ -13,7 +13,8 @@ class Restaurant extends Model
         'name',
         'address',
         'image',
-        'p_iva'
+        'p_iva',
+        'slug'
     ];
 
     // Definisce la relazione con l'User

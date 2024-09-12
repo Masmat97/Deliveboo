@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class RestaurantSeeder extends Seeder
 {
@@ -176,7 +177,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Sebastiano Ziani, 58, 00136 Roma RM, Italy',
                 'p_iva' => 'IT2222222222',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/e9/66/60/dal-1993-solo-cucina.jpg?w=1200&h=-1&s=1',
-                'types' => [10,16]
+                'types' => [10, 16]
             ],
             [
                 'name' => ' Pequeño Atypical Tapas Bar',
@@ -231,6 +232,7 @@ class RestaurantSeeder extends Seeder
 
             $user = $users[$userIndex % $users->count()];; // Get the next user in the list
 
+
             $restaurant = new Restaurant([
 
                 'name' => $data['name'],
@@ -245,9 +247,15 @@ class RestaurantSeeder extends Seeder
 
             ]);
 
+
+            $restaurant->slug = Str::slug($data['name']); // Compila lo slug
+
+
             $restaurant->save();
 
+
             $restaurant->types()->attach($data['types']);
+
 
             $userIndex++;
         }
