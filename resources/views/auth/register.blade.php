@@ -13,8 +13,8 @@
                             @csrf
 
                             <div class="mb-4 row">
-                                <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }} *</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}
+                                    *</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -108,7 +108,7 @@
                                 <label class="form-label fw-bold" for="image">Immagine *</label>
 
                                 <input id="image" type="file" class="form-control" name="image"
-                                    value="{{ old('image') }}" required>
+                                    value="{{ old('image') }}" required accept="image/*">
 
                                 @error('image')
                                     <div class="alert alert-danger">{{ $message }}</div>
