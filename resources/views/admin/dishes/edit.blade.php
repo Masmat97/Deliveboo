@@ -9,8 +9,8 @@
                 <div class="col-md-8 col-sm-10 col-12">
                     <div class="form-group p-3">
                         <label for="name" class="form-label">Name:*</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ $dish->name }}" required
-                               maxlength="255" minlength="3">
+                        <input type="text" class="form-control" id="name" name="name" value="{{ $dish->name }}"
+                            required maxlength="255" minlength="3">
                         <div id="name-error"></div> <!-- Add this element to display the error message -->
                         @error('name')
                             @if ($message == 'You must enter the name of the dish.')
@@ -22,7 +22,8 @@
                     </div>
                     <div class="form-group p-3">
                         <label for="image" class="form-label">Image:</label>
-                        <input type="file" class="form-control" id="image" name="image" value="{{ $dish->image }}">
+                        <input type="file" class="form-control" id="image" name="image" value="{{ $dish->image }}"
+                            accept="image/*">
                         @error('image')
                             @if ($message == 'The image file cannot be larger than 2MB.')
                                 <div class="alert alert-danger">The image file cannot be larger than 2MB.</div>
@@ -39,14 +40,16 @@
                             @elseif($message == 'Please enter at least one ingredient.')
                                 <div class="alert alert-danger">Please enter at least one ingredient.</div>
                             @elseif($message == 'Ingredient can only contain letters, numbers, and spaces.')
-                                <div class="alert alert-danger">Ingredient contains prohibited characters. Please enter only alphanumeric
+                                <div class="alert alert-danger">Ingredient contains prohibited characters. Please enter only
+                                    alphanumeric
                                     characters and spaces.</div>
                             @endif
                         @enderror
                     </div>
                     <div class="form-group p-3">
                         <label for="price" class="form-label">Price:*</label>
-                        <input type="text" class="form-control" id="price" name="price" value="{{ $dish->price }}" required>
+                        <input type="text" class="form-control" id="price" name="price" value="{{ $dish->price }}"
+                            required>
                         @error('price')
                             @if ($message == 'The price must be greater than 0.')
                                 <div class="alert alert-danger">The price must be greater than 0.</div>

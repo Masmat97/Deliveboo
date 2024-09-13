@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group p-3">
                         <label for="image" class="form-label p-2"><b>Immagine:*</b></label>
-                        <input type="file" class="form-control" id="image" name="image">
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
                         <div id="error-message"></div>
                     </div>
                     <div class="form-group p-3">
@@ -26,7 +26,8 @@
                     </div>
                     <div class="form-group p-3">
                         <label for="price" class="form-label p-2"><b>Prezzo:*</b></label>
-                        <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}">
+                        <input type="text" class="form-control" id="price" name="price"
+                            value="{{ old('price') }}">
                         @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
