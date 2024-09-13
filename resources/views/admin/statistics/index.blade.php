@@ -3,6 +3,8 @@
 @section('content')
 <div class="container">
     <h1>Statistiche degli Ordini</h1>
+    <canvas id="myChart" width="300" height="200"></canvas>
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -30,4 +32,29 @@
         </tbody>
     </table>
 </div>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar', // Puoi scegliere altri tipi come 'line', 'pie', ecc.
+        data: {
+            labels: @json($ordersDetails->pluck('date')),
+            datasets: [{
+                label: 'Totale Vendite',
+                data: @json($ordersDetails->pluck('calculated_total')),
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
 @endsection
