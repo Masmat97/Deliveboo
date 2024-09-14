@@ -1,3 +1,5 @@
+app blade
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -35,26 +37,6 @@
 																				<span class="navbar-toggler-icon"></span>
 																</button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.restaurants.index') }}">{{ __('Ristorante') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.dishes.create') }}">{{ __('+Piatto') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.orders.index') }}">{{ __('Ordini') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                                href="{{ route('admin.statistics.index') }}">{{ __('Statistiche') }}</a>
-                        </li>
-                    </ul>
 																<div class="collapse navbar-collapse" id="navbarSupportedContent">
 																				<!-- Left Side Of Navbar -->
 																				<ul class="navbar-nav me-auto">
@@ -76,24 +58,27 @@
 																								</li>
 																				</ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+																				<!-- Right Side Of Navbar -->
+																				<ul class="navbar-nav ms-auto">
+																								<li class="nav-item">
+																												<a class="nav-link" href="{{ route('cart.index') }}">Carrello</a>
+																								</li>
+																								<!-- Authentication Links -->
+																								@guest
+																												<li class="nav-item">
+																																<a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+																												</li>
+																												@if (Route::has('register'))
+																																<li class="nav-item">
+																																				<a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+																																</li>
+																												@endif
+																								@else
+																												<li class="nav-item dropdown">
+																																<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+																																				data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+																																				{{ Auth::user()->name }}
+																																</a>
 
 																																<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 																																				<a class="dropdown-item"
@@ -122,3 +107,5 @@
 </body>
 
 </html>
+
+
