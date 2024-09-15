@@ -38,7 +38,6 @@
                             method="POST" class="me-2">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="btn btn-success">Segna come Completato</button>
                         </form>
 
                         <form
@@ -46,7 +45,6 @@
                             method="POST">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="btn btn-warning">Segna come In Preparazione</button>
                         </form>
                     </div>
                 </div>
