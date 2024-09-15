@@ -41,7 +41,7 @@ class DishController extends Controller
     public function store(Request $request)
     {
         if (!auth()->check()) {
-            return redirect()->route('login')->with('error', 'You must be logged in to create a dish');
+            return redirect()->route('login')->with('error', 'Devi aver effettuato l accesso per creare un piatto');
         }
         $restaurant = Restaurant::where('user_id', auth()->id())->first();
         $data = $request->validate([
@@ -51,13 +51,13 @@ class DishController extends Controller
             'price' => 'required|numeric|min:0.01',
             'availability' => 'required|in:0,1',
         ], [
-            'price.min' => 'The price must be greater than 0.',
-            'image.max' => 'The image file cannot be larger than 2MB.',
-            'name.required' => 'You must enter the name of the dish.',
-            'name.regex' => 'The name can only contain letters and spaces.',
-            'ingredient.required' => 'Please enter an ingredient.',
+            'price.min' => 'Il prezzo deve essere maggiore di 0.',
+            'image.max' => 'Il file immagine non può essere più grande di 2 MB.',
+            'name.required' => 'Devi inserire il nome del piatto.',
+            'name.regex' => 'Il nome può contenere solo lettere e spazi.',
+            'ingredient.required' => 'Inserisci un ingrediente.',
             'ingredient.min' => 'Please enter at least one ingredient.',
-            'ingredient.regex' => 'Ingredient can only contain letters, numbers, and spaces.',
+            'ingredient.regex' => 'Può contenere solo lettere, numeri e spazi.',
         ]);
 
         if ($request->has('image')) {
@@ -70,7 +70,7 @@ class DishController extends Controller
         $newDish->restaurant_id = $restaurant->id;
         $newDish->save();
 
-        return redirect()->route('admin.dishes.index')->with('success', 'Dish created successfully');
+        return redirect()->route('admin.dishes.index')->with('success', 'Piatto creato con successo');
     }
     /**
      * Display the specified resource.
@@ -115,13 +115,13 @@ class DishController extends Controller
             'price' => 'required|numeric|min:0.01',
             'availability' => 'required|in:0,1',
         ], [
-            'price.min' => 'The price must be greater than 0.',
-            'image.max' => 'The image file cannot be larger than 2MB.',
-            'name.required' => 'You must enter the name of the dish.',
-            'name.regex' => 'The name can only contain letters and spaces.',
-            'ingredient.required' => 'Please enter an ingredient.',
-            'ingredient.min' => 'Please enter at least one ingredient.',
-            'ingredient.regex' => 'Ingredient can only contain letters, numbers, and spaces.',
+            'price.min' => 'Il prezzo deve essere maggiore di 0.',
+            'image.max' => 'Il file immagine non può essere più grande di 2 MB.',
+            'name.required' => 'Devi inserire il nome del piatto.',
+            'name.regex' => 'Il nome può contenere solo lettere e spazi.',
+            'ingredient.required' => 'Inserisci un ingrediente.',
+            'ingredient.min' => 'Inserisci almeno un ingrediente.',
+            'ingredient.regex' => 'Può contenere solo lettere, numeri e spazi.',
         ]);
 
 
@@ -137,7 +137,7 @@ class DishController extends Controller
         $dish->fill($data);
         $dish->save();
 
-        return redirect()->route('admin.dishes.index', $dish)->with('success', 'Dish updated successfully');
+        return redirect()->route('admin.dishes.index', $dish)->with('success', 'Piatto aggiornato con successo');
     }
 
 
