@@ -58,9 +58,7 @@
 
 																				<!-- Right Side Of Navbar -->
 																				<ul class="navbar-nav ms-auto">
-																								<li class="nav-item">
-																												<a class="nav-link" href="{{ route('cart.index') }}">Carrello</a>
-																								</li>
+
 																								<!-- Authentication Links -->
 																								@guest
 																												<li class="nav-item">
