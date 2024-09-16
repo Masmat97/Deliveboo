@@ -8,17 +8,18 @@
                 <div class="col-md-8 col-sm-10 col-12">
                     <div class="form-group p-3">
                         <label for="name" class="form-label p-2"><b>Nome:*</b></label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+                            required>
                         <div id="name-error"></div>
                     </div>
                     <div class="form-group p-3">
                         <label for="image" class="form-label p-2"><b>Immagine:*</b></label>
-                        <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
                         <div id="error-message"></div>
                     </div>
                     <div class="form-group p-3">
                         <label for="ingredient" class="form-label p-2"><b>Ingredienti:*</b></label>
-                        <textarea class="form-control" id="ingredient" name="ingredient">{{ old('ingredient') }}</textarea>
+                        <textarea class="form-control" id="ingredient" name="ingredient" required>{{ old('ingredient') }}</textarea>
                         <p id="message"></p>
                         @error('ingredient')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -26,8 +27,8 @@
                     </div>
                     <div class="form-group p-3">
                         <label for="price" class="form-label p-2"><b>Prezzo:*</b></label>
-                        <input type="text" class="form-control" id="price" name="price"
-                            value="{{ old('price') }}">
+                        <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}"
+                            required>
                         @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
