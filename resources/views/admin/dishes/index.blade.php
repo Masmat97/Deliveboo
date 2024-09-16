@@ -30,11 +30,10 @@
                                 {{-- <td data-label="Ingredienti">{!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e(Str::limit($dish->ingredient, 100, ' [Read more]')))) !!}</td> --}}
                                 <td data-label="Azioni">
                                     <div class="d-flex justify-content-around">
+
+                                        <a href="{{ route('admin.dishes.edit', $dish->id) }}" class="btn btn-warning btn-sm" style="height: 2rem;">Modifica</a>
                                         {{-- <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary btn-sm m-1">Dettagli</a> --}}
-                                        <form action="{{ route('admin.dishes.edit', $dish->id) }}" method="GET" class="d-inline">
-                                            @csrf
-                                            <button type="submit" class="btn btn-warning btn-sm">Modifica</button>
-                                        </form>
+
                                         <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Sei sicuro di eliminare questo piatto?')">
                                             @csrf
                                             @method('DELETE')
