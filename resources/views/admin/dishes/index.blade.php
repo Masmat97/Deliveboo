@@ -26,7 +26,7 @@
                                     @endif
                                 </td>
                                 <td data-label="Nome">{{ $dish->name }}</td>
-                                <td data-label="Nome">€{{ $dish->price }}</td>
+                                <td data-label="Prezzo">€{{ $dish->price }}</td>
                                 {{-- <td data-label="Ingredienti">{!! preg_replace('/\n{2,}/', '</p><p>', nl2br(e(Str::limit($dish->ingredient, 100, ' [Read more]')))) !!}</td> --}}
                                 <td data-label="Azioni">
                                     <div class="d-flex justify-content-around">
