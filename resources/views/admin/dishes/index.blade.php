@@ -35,11 +35,22 @@
                                         {{-- <a href="{{ route('admin.dishes.show', $dish->id) }}" class="btn btn-primary btn-sm m-1">Dettagli</a> --}}
 
                                         <form action="{{ route('admin.dishes.destroy', $dish->id) }}" method="POST" class="d-inline"
-                                            onsubmit="return confirm('Sei sicuro di eliminare il piatto {{ $dish->name }}?')">
-                                         @csrf
-                                         @method('DELETE')
-                                         <button type="submit" class="btn btn-danger btn-sm">Elimina</button>
-                                     </form>
+                                            onsubmit="event.preventDefault(); Swal.fire({
+                                                title: 'Elimina il piatto?',
+                                                text: 'Sei sicuro di eliminare il piatto {{ $dish->name }}?',
+                                                icon: 'warning',
+                                                showCancelButton: true,
+                                                confirmButtonText: 'Elimina',
+                                                cancelButtonText: 'Annulla',
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    this.submit(); // Submit the form if the user confirms
+                                                }
+                                            })">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">Elimina</button>
+                                        </form>
                                         </div>
                                 </td>
                             </tr>
