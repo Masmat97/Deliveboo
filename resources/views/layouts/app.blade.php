@@ -44,9 +44,10 @@
 																								<li class="nav-item">
 																												<a class="nav-link" href="{{ route('admin.restaurants.index') }}">{{ __('Ristorante') }}</a>
 																								</li>
-																								<li class="nav-item">
-																												<a class="nav-link" href="{{ route('admin.dishes.create') }}">{{ __('+Piatto') }}</a>
-																								</li>
+                                                                                                <li class="nav-item">
+                                                                                                 <a class="nav-link" href="{{ route('admin.dishes.index') }}">{{ __('Menù') }}</a>
+                                                                                 </li>
+
 																								<li class="nav-item">
 																												<a class="nav-link" href="{{ route('admin.orders.index') }}">{{ __('Ordini') }}</a>
 																								</li>
