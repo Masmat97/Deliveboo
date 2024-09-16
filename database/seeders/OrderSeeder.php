@@ -26,7 +26,7 @@ class OrderSeeder extends Seeder
                 $newOrder->client_name = $faker->name;
                 $newOrder->client_address = $faker->address;
                 $newOrder->email = $faker->safeEmail;
-                $newOrder->phone_number = $faker->phoneNumber;
+                $newOrder->phone_number = '33333333';
                 $newOrder->total = $faker->randomFloat(2, 10, 400); // Totale casuale tra 10 e 400
                 $newOrder->save();
 
