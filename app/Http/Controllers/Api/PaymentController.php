@@ -17,30 +17,26 @@ class PaymentController extends Controller
 
         $newOrder->date = date('Y-m-d');
 
-        $newOrder->client_name = 'Giuseppe';
+        $newOrder->client_name = $data[1]['name'];
 
-        $newOrder->client_address = 'Via ciao';
+        $newOrder->client_address = $data[1]['address'];
 
-        $newOrder->email = 'gerg@jmo.it';
+        $newOrder->email = $data[1]['email'];
 
-        $newOrder->phone_number = '33333333';
+        $newOrder->phone_number = $data[1]['phone_number'];
 
-        $newOrder->total = '34';
+        $newOrder->total = $data[2];
 
         $newOrder->save();
 
 
-        foreach ($data as $item) {
+        foreach ($data[0] as $item) {
             $dish = Dish::find($item['dish']['id']);
 
             $newOrder->dishes()->attach($dish['id'], [
-
                 'price' => $dish['price'], // Prezzo del piatto
-
                 'quantity' => $item['quantity'], // Quantità casuale per piatto
-
                 'name_dish' => $dish['name'], // Nome del piatto
-
             ]);
         }
         return response()->json([
