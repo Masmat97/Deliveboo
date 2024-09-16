@@ -69,10 +69,19 @@
 
 <style scoped>
     @media (max-width: 425px) {
-        .table-sm {
-            display: block;
-            width: 100%;
-        }
+
+        .table-responsive {
+        width: 100vw; /* make the container full-screen width */
+        height: 100vh; /* make the container full-screen height */
+        display: flex;
+        justify-content: center;
+        align-items: center; /* center the cards vertically and horizontally */
+    }
+
+    .table-sm {
+        width: 80%; /* adjust the width of the card to your liking */
+        margin: 0 auto; /* center the card horizontally */
+    }
         .table-sm thead {
             display: none;
         }
