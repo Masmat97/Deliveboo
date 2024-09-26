@@ -20,161 +20,161 @@ class RestaurantSeeder extends Seeder
         $restaurants = [
             [
                 'name' => 'La Bella Vita',
-                'address' => 'Via del Corso, 18, 00187 Roma RM, Italy',
+                'address' => 'Via del Corso, 18, 00187 Roma RM, Italia',
                 'p_iva' => 'IT1234567890',
                 'image' => 'https://img1.wsimg.com/isteam/ip/587e2db3-e147-4a44-9766-3c9c8d5285ca/blob-0001.png',
                 'types' => [1]
             ],
             [
                 'name' => 'Il Pagliaccio',
-                'address' => 'Via dei Banchi Vecchi, 129/a, 00187 Roma RM, Italy',
+                'address' => 'Via dei Banchi Vecchi, 129/a, 00187 Roma RM, Italia',
                 'p_iva' => 'IT9876543210',
                 'image' => 'https://www.thegastrojob.com/wp-content/uploads/2018/02/Ristorante-il-Pagliaccio-a-Roma.jpg',
                 'types' => [1]
             ],
             [
                 'name' => 'Sushi Ko',
-                'address' => 'Via della Lungaretta, 21, 00153 Roma RM, Italy',
+                'address' => 'Via della Lungaretta, 21, 00153 Roma RM, Italia',
                 'p_iva' => 'IT1111111111',
                 'image' => 'https://www.zenit-group.it/wp-content/uploads/2016/02/Sushiko-Ferrara-foto-10-500x500.jpg',
                 'types' => [2, 4, 26]
             ],
             [
                 'name' => 'Tandoori Nights',
-                'address' => 'Via dei Serpenti, 124, 00187 Roma RM, Italy',
+                'address' => 'Via dei Serpenti, 124, 00187 Roma RM, Italia',
                 'p_iva' => 'IT2222222222',
                 'image' => 'https://photos.wikimapia.org/p/00/03/68/93/41_full.jpg',
                 'types' => [3]
             ],
             [
                 'name' => 'La Rosetta',
-                'address' => 'Piazza del Popolo, 18, 00187 Roma RM, Italy',
+                'address' => 'Piazza del Popolo, 18, 00187 Roma RM, Italia',
                 'p_iva' => 'IT3333333333',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/f2/65/80/ristorante-la-rosetta.jpg?w=1200&h=-1&s=1',
                 'types' => [1, 4]
             ],
             [
                 'name' => 'Burger Bar',
-                'address' => 'Via del Corso, 241, 00187 Roma RM, Italy',
+                'address' => 'Via del Corso, 241, 00187 Roma RM, Italia',
                 'p_iva' => 'IT4444444444',
                 'image' => 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/roma-burger-bar-glendalina-ziemba.jpg',
                 'types' => [5, 8]
             ],
             [
                 'name' => 'La Gensola',
-                'address' => 'Piazza della Gensola, 15, 00153 Roma RM, Italy',
+                'address' => 'Piazza della Gensola, 15, 00153 Roma RM, Italia',
                 'p_iva' => 'IT5555555555',
                 'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/16/ed/8f/99/photo0jpg.jpg',
                 'types' => [1]
             ],
             [
                 'name' => 'Kebabish',
-                'address' => 'Via dei Mille, 15, 00187 Roma RM, Italy',
+                'address' => 'Via dei Mille, 15, 00187 Roma RM, Italia',
                 'p_iva' => 'IT6666666666',
                 'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/11/98/81/f7/kebabish-curry-and-grill.jpg',
                 'types' => [6, 7, 22]
             ],
             [
                 'name' => 'La Campana',
-                'address' => 'Via Campana, 47, 00187 Roma RM, Italy',
+                'address' => 'Via Campana, 47, 00187 Roma RM, Italia',
                 'p_iva' => 'IT7777777777',
                 'image' => 'https://italianliving.com/custom/domain_1/image_files/sitemgr_photo_23534.jpg',
                 'types' => [1]
             ],
             [
                 'name' => 'Sakura',
-                'address' => 'Via dei Giubbonari, 21, 00186 Roma RM, Italy',
+                'address' => 'Via dei Giubbonari, 21, 00186 Roma RM, Italia',
                 'p_iva' => 'IT8888888888',
                 'image' => 'https://is2-ssl.mzstatic.com/image/thumb/Purple115/v4/55/3b/d9/553bd9ae-784e-dc83-8700-044fb2da59d5/source/512x512bb.jpg',
                 'types' => [2, 26, 4, 24]
             ],
             [
                 'name' => 'La Carbonara',
-                'address' => 'Via Panonica, 10, 00187 Roma RM, Italy',
+                'address' => 'Via Panonica, 10, 00187 Roma RM, Italia',
                 'p_iva' => 'IT9999999999',
                 'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/10/e3/07/90/photo2jpg.jpg',
                 'types' => [1]
             ],
             [
                 'name' => 'Tacos el Fogoncito',
-                'address' => 'Via dei Coronari, 135, 00186 Roma RM, Italy',
+                'address' => 'Via dei Coronari, 135, 00186 Roma RM, Italia',
                 'p_iva' => 'IT1010101010',
                 'image' => 'https://live.staticflickr.com/2256/2325273112_5e296f04dd.jpg',
                 'types' => [10]
             ],
             [
                 'name' => 'La Galette',
-                'address' => 'Via della Scrofa, 65, 00187 Roma RM, Italy',
+                'address' => 'Via della Scrofa, 65, 00187 Roma RM, Italia',
                 'p_iva' => 'IT1212121212',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/99/09/0d/la-galetta.jpg?w=1200&h=-1&s=1',
                 'types' => [11]
             ],
             [
                 'name' => 'Ristorante Pizzeria Il Buchetto',
-                'address' => 'Via della Fontana del Finocchio 32, 00132 Roma RM, Italy',
+                'address' => 'Via della Fontana del Finocchio 32, 00132 Roma RM, Italia',
                 'p_iva' => 'IT9876543210',
                 'image' => 'https://media-cdn.tripadvisor.com/media/photo-s/04/30/29/9d/ristorante-pizzeria-il.jpg',
                 'types' => [1, 25]
             ],
             [
                 'name' => 'Miyabi',
-                'address' => 'Via del Corso, 18, 00187 Roma RM, Italy',
+                'address' => 'Via del Corso, 18, 00187 Roma RM, Italia',
                 'p_iva' => 'IT2222222222',
                 'image' => 'https://img.restaurantguru.com/r17d-MIYABI-RISTORANTE-exterior.jpg',
-                'types' => [2, 9, 13]
+                'types' => [2, 9, 13, 26]
             ],
             [
                 'name' => 'Romakinho',
-                'address' => 'Via dei Coronari, 134, 00186 Roma RM, Italy',
+                'address' => 'Via dei Coronari, 134, 00186 Roma RM, Italia',
                 'p_iva' => 'IT4444444444',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/c2/ce/4d/romakinho-brazilian-sushi.jpg?w=500&h=-1&s=1',
                 'types' => [4, 18, 24, 26]
             ],
             [
                 'name' => ' Pad Thai Kung',
-                'address' => 'Via Aurelia 483 Mercato Irnerio, BOX 19, 00165 Roma RM, Italy',
+                'address' => 'Via Aurelia 483 Mercato Irnerio, BOX 19, 00165 Roma RM, Italia',
                 'p_iva' => 'IT5555555555',
                 'image' => 'https://lh3.googleusercontent.com/p/AF1QipMQhic8kLPytAjBwC644jLepfadAZOyRHdoQAKy=s1360-w1360-h1020',
                 'types' => [13]
             ],
             [
                 'name' => 'McDonald\'s Roma',
-                'address' => 'Via dei Fori Imperiali, 1, 00186 Roma RM, Italy',
+                'address' => 'Via dei Fori Imperiali, 1, 00186 Roma RM, Italia',
                 'p_iva' => 'IT6666666666',
                 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/McDonald%27s_logo.svg/2560px-McDonald%27s_logo.svg.png',
                 'types' => [5, 8, 22]
             ],
             [
                 'name' => 'Burger King Roma',
-                'address' => 'Via del Tritone, 132, 00187 Roma RM, Italy',
+                'address' => 'Via del Tritone, 132, 00187 Roma RM, Italia',
                 'p_iva' => 'IT7777777777',
                 'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHcjv0wmeIzNl0MAwpCZ77X3qzKnyuufZZ0w&s',
                 'types' => [5, 8, 22]
             ],
             [
                 'name' => 'Old Wild West',
-                'address' => 'Via Torino, 133, 00187 Roma RM, Italy',
+                'address' => 'Via Torino, 133, 00187 Roma RM, Italia',
                 'p_iva' => 'IT8888888888',
                 'image' => 'https://w7.pngwing.com/pngs/332/425/png-transparent-american-frontier-old-wild-west-chophouse-restaurant-province-of-udine-others-miscellaneous-food-text.png',
                 'types' => [5, 8]
             ],
             [
                 'name' => 'Ristorante Ali Baba',
-                'address' => "Via dell'Arco di Travertino, 27, 00178 Roma RM, Italy",
+                'address' => "Via dell'Arco di Travertino, 27, 00178 Roma RM, Italia",
                 'p_iva' => 'IT9999999999',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ac/30/89/caption.jpg?w=1100&h=-1&s=1',
                 'types' => [7, 22, 6]
             ],
             [
                 'name' => 'Greco Romano',
-                'address' => 'Via Guglielmo Calderini 48/50, 00196 Roma RM, Italy',
+                'address' => 'Via Guglielmo Calderini 48/50, 00196 Roma RM, Italia',
                 'p_iva' => 'IT1111111111',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/8b/12/2c/greco-romano.jpg?w=1200&h=-1&s=1',
                 'types' => [12]
             ],
             [
                 'name' => 'El Pueblo Bistrot Sede Cipro',
-                'address' => 'Via Sebastiano Ziani, 58, 00136 Roma RM, Italy',
+                'address' => 'Via Sebastiano Ziani, 58, 00136 Roma RM, Italia',
                 'p_iva' => 'IT2222222222',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/e9/66/60/dal-1993-solo-cucina.jpg?w=1200&h=-1&s=1',
                 'types' => [10, 16]
@@ -202,7 +202,7 @@ class RestaurantSeeder extends Seeder
             ],
             [
                 'name' => 'Poke House Roma',
-                'address' => 'Via del Gambero, 36 Roma RM, Italy',
+                'address' => 'Via del Gambero, 36 Roma RM, Italia',
                 'p_iva' => 'IT5555555555',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/a1/e7/f5/house-bowls.jpg?w=1200&h=-1&s=1',
                 'types' => [24]
@@ -220,6 +220,48 @@ class RestaurantSeeder extends Seeder
                 'p_iva' => 'IT7777777777',
                 'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/72/6e/09/insegna.jpg?w=1200&h=-1&s=1',
                 'types' => [19]
+            ],
+            [
+                'name' => 'Assunta Madre',
+                'address' => 'Via Giulia 14, 00186 Roma, Italia"',
+                'p_iva' => 'IT1234567890',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/98/20/d6/la-nostra-insegna.jpg?w=700&h=-1&s=1',
+                'types' => [1, 23]
+            ],
+            [
+                'name' => 'Bentu & Soi',
+                'address' => 'Via Casilina 65 Near Piazza del Pigneto, 00182 Roma Italia',
+                'p_iva' => 'IT0987654321',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/79/cd/95/terrasse-exterieure.jpg?w=1200&h=-1&s=1',
+                'types' => [1, 4, 23]
+            ],
+            [
+                'name' => 'Moci Oriental Flavors',
+                'address' => 'Via Dei Durantini 12/14, 00157 Roma Italia',
+                'p_iva' => 'IT2222222222',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1f/61/6a/8b/caption.jpg?w=600&h=-1&s=1',
+                'types' => [2, 4, 9]
+            ],
+            [
+                'name' => 'Ristorante Cinese Wang Xiang Lou',
+                'address' => 'Via del Viminale 5A, 00184 Roma Italia',
+                'p_iva' => 'IT3333333334',
+                'image' => 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/b7/b8/5d/photo0jpg.jpg?w=1200&h=-1&s=1',
+                'types' => [9]
+            ],
+            [
+                'name' => 'Gainn',
+                'address' => 'Via Dei Mille 18, 00185 Roma Italia',
+                'p_iva' => 'IT3333333345',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRhpTA4R8Mz8s0Xd4dDO_zsRSKVj7KXr1gpQ&s',
+                'types' => [15]
+            ],
+            [
+                'name' => 'Galbi',
+                'address' => 'Via Cremera, 21, 00198 Roma Italia',
+                'p_iva' => 'IT3333333222',
+                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7BPMkNym5O_xx8WBoEsGv3zDZltiQlByvqg&s',
+                'types' => [15]
             ]
 
         ];

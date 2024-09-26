@@ -110,7 +110,7 @@ class TypeSeeder extends Seeder
         $newType23->save();
 
         $newType24 = new Type();
-        $newType24->name = 'Pizzaeria';
+        $newType24->name = 'Pizzeria';
         $newType24->save();
 
         $newType25 = new Type();

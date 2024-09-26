@@ -18,7 +18,7 @@ class DishSeeder extends Seeder
         //Piatti italiani
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 1; 
+        $newDish->restaurant_id = 1;
         $newDish->name = '"Pollo alla Cacciatora';
         $newDish->ingredient = "Petto di pollo, Funghi, Cipolla, Aglio";
         $newDish->price = 15.99;
@@ -27,7 +27,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 1; 
+        $newDish->restaurant_id = 1;
         $newDish->name = 'Spaghetti Aglio e Olio';
         $newDish->ingredient = 'Spaghetti, Aglio, Olio, Peperoncino.';
         $newDish->price = 12.99;
@@ -45,7 +45,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 1; 
+        $newDish->restaurant_id = 1;
         $newDish->name = 'Risotto alla Milanese';
         $newDish->ingredient = 'Risotto, Zafferano, Brodo di manzo, Formaggio Parmigiano, Ossobuco';
         $newDish->price = 22.99;
@@ -54,7 +54,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 1; 
+        $newDish->restaurant_id = 1;
         $newDish->name = 'Pollo alla Parmigiana';
         $newDish->ingredient = 'Petto di pollo, Salsa di pomodoro, Mozzarella, Parmigiano';
         $newDish->price = 16.99;
@@ -63,7 +63,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 1; 
+        $newDish->restaurant_id = 1;
         $newDish->name = 'Fettuccine Alfredo';
         $newDish->ingredient = 'Fettuccine, Parmigiano, Burro, Panna';
         $newDish->price = 18.99;
@@ -72,7 +72,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 2; 
+        $newDish->restaurant_id = 2;
         $newDish->name = 'Gnocchi alla Romana';
         $newDish->ingredient = 'Gnocchi, salsa di pomodoro, formaggio Pecorino Romano, basilico.';
         $newDish->price = 16.99;
@@ -81,7 +81,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 2; 
+        $newDish->restaurant_id = 2;
         $newDish->name = 'Insalata Caprese';
         $newDish->ingredient = 'Pomodoro, Mozzarella, Basilico, Aceto balsamico.';
         $newDish->price = 9.99;
@@ -90,7 +90,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 2; 
+        $newDish->restaurant_id = 2;
         $newDish->name = 'Tortellini alla Panna';
         $newDish->ingredient = 'Tortellini, salsa alla panna, formaggio Parmigiano, prezzemolo fresco';
         $newDish->price = 18.99;
@@ -99,7 +99,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 2; 
+        $newDish->restaurant_id = 2;
         $newDish->name = 'Cannelloni con Spinaci';
         $newDish->ingredient = 'Cannelloni, Spinaci, Ricotta, Salsa di pomodoro';
         $newDish->price = 15.99;
@@ -108,7 +108,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 2; 
+        $newDish->restaurant_id = 2;
         $newDish->name = 'Zeppole di San Giuseppe';
         $newDish->ingredient = 'Impasto, Formaggio ricotta, Zucchero a velo, Gocce di cioccolato';
         $newDish->price = 11.99;
@@ -137,7 +137,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 3; 
+        $newDish->restaurant_id = 3;
         $newDish->name = 'Gyoza';
         $newDish->ingredient = 'Maiale, Verdure, Salsa di soia, Ravioli saltati in padella';
         $newDish->price = 8.99;
@@ -146,7 +146,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 3; 
+        $newDish->restaurant_id = 3;
         $newDish->name = 'Teriyaki Chicken';
         $newDish->ingredient = 'Petto di pollo, salsa teriyaki, riso, verdure';
         $newDish->price = 13.99;
@@ -155,7 +155,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 3; 
+        $newDish->restaurant_id = 3;
         $newDish->name = 'Udon Noodles';
         $newDish->ingredient = 'Noodles Udon, Verdure, Brodo di Miso, Pezzi di Tempura';
         $newDish->price = 11.99;
@@ -166,7 +166,7 @@ class DishSeeder extends Seeder
         //Piatti indiani
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 4; 
+        $newDish->restaurant_id = 4;
         $newDish->name = 'Chicken Tikka Masala';
         $newDish->ingredient = 'Petto di pollo, Salsa di pomodoro, Panna, Spezie';
         $newDish->price = 14.99;
@@ -175,7 +175,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 4; 
+        $newDish->restaurant_id = 4;
         $newDish->name = 'Palak Paneer';
         $newDish->ingredient = 'Formaggio Paneer, Spinaci, Aglio, Panna';
         $newDish->price = 13.99;
@@ -184,7 +184,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 4; 
+        $newDish->restaurant_id = 4;
         $newDish->name = 'Samosas';
         $newDish->ingredient = 'Patate, Piselli, Cipolle, Spezie, Pasticceria';
         $newDish->price = 6.99;
@@ -193,7 +193,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 4; 
+        $newDish->restaurant_id = 4;
         $newDish->name = 'Butter Chicken';
         $newDish->ingredient = 'Petto di pollo, Salsa di pomodoro, Burro, Spezie';
         $newDish->price = 15.99;
@@ -202,7 +202,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 4; 
+        $newDish->restaurant_id = 4;
         $newDish->name = 'Mattar Paneer';
         $newDish->ingredient = 'Formaggio Paneer, Piselli, Cipolle, Spezie, Panna';
         $newDish->price = 14.99;
@@ -213,7 +213,7 @@ class DishSeeder extends Seeder
         //Piatti di pesce
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 5; 
+        $newDish->restaurant_id = 5;
         $newDish->name = 'Pasta allo Scoglio';
         $newDish->ingredient = 'Gamberi, Cozze, Vongole, Aglio, Pomodorini, Vino bianco, Linguine';
         $newDish->price = 19.99;
@@ -222,7 +222,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 5; 
+        $newDish->restaurant_id = 5;
         $newDish->name = 'Tartare di Gambero';
         $newDish->ingredient = 'Gamberetti, limone, capperi, aglio, olio';
         $newDish->price = 16.99;
@@ -240,7 +240,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 5; 
+        $newDish->restaurant_id = 5;
         $newDish->name = 'Grilled Octopus';
         $newDish->ingredient = 'Polpo, Olio, Aglio, Limone, Erbe aromatiche';
         $newDish->price = 17.99;
@@ -249,7 +249,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 5; 
+        $newDish->restaurant_id = 5;
         $newDish->name = 'Fritto Misto';
         $newDish->ingredient = 'Gamberetti, Calamari, Bianchetti, Zucchine, Olio';
         $newDish->price = 15.99;
@@ -257,10 +257,10 @@ class DishSeeder extends Seeder
         $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxOlmTmH7Zi-GIX4LVbvsjahUp2BL-Kf2ceQ&s';
         $newDish->save();
 
-        //Hamburger 
+        //Hamburger
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 6; 
+        $newDish->restaurant_id = 6;
         $newDish->name = 'Classic Cheeseburger';
         $newDish->ingredient = 'Hamburger di manzo, formaggio cheddar, lattuga, pomodoro, cipolla, sottaceti';
         $newDish->price = 12.99;
@@ -269,7 +269,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 6; 
+        $newDish->restaurant_id = 6;
         $newDish->name = 'Bacon BBQ Burger';
         $newDish->ingredient = 'Hamburger di manzo, Bacon, Formaggio cheddar, Salsa barbecue, Lattuga, Pomodoro';
         $newDish->price = 14.99;
@@ -278,7 +278,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 6; 
+        $newDish->restaurant_id = 6;
         $newDish->name = 'Mushroom Swiss Burger';
         $newDish->ingredient = 'Hamburger di manzo, funghi saltati, formaggio svizzero, lattuga, pomodoro';
         $newDish->price = 13.99;
@@ -287,7 +287,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 6; 
+        $newDish->restaurant_id = 6;
         $newDish->name = 'Jalapeno Popper Burger';
         $newDish->ingredient = 'Hamburger di manzo, peperoni jalapeno, formaggio cremoso, pancetta, lattuga, pomodoro';
         $newDish->price = 15.99;
@@ -308,7 +308,7 @@ class DishSeeder extends Seeder
         //Italian dishes
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 7; 
+        $newDish->restaurant_id = 7;
         $newDish->name = 'Fritto Misto';
         $newDish->ingredient = 'Verdure miste, Gamberi, Calamari, Zucchine, Fritto misto in pastella';
         $newDish->price = 14.99;
@@ -317,7 +317,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 7; 
+        $newDish->restaurant_id = 7;
         $newDish->name = 'Ravioli alla Norma';
         $newDish->ingredient = 'Ravioli, Melanzane, Salsa di pomodoro, Ricotta salata, Basilico';
         $newDish->price = 17.99;
@@ -326,7 +326,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 7; 
+        $newDish->restaurant_id = 7;
         $newDish->name = 'Pollo alla Cacciatora con Funghi';
         $newDish->ingredient = 'Petto di pollo, Funghi, Cipolla, Aglio, Vino bianco, Salsa di pomodoro';
         $newDish->price = 19.99;
@@ -335,7 +335,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 7; 
+        $newDish->restaurant_id = 7;
         $newDish->name = 'Crespelle con Nutella';
         $newDish->ingredient = 'Impasto per crespelle, Nutella, Panna montata, Fragole fresche';
         $newDish->price = 10.99;
@@ -344,7 +344,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 7; 
+        $newDish->restaurant_id = 7;
         $newDish->name = 'Tiramisù';
         $newDish->ingredient = 'Savoiardi, Espresso, Mascarpone, Panna montata, Cacao in polvere';
         $newDish->price = 12.99;
@@ -353,10 +353,10 @@ class DishSeeder extends Seeder
         $newDish->save();
 
 
-        //Kebab 
+        //Kebab
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 8; 
+        $newDish->restaurant_id = 8;
         $newDish->name = 'Panino Kebab';
         $newDish->ingredient = 'Agnello, pomodoro, cipolla, lattuga, salsa tzatziki, pane pita';
         $newDish->price = 9.99;
@@ -365,7 +365,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 8; 
+        $newDish->restaurant_id = 8;
         $newDish->name = 'Piadina Kebab';
         $newDish->ingredient = 'Pollo, pomodoro, cipolla, lattuga, salsa tzatziki, pane piadina';
         $newDish->price = 10.99;
@@ -374,7 +374,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 8; 
+        $newDish->restaurant_id = 8;
         $newDish->name = 'Doner Kebab';
         $newDish->ingredient = 'Agnello, pomodoro, cipolla, lattuga, salsa tzatziki, pane pita';
         $newDish->price = 11.99;
@@ -385,7 +385,7 @@ class DishSeeder extends Seeder
         //Piatti Italiani
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 9; 
+        $newDish->restaurant_id = 9;
         $newDish->name = 'Bruschetta con Prosciutto';
         $newDish->ingredient = ' Pane tostato, Prosciutto, Pomodori freschi, Basilico, Mozzarella';
         $newDish->price = 13.99;
@@ -394,7 +394,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 9; 
+        $newDish->restaurant_id = 9;
         $newDish->name = 'Spaghetti alla Carbonara';
         $newDish->ingredient = 'Spaghetti, Bacon, Uova, Parmigiano Reggiano, Pepe Nero';
         $newDish->price = 16.99;
@@ -403,7 +403,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 9; 
+        $newDish->restaurant_id = 9;
         $newDish->name = 'Pollo alla Milanese';
         $newDish->ingredient = 'Petto di pollo impanato, salsa di pomodoro, formaggio mozzarella, basilico fresco';
         $newDish->price = 18.99;
@@ -412,7 +412,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 9; 
+        $newDish->restaurant_id = 9;
         $newDish->name = 'Cannoli Siciliani';
         $newDish->ingredient = 'Gusci di cannoli, Ricotta zuccherata, Gocce di cioccolato, Frutta candita';
         $newDish->price = 11.99;
@@ -421,7 +421,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 9; 
+        $newDish->restaurant_id = 9;
         $newDish->name = 'Panna Cotta con Frutta';
         $newDish->ingredient = 'Crema di panna cotta, Frutti di bosco misti, Panna montata, Menta fresca';
         $newDish->price = 14.99;
@@ -432,7 +432,7 @@ class DishSeeder extends Seeder
         //Piatti Giapponesi
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 10; 
+        $newDish->restaurant_id = 10;
         $newDish->name = 'Tonkatsu';
         $newDish->ingredient = 'Costoletta di maiale impanata, Cavolo tritato, Riso, Zuppa di miso';
         $newDish->price = 14.99;
@@ -441,7 +441,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 10; 
+        $newDish->restaurant_id = 10;
         $newDish->name = 'Yakiitori';
         $newDish->ingredient = 'Spiedini di pollo alla griglia, salsa yakitori, riso al vapore';
         $newDish->price = 12.99;
@@ -450,7 +450,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 10; 
+        $newDish->restaurant_id = 10;
         $newDish->name = 'Bento Box';
         $newDish->ingredient = 'Salmone alla griglia, Riso al vapore, Verdure miste, Zuppa di miso';
         $newDish->price = 15.99;
@@ -459,7 +459,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 10; 
+        $newDish->restaurant_id = 10;
         $newDish->name = 'Onigiri';
         $newDish->ingredient = 'Hamburger di riso triangolari, ripieno di salmone, alga nori';
         $newDish->price = 9.99;
@@ -468,7 +468,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 10; 
+        $newDish->restaurant_id = 10;
         $newDish->name = 'Mochi Ice Cream';
         $newDish->ingredient = 'Guscio di mochi, gelato al tè verde, pasta di fagioli rossi';
         $newDish->price = 6.99;
@@ -479,7 +479,7 @@ class DishSeeder extends Seeder
         //Italian dishes
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 11; 
+        $newDish->restaurant_id = 11;
         $newDish->name = 'Arancini con Mozzarella';
         $newDish->ingredient = 'Polpette di risotto, Mozzarella, Salsa di pomodoro, Prezzemolo fresco';
         $newDish->price = 12.99;
@@ -488,7 +488,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 11; 
+        $newDish->restaurant_id = 11;
         $newDish->name = 'Tortellini en Brodo';
         $newDish->ingredient = 'Tortellini, Brodo di pollo, Prezzemolo fresco, Parmigiano Reggiano';
         $newDish->price = 15.99;
@@ -497,7 +497,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 11; 
+        $newDish->restaurant_id = 11;
         $newDish->name = 'Spaghetti alla Carbonara';
         $newDish->ingredient = 'Spaghetti, Guanciale, Uova, Parmigiano Reggiano, Pepe Nero';
         $newDish->price = 16.99;
@@ -506,7 +506,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 11; 
+        $newDish->restaurant_id = 11;
         $newDish->name = 'Sfogliatelle con Ricotta';
         $newDish->ingredient = 'Gusci di sfogliatelle, Ricotta zuccherata, Frutta candita, Zucchero a velo';
         $newDish->price = 10.99;
@@ -515,7 +515,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 11; 
+        $newDish->restaurant_id = 11;
         $newDish->name = 'Caffè Italiano';
         $newDish->ingredient = 'Espresso, Panna montata, Cioccolato in polvere';
         $newDish->price = 4.99;
@@ -526,7 +526,7 @@ class DishSeeder extends Seeder
         //Piatti Messicani
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 12; 
+        $newDish->restaurant_id = 12;
         $newDish->name = 'Tacos al Pastor';
         $newDish->ingredient = 'Maiale, Ananas, Cipolla, Coriandolo, Tortilla';
         $newDish->price = 12.99;
@@ -535,7 +535,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 12; 
+        $newDish->restaurant_id = 12;
         $newDish->name = 'Quesadillas';
         $newDish->ingredient = 'Pollo, Formaggio, Cipolla, Peperoni, Tortilla';
         $newDish->price = 10.99;
@@ -544,7 +544,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 12; 
+        $newDish->restaurant_id = 12;
         $newDish->name = 'Enchiladas Rojas';
         $newDish->ingredient = 'Manzo, Salsa di pomodoro, Formaggio, Tortilla';
         $newDish->price = 13.99;
@@ -553,7 +553,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 12; 
+        $newDish->restaurant_id = 12;
         $newDish->name = 'Chiles Rellenos';
         $newDish->ingredient = 'Peperoni poblano arrostiti, Formaggio, Carne, Salsa di pomodoro';
         $newDish->price = 14.99;
@@ -562,7 +562,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 12; 
+        $newDish->restaurant_id = 12;
         $newDish->name = 'Fajitas';
         $newDish->ingredient = 'Manzo, Peperoni, Cipolla, Tortilla, Panna acida';
         $newDish->price = 15.99;
@@ -573,7 +573,7 @@ class DishSeeder extends Seeder
         //Piatti Francesi
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 13; 
+        $newDish->restaurant_id = 13;
         $newDish->name = 'Coq au Vin';
         $newDish->ingredient = 'Pollo, Vino rosso, Funghi, Pancetta, Patate';
         $newDish->price = 18.99;
@@ -582,7 +582,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 13; 
+        $newDish->restaurant_id = 13;
         $newDish->name = 'Bouillabaisse';
         $newDish->ingredient = 'Pesce, Crostacei, Verdure, Rouille, Crostini';
         $newDish->price = 19.99;
@@ -591,7 +591,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 13; 
+        $newDish->restaurant_id = 13;
         $newDish->name = 'Ratatouille';
         $newDish->ingredient = 'Melanzane, zucchine, peperoni, pomodori, aglio';
         $newDish->price = 12.99;
@@ -600,7 +600,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 13; 
+        $newDish->restaurant_id = 13;
         $newDish->name = 'Crème Brûlée';
         $newDish->ingredient = 'Panna, Zucchero, Uova, Vaniglia, Zucchero caramellato';
         $newDish->price = 7.99;
@@ -609,7 +609,7 @@ class DishSeeder extends Seeder
         $newDish->save();
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 13; 
+        $newDish->restaurant_id = 13;
         $newDish->name = 'Quiche Lorraine';
         $newDish->ingredient = 'Uova, Panna, Pancetta, Formaggio, Pasticceria';
         $newDish->price = 14.99;
@@ -619,7 +619,7 @@ class DishSeeder extends Seeder
 
 
         $newDish = new Dish();
-        $newDish->restaurant_id = 14; 
+        $newDish->restaurant_id = 14;
         $newDish->name = 'Risotto alla Milanese';
         $newDish->ingredient = 'Risotto, Zafferano, Brodo di manzo, Parmigiano Reggiano, Ossobuco';
         $newDish->price = 22.99;
@@ -1411,6 +1411,284 @@ class DishSeeder extends Seeder
         $newDish->price = 8.50;
         $newDish->availability = true;
         $newDish->image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYdVq2cZjU_MaNPywVhqZrknS07q8_mjggCg&s';
+        $newDish->save();
+
+        // Assunta madre
+        $newDish = new Dish();
+        $newDish->restaurant_id = 30;
+        $newDish->name = 'Tartare bianca con avocado e lime';
+        $newDish->ingredient = 'branzino, avocado, lime, cipolle';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/18/f8/ec/tartare-bianca-con-avocado.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 30;
+        $newDish->name = 'Tartare di tonno';
+        $newDish->ingredient = 'tonno, avocado, lime, cipolle';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/18/f8/98/tartare-di-tonno.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 30;
+        $newDish->name = 'Tagliolini scampi e menta';
+        $newDish->ingredient = 'pasta, scampi, menta, pane';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/18/f4/21/tagliolini-scampi-e-menta.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 30;
+        $newDish->name = 'Polpette di spigola';
+        $newDish->ingredient = 'spigola, pomodoro, basilico, pangrattato';
+        $newDish->price = 9.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/18/f0/1c/le-famose-polpette-di.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 30;
+        $newDish->name = 'Fritto misto';
+        $newDish->ingredient = 'gamberetti, calamaro, bianchetti, acciughe';
+        $newDish->price = 11.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/18/f2/57/il-nostro-fritto.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        // Bentu e soi
+        $newDish = new Dish();
+        $newDish->restaurant_id = 31;
+        $newDish->name = 'Ciuppino';
+        $newDish->ingredient = 'pesce misto e crostacei, brodo di pesce, aglio, prezzemolo';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://www.vitalchoice.com/blog/wp-content/uploads/2023/03/Cioppino-recipe.jpeg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 31;
+        $newDish->name = 'Burrida';
+        $newDish->ingredient = 'pescecane , aglio, pomodoro, capperi, prezzemolo';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://media-assets.lacucinaitaliana.it/photos/620fbeaed274969b4db75f42/1:1/w_2560%2Cc_limit/burrida-di-pesce-fresco-liguria-la-versione-tradizionale1.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 31;
+        $newDish->name = 'Malloreddus di pesce';
+        $newDish->ingredient = 'malloreddus, cozze, cipolla, prezzemolo';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://media-assets.lacucinaitaliana.it/photos/61fd3a6176fbfc8fddc03767/4:3/w_800,h_600,c_limit/Gnocchetti-sardi-con-vongole-e-cozze1.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 31;
+        $newDish->name = 'Fregola con Arselle';
+        $newDish->ingredient = 'fregola, arselle , arselle , aglio';
+        $newDish->price = 9.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://images.dissapore.com/wp-content/uploads/2022/06/shutterstock_1800987337.jpg?width=1280&height=720&quality=50';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 31;
+        $newDish->name = 'Seadas';
+        $newDish->ingredient = 'farina di semola , burro, una scorza di limone o arancia, miele sardo';
+        $newDish->price = 11.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://www.viaggioff.it/wp-content/uploads/2022/07/seadas-sardegna.jpg';
+        $newDish->save();
+
+        //Moci oriental
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 32;
+        $newDish->name = 'Nero Seppia Gyoza';
+        $newDish->ingredient = 'gamberi macinati totano e calamari tagliati, castagne d’acqua zenzero, cipollato, nero seppia e bambù';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/87/66/df/moci-roma.jpg?w=1100&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 32;
+        $newDish->name = 'Yaki Soba';
+        $newDish->ingredient = 'spaghetti di grano saraceno con calamari, gamberi e uova e verdure';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/87/66/c1/moci-roma.jpg?w=1100&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 32;
+        $newDish->name = 'Manzo alla Piastra';
+        $newDish->ingredient = 'carne di manzo, semi di sesamo';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/20/ed/97/37/riscoprite-i-veri-sapori.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 32;
+        $newDish->name = 'Manzo Piccante';
+        $newDish->ingredient = 'manzo con peperoni, cipolla e arachidi';
+        $newDish->price = 9.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://msgimages.s3.eu-central-1.amazonaws.com/5SHe5MrkYOrD7kZQ0LuY9MNAQDCtI3bt/5SHe5MrkYOrD7kZQ0LuY9MNAQDCtI3bt/481da8002665a754cd32186a135c3c299c94d21acd6c89b4355f1e63cd9d5241dc4e77e6fa87785a.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 32;
+        $newDish->name = 'Ebi Yaki';
+        $newDish->ingredient = 'spiedini di gamberi glassati in salsa teriyaki';
+        $newDish->price = 11.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/20/ed/86/54/riscoprite-i-veri-sapori.jpg?w=1200&h=-1&s=1';
+        $newDish->save();
+
+        //Wang Xiang Lou
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 33;
+        $newDish->name = 'Pollo Kung Pao';
+        $newDish->ingredient = "petto di pollo, aglio, cipolla, arachidi, salsa di soia, riso";
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/188353BD-9C50-4D76-86E6-A45F525119CF/Derivates/71FB3CEC-4C97-479C-8D6B-354B4EFB513E.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 33;
+        $newDish->name = 'Manzo e broccoli saltati in padella';
+        $newDish->ingredient = 'manzo, broccoli, salsa di ostriche, salsa di soia, aglio, cipolla  ';
+        $newDish->price = 14.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://recipeimages.migros.ch/crop/v-w-600-h-300-a-center_center/4221f8e76a0b3e5dc928fdecab010f467a0d1839/straccetti-di-manzo-con-broccoli-0-16-9.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 33;
+        $newDish->name = 'Zuppa di wonton';
+        $newDish->ingredient = 'wonton, carne di maiale macinata, cavolo, cipollotti';
+        $newDish->price = 12.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://www.giallozafferano.it/images/238-23853/Wonton-soup_450x300.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 33;
+        $newDish->name = 'Uovo Foo Young';
+        $newDish->ingredient = 'uova, riso, cipollotti, salsa di ostriche, salsa di soia, funghi';
+        $newDish->price = 9.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://thumbs.dreamstime.com/z/l-uovo-cinese-foo-young-dell-omelette-%C3%A8-servito-con-il-primo-piano-del-riso-vista-superiore-orizzontale-su-un-piatto-da-sopra-148752429.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 33;
+        $newDish->name = 'Maiale in agrodolce';
+        $newDish->ingredient = 'maiale, cipolla, peperoni, ketchup, zucchero, ananas,';
+        $newDish->price = 11.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://www.giallozafferano.it/images/236-23668/Maiale-in-agrodolce_450x300.jpg';
+        $newDish->save();
+
+          //Gainn
+        $newDish = new Dish();
+        $newDish->restaurant_id = 34;
+        $newDish->name = 'Bibimbap';
+        $newDish->ingredient = "riso, zucchine, carote, ribeye, tofu fritto, kimchi, uova";
+        $newDish->price = 13.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://www.seriouseats.com/thmb/9gYczIvS4R7ZvK19ahBns0xOG_k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230113-Bibimbap-AmandaSuarez-hero-331e5e1ffa5b400fbb684e59b14d57c1.JPG';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 34;
+        $newDish->name = 'Japchae (spaghetti di riso saltati in padella)';
+        $newDish->ingredient = 'spaghetti di vetro (dangmyeon), cipolla, ribeye, salsa di soia';
+        $newDish->price = 11.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://blog.giallozafferano.it/viaggiandomangiando/wp-content/uploads/2021/07/Japchae-scaled.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 34;
+        $newDish->name = ' Bulgogi (manzo marinato)';
+        $newDish->ingredient = 'ribeye, Gochujang (pasta di peperoncino coreano), salsa di soia, cipolla, aglio';
+        $newDish->price = 11.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/HF220826_R16_W42_IT_IT125-1_KB_Main_low-e36d4382.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 34;
+        $newDish->name = 'Kimbap (sushi in stile coreano)';
+        $newDish->ingredient = 'cetriolo, carota, spinaci, manzo, Gochujang (pasta di peperoncino coreano), riso';
+        $newDish->price = 13.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://c8.alamy.com/compit/2g5h1b6/involtini-kimbap-di-sushi-in-stile-coreano-e-giapponese-2g5h1b6.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 34;
+        $newDish->name = 'Tteokbokki (dolci di riso piccanti)';
+        $newDish->ingredient = 'gallette di riso (tteok), uova sode, Gochujang, cipolle verdi';
+        $newDish->price = 10.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://cdn.ilclubdellericette.it/wp-content/uploads/2021/10/tteokbokki-gnocchi-di-riso-coreani-1280x720.jpg';
+        $newDish->save();
+
+            //Galbi34
+        $newDish = new Dish();
+        $newDish->restaurant_id = 35;
+        $newDish->name = 'Naengmyeon (spaghetti freddi)';
+        $newDish->ingredient = "spaghetti di grano saraceno, Gochujang (pasta di peperoncino coreana), cetriolo , pera, uovo sodo";
+        $newDish->price = 8.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://cf.creatrip.com/original/spot/13049/06ll0hupz6k0esz8w3gsg2nvocs2tth7.jpg?d=1600x900&q=75&f=webp';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 35;
+        $newDish->name = 'Bibimbap';
+        $newDish->ingredient = "riso, zucchine, carote, ribeye, tofu fritto, kimchi, uova";
+        $newDish->price = 11.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Korean.food-Bibimbap-02.jpg/800px-Korean.food-Bibimbap-02.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 35;
+        $newDish->name = 'Bossam (Maiale avvolto)';
+        $newDish->ingredient = 'pancetta di maiale, Gochujang (pasta di peperoncino coreana), riso, broccoli';
+        $newDish->price = 10.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://img.freepik.com/foto-premium/bossam-ventre-di-maiale-al-vapore-avvolto-in-lattuga-con-vari-condimenti-tradizionale_921026-35067.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 35;
+        $newDish->name = 'Doenjang Jjigae (stufato di pasta di soia fermentata)';
+        $newDish->ingredient = 'doenjang (farina di soia fermentata coreana), Gochujang (pasta di peperoncino coreana), verdure ';
+        $newDish->price = 8.90;
+        $newDish->availability = true;
+        $newDish->image = 'https://www.kimchiebasilico.it/wp-content/uploads/2015/09/dwenjang-and-rice.jpg';
+        $newDish->save();
+
+        $newDish = new Dish();
+        $newDish->restaurant_id = 35;
+        $newDish->name = 'Mandu';
+        $newDish->ingredient = 'cipollotti tritati, kimchi';
+        $newDish->price = 7.50;
+        $newDish->availability = true;
+        $newDish->image = 'https://recipecontent.fooby.ch/18968_3-2_1920-1280.jpg';
         $newDish->save();
     }
 }

@@ -166,6 +166,33 @@ class UserSeeder extends Seeder
                 'email' => 'imonticiani@restaurant.it',
                 'password' => Hash::make('deliveboo123')
             ],
+            [
+                'name' => 'Assunta Madre',
+                'email' => 'assuntamadre@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Bentu & Soi',
+                'email' => 'bentuesoi@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
+            [
+                'name' => 'Moci Oriental Flavors',
+                'email' => 'mociorientalflavors@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],  [
+                'name' => 'Wang Xiang Lou',
+                'email' => 'wangxianglou@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],  [
+                'name' => 'Gainn',
+                'email' => 'gainn@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],  [
+                'name' => 'Galbi',
+                'email' => 'galbi@restaurant.it',
+                'password' => Hash::make('deliveboo123')
+            ],
 
         ];
 
