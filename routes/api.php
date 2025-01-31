@@ -8,6 +8,7 @@ use Database\Seeders\RestaurantSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Expr\PostDec;
+use App\Http\Controllers\Api\BraintreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,9 @@ Route::get('types', [TypeController::class, 'index']);
 Route::get('restaurants/{slug}', [RestaurantController::class, 'show']);
 Route::get('types/restaurant', [TypeController::class, 'show']);
 
-Route::post('payment', [PaymentController::class, 'store']);
+
+Route::get('/braintree/token', [BraintreeController::class, 'getToken']);
+Route::post('/braintree/checkout', [BraintreeController::class, 'checkout']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
